@@ -848,22 +848,11 @@
 .approval-review-dialog .approval-review-panel .permissions-scroll {
   flex: 1;
   min-height: 0;
-  max-height: min(640px, calc(92vh - 160px));
+  max-height: min(720px, calc(92vh - 48px));
   height: auto;
-  margin: 0 0 0;
+  margin: 0;
   border-radius: 0;
   background: white;
-}
-/* Identity block matches edit panel profile (no in-profile actions). */
-.approval-review-dialog .approval-review-panel .approval-review-profile {
-  position: static;
-  min-height: 0;
-  height: auto;
-  border-bottom: 0;
-  padding-bottom: 16px;
-}
-.approval-review-dialog .approval-review-profile .permission-name {
-  margin-left: 44px;
 }
 .approval-review-dialog .approval-review-panel .permission-info {
   min-height: 0;
@@ -874,25 +863,9 @@
   margin-top: var(--space-section);
   padding-top: 0;
 }
-.approval-review-dialog .approval-review-footer {
-  flex-shrink: 0;
-  margin-top: 0;
-  padding: 24px;
-  gap: 8px;
-  border-top: 0;
-  background: white;
-  justify-content: flex-end;
-}
-.approval-review-dialog .approval-review-footer .permission-edit.primary-button {
-  background: var(--brand);
-  color: white;
-  border: 1px solid var(--brand);
-  padding-left: 12px;
-  padding-right: 12px;
-}
-.approval-review-dialog .approval-review-footer .permission-edit.primary-button:hover {
-  background: #00265a;
-  border-color: #00265a;
+/* Same sticky profile + actions + bottom stroke as the permissions side panel. */
+.approval-review-dialog .approval-review-panel .permission-profile {
+  height: auto;
 }
 .pending-approval-actions .permission-edit {
   border: 1px solid var(--interactive);

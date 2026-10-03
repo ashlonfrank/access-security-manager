@@ -48,11 +48,27 @@ export default function ApprovalReviewModal({
             tabIndex={0}
             aria-label={`Access review for ${user.name}`}
           >
-            <div className="permission-profile approval-review-profile">
+            <div className="permission-profile">
               <Avatar user={user} />
               <div className="permission-name">
                 <h3 id="approval-request-title">{user.name}</h3>
                 <p>{user.email}</p>
+              </div>
+              <div className="permission-actions">
+                <button
+                  type="button"
+                  className="permission-delete"
+                  onClick={onClose}
+                >
+                  Decline
+                </button>
+                <button
+                  type="button"
+                  className="permission-edit primary-button"
+                  onClick={approve}
+                >
+                  Approve access
+                </button>
               </div>
             </div>
 
@@ -76,19 +92,6 @@ export default function ApprovalReviewModal({
 
             <PermissionCategoriesEditor />
             <PermissionAccountsEditor />
-          </div>
-
-          <div className="permission-actions approval-review-footer">
-            <button type="button" onClick={onClose}>
-              Cancel
-            </button>
-            <button
-              type="button"
-              className="permission-edit primary-button"
-              onClick={approve}
-            >
-              Approve access
-            </button>
           </div>
         </div>
       </EditorContext.Provider>
