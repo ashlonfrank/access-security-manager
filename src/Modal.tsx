@@ -4,10 +4,12 @@ export default function Modal({
   title,
   onClose,
   children,
+  className,
 }: {
   title: string;
   onClose: () => void;
   children: ReactNode;
+  className?: string;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
@@ -21,7 +23,12 @@ export default function Modal({
   return (
     <dialog
       ref={ref}
-      className={title.startsWith("Delete ") ? "delete-confirmation" : undefined}
+      className={
+        className ??
+        (title.startsWith("Delete ") || title.startsWith("Are you sure")
+          ? "delete-confirmation"
+          : undefined)
+      }
       aria-labelledby="dialog-title"
       onCancel={onClose}
       onClick={(e) => {

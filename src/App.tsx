@@ -6,8 +6,10 @@ import {
 } from "react";
 import assets from "./assets.json";
 import PermissionsPanel from "./PermissionsPanel";
+import ApprovalRequestPanel from "./ApprovalRequestPanel";
 import CompaniesView from "./CompaniesView";
 import Modal from "./Modal";
+import { pendingRequestLine } from "./pendingApprovals";
 import Avatar from "./Avatar";
 import ManageSegments from "./ManageSegments";
 import useStickyRows from "./useStickyRows";
@@ -30,8 +32,10 @@ export type User = {
 type DialogState =
   | { kind: "add" }
   | { kind: "delete"; user: User }
+  | { kind: "decline"; user: User }
   | { kind: "info"; title: string; content: string }
   | null;
+const organizationName = "Bean & Branch";
 const roles = businessRoles;
 const storageKey = "asm-demo-users-v1";
 function normalizeDemoUsers(users: User[]): User[] {
@@ -91,6 +95,7 @@ export default function App() {
   const [nameSort, setNameSort] = useState<"ascending" | "descending" | null>(null);
   const [sortKey, setSortKey] = useState<"name" | "status">("name");
   const [dialog, setDialog] = useState<DialogState>(null);
+  const [reviewId, setReviewId] = useState<string | null>(null);
   const [notice, setNotice] = useState("");
   const [formError, setFormError] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
@@ -117,13 +122,30 @@ export default function App() {
   );
   if (nameSort) visible.sort((a, b) => (nameSort === "ascending" ? 1 : -1) * a[sortKey].localeCompare(b[sortKey], undefined, { sensitivity: "base" }));
   const selectedUser = users.find((user) => user.id === selectedId);
+  const reviewUser = users.find((user) => user.id === reviewId);
+  const pendingVisible = visible.filter((user) => user.status === "Needs approval");
   useEffect(() => {
     if (selectedId && !visible.some((user) => user.id === selectedId))
       setSelectedId(null);
   }, [query, role, status, approval, tab, users, selectedId]);
   useEffect(() => {
+    if (
+      reviewId &&
+      !users.some(
+        (user) => user.id === reviewId && user.status === "Needs approval",
+      )
+    )
+      setReviewId(null);
+  }, [query, role, status, approval, tab, users, reviewId]);
+  useEffect(() => {
+    if (!approval) setReviewId(null);
+  }, [approval]);
+  useEffect(() => {
     const close = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && !dialog) setSelectedId(null);
+      if (event.key === "Escape" && !dialog) {
+        setSelectedId(null);
+        setReviewId(null);
+      }
     };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
@@ -300,7 +322,11 @@ export default function App() {
       </div>
       <main
         id="main"
-        className={selectedUser && tab === "users" ? "has-permissions" : ""}
+        className={
+          tab === "users" && (selectedUser || reviewUser)
+            ? "has-permissions"
+            : ""
+        }
       >
         <div className="management-heading">
           <div className="heading-tabs">
@@ -327,14 +353,20 @@ export default function App() {
               <button
                 className={`pill ${!approval ? "active" : ""}`}
                 aria-pressed={!approval}
-                onClick={() => setApproval(false)}
+                onClick={() => {
+                  setApproval(false);
+                  setReviewId(null);
+                }}
               >
                 All users
               </button>
               <button
                 className={`pill ${approval ? "active" : ""}`}
                 aria-pressed={approval}
-                onClick={() => setApproval(true)}
+                onClick={() => {
+                  setSelectedId(null);
+                  setApproval(true);
+                }}
               >
                 Needs approval
               </button>
@@ -352,87 +384,161 @@ export default function App() {
               </label>
             </div>
             <div className="users-content">
-              <div className="users-table-content">
-                <div ref={listRef} className="user-list" role="table" aria-label="Users">
-                  <div className="list-header" role="row">
-                    <NameSortHeader direction={sortKey === "name" ? nameSort : null} onSort={() => { setSortKey("name"); setNameSort(sortKey === "name" && nameSort === "ascending" ? "descending" : "ascending"); }} />
-                    <span role="columnheader">Role</span>
-                    <span role="columnheader">Job</span>
-                    <NameSortHeader label="Status" direction={sortKey === "status" ? nameSort : null} onSort={() => { setSortKey("status"); setNameSort(sortKey === "status" && nameSort === "ascending" ? "descending" : "ascending"); }} />
-                    <span role="columnheader" className="sr-only">
-                      Details
-                    </span>
-                  </div>
-                  <div role="rowgroup" className="list-body">
-                    {visible.map((user) => (
-                      <div
-                        role="row"
-                        key={user.id}
-                        className={`user-row ${isInactive(user.status) ? "inactive-user" : ""} ${selectedId === user.id ? "selected-user" : ""}`}
-                      >
-                        <div role="cell" className="identity">
-                          <Avatar user={user} />
-                          <div>
-                            <div className="user-name">{user.name}</div>
-                            <div className="user-email">{user.email}</div>
-                          </div>
-                        </div>
-                        <div role="cell">
-                          <span className={`tag role-tag ${isInactive(user.status) ? "inactive-role" : ""}`}>{isInactive(user.status) ? "N/A" : user.role}</span>
-                        </div>
-                        <div role="cell" className="job">
-                          {user.job}
-                        </div>
-                        <div role="cell">
-                          <span
-                            className={`tag status-tag ${statusClass(user.status)}`}
+              {approval ? (
+                <div
+                  className={`users-table-content pending-approvals ${reviewUser ? "has-review-panel" : ""}`}
+                >
+                  {pendingVisible.length > 0 ? (
+                    <>
+                      <h2 className="pending-approvals-heading">
+                        Pending approvals
+                      </h2>
+                      <ul className="pending-approvals-list" aria-label="Pending approvals">
+                        {pendingVisible.map((user) => (
+                          <li
+                            key={user.id}
+                            className={`pending-approval-row ${reviewId === user.id ? "selected-pending" : ""}`}
                           >
-                            {user.status}
-                          </span>
-                        </div>
-                        <div role="cell">
-                          <button
-                            className="row-link"
-                            aria-label={`View ${user.name}`}
-                            aria-expanded={selectedId === user.id}
-                            aria-controls={
-                              selectedUser ? "permissions-title" : undefined
-                            }
-                            onClick={() => setSelectedId(user.id)}
-                          >
-                            <Icon src={assets.imgIcon} />
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                            <div className="pending-approval-identity">
+                              <Avatar user={user} />
+                              <div className="pending-approval-name">
+                                {user.name}
+                              </div>
+                            </div>
+                            <p className="pending-approval-meta">
+                              {pendingRequestLine(user)}
+                            </p>
+                            <div className="pending-approval-actions">
+                              <button
+                                type="button"
+                                className="pill pill-decline"
+                                onClick={() =>
+                                  setDialog({ kind: "decline", user })
+                                }
+                              >
+                                Decline
+                              </button>
+                              <button
+                                type="button"
+                                className="primary-button pending-review-button"
+                                aria-expanded={reviewId === user.id}
+                                aria-controls="approval-request-title"
+                                onClick={() => setReviewId(user.id)}
+                              >
+                                Review
+                              </button>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <div className="empty-state">
+                      <h2>No users need approval</h2>
+                      <p>New users awaiting approval will appear here.</p>
+                      <button className="text-button" onClick={resetFilters}>
+                        Show all users
+                      </button>
+                    </div>
+                  )}
+                  {reviewUser && (
+                    <ApprovalRequestPanel
+                      user={reviewUser}
+                      organizationName={organizationName}
+                      onClose={() => setReviewId(null)}
+                      onApprove={() => {
+                        setUsers((prev) =>
+                          prev.map((u) =>
+                            u.id === reviewUser.id
+                              ? { ...u, status: "Active" }
+                              : u,
+                          ),
+                        );
+                        setReviewId(null);
+                        setNotice(`${reviewUser.name} approved and activated.`);
+                      }}
+                    />
+                  )}
                 </div>
-                {visible.length === 0 && (
-                  <div className="empty-state">
-                    <h2>
-                      {approval ? "No users need approval" : "No users found"}
-                    </h2>
-                    <p>
-                      {approval
-                        ? "New users awaiting approval will appear here."
-                        : "Try another search or adjust your filters."}
-                    </p>
-                    <button className="text-button" onClick={resetFilters}>
-                      Show all users
-                    </button>
+              ) : (
+                <>
+                  <div className="users-table-content">
+                    <div ref={listRef} className="user-list" role="table" aria-label="Users">
+                      <div className="list-header" role="row">
+                        <NameSortHeader direction={sortKey === "name" ? nameSort : null} onSort={() => { setSortKey("name"); setNameSort(sortKey === "name" && nameSort === "ascending" ? "descending" : "ascending"); }} />
+                        <span role="columnheader">Role</span>
+                        <span role="columnheader">Job</span>
+                        <NameSortHeader label="Status" direction={sortKey === "status" ? nameSort : null} onSort={() => { setSortKey("status"); setNameSort(sortKey === "status" && nameSort === "ascending" ? "descending" : "ascending"); }} />
+                        <span role="columnheader" className="sr-only">
+                          Details
+                        </span>
+                      </div>
+                      <div role="rowgroup" className="list-body">
+                        {visible.map((user) => (
+                          <div
+                            role="row"
+                            key={user.id}
+                            className={`user-row ${isInactive(user.status) ? "inactive-user" : ""} ${selectedId === user.id ? "selected-user" : ""}`}
+                          >
+                            <div role="cell" className="identity">
+                              <Avatar user={user} />
+                              <div>
+                                <div className="user-name">{user.name}</div>
+                                <div className="user-email">{user.email}</div>
+                              </div>
+                            </div>
+                            <div role="cell">
+                              <span className={`tag role-tag ${isInactive(user.status) ? "inactive-role" : ""}`}>{isInactive(user.status) ? "N/A" : user.role}</span>
+                            </div>
+                            <div role="cell" className="job">
+                              {user.job}
+                            </div>
+                            <div role="cell">
+                              <span
+                                className={`tag status-tag ${statusClass(user.status)}`}
+                              >
+                                {user.status}
+                              </span>
+                            </div>
+                            <div role="cell">
+                              <button
+                                className="row-link"
+                                aria-label={`View ${user.name}`}
+                                aria-expanded={selectedId === user.id}
+                                aria-controls={
+                                  selectedUser ? "permissions-title" : undefined
+                                }
+                                onClick={() => setSelectedId(user.id)}
+                              >
+                                <Icon src={assets.imgIcon} />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    {visible.length === 0 && (
+                      <div className="empty-state">
+                        <h2>No users found</h2>
+                        <p>Try another search or adjust your filters.</p>
+                        <button className="text-button" onClick={resetFilters}>
+                          Show all users
+                        </button>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-              {selectedUser && (
-                <PermissionsPanel
-                  user={selectedUser}
-                  onUpdate={(patch) => setUsers((prev) => prev.map((u) => u.id === selectedUser.id ? { ...u, ...patch } : u))}
-                  onClose={() => setSelectedId(null)}
-                  emailInUse={(email) => users.some((u) => u.id !== selectedUser.id && u.email.toLowerCase() === email)}
-                  onDelete={() =>
-                    setDialog({ kind: "delete", user: selectedUser })
-                  }
-                />
+                  {selectedUser && (
+                    <PermissionsPanel
+                      user={selectedUser}
+                      onUpdate={(patch) => setUsers((prev) => prev.map((u) => u.id === selectedUser.id ? { ...u, ...patch } : u))}
+                      onClose={() => setSelectedId(null)}
+                      emailInUse={(email) => users.some((u) => u.id !== selectedUser.id && u.email.toLowerCase() === email)}
+                      onDelete={() =>
+                        setDialog({ kind: "delete", user: selectedUser })
+                      }
+                    />
+                  )}
+                </>
               )}
             </div>
           </section>
@@ -454,7 +560,9 @@ export default function App() {
               ? "Add a user"
               : dialog.kind === "delete"
                 ? `Delete ${dialog.user.name}?`
-                : dialog.title
+                : dialog.kind === "decline"
+                  ? `Are you sure you want to decline the invite from ${dialog.user.name}?`
+                  : dialog.title
           }
           onClose={() => setDialog(null)}
         >
@@ -525,6 +633,49 @@ export default function App() {
                   }}
                 >
                   Delete user
+                </button>
+              </div>
+            </>
+          ) : dialog.kind === "decline" ? (
+            <>
+              <div className="decline-warning-banner" role="note">
+                <span className="decline-warning-icon" aria-hidden="true">
+                  !
+                </span>
+                <p>
+                  We&apos;ll let the person who invited them know their request
+                  was declined.
+                </p>
+              </div>
+              <div className="decline-summary-card">
+                <Avatar user={dialog.user} />
+                <div>
+                  <div className="decline-summary-heading">
+                    <span className="user-name">{dialog.user.name}</span>
+                    <span className="tag role-tag">{dialog.user.role}</span>
+                  </div>
+                  <div className="user-email">{dialog.user.email}</div>
+                </div>
+              </div>
+              <div className="dialog-actions">
+                <button className="pill" onClick={() => setDialog(null)}>
+                  Cancel
+                </button>
+                <button
+                  className="pill pill-decline"
+                  onClick={() => {
+                    setUsers((prev) =>
+                      prev.filter((u) => u.id !== dialog.user.id),
+                    );
+                    localStorage.removeItem(
+                      `asm-permissions-v1-${dialog.user.id}`,
+                    );
+                    if (reviewId === dialog.user.id) setReviewId(null);
+                    setDialog(null);
+                    setNotice(`${dialog.user.name} access request declined.`);
+                  }}
+                >
+                  Yes, decline
                 </button>
               </div>
             </>
