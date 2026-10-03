@@ -16,7 +16,6 @@ import {
   PermissionAccountsEditor,
   PermissionCategoriesEditor,
 } from "./permissionUi";
-import PermissionProfileMoreMenu from "./PermissionProfileMoreMenu";
 type PanelUser = User;
 export type UserChanges = Pick<User, "name" | "email" | "role" | "job" | "status">;
 function readPermissions(id: string): Permissions {
@@ -36,12 +35,6 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
   const [role, setRole] = useState(user.role);
   const [job, setJob] = useState(user.job);
   const [error, setError] = useState("");
-  const [menuNotice, setMenuNotice] = useState("");
-  useEffect(() => {
-    if (!menuNotice) return;
-    const timer = window.setTimeout(() => setMenuNotice(""), 3200);
-    return () => window.clearTimeout(timer);
-  }, [menuNotice]);
   useLayoutEffect(() => {
     const element = panel.current;
     if (!element) return;
@@ -112,25 +105,9 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
           <button className="permission-close" aria-label="Close permissions" onClick={onClose}><img src={assets.imgMask2} alt="" /></button>
           <div className="permission-actions">
             {editing ? <><button className="permission-edit primary-button" onClick={save}>Save changes</button><button onClick={cancelEdit}>Cancel</button></>
-              : <>
-                  <button type="button" className="permission-edit" onClick={beginEdit}>
-                    Edit
-                  </button>
-                  <PermissionProfileMoreMenu
-                    userName={user.name}
-                    onDelete={onDelete}
-                    onSendOneTimePassword={() =>
-                      setMenuNotice(`One-time password sent to ${user.email} (demo).`)
-                    }
-                  />
-                </>}
+              : <><button className="permission-edit" onClick={beginEdit}>Edit<img src={assets.imgMask} alt="" /></button><button className="permission-delete" onClick={onDelete}>Delete user</button></>}
           </div>
           {error && <p className="permission-feedback error" role="alert">{error}</p>}
-          {menuNotice && (
-            <p className="permission-feedback" role="status">
-              {menuNotice}
-            </p>
-          )}
         </div>
         <section className="permission-info">
           <div className="permission-info-heading"><h3>User info</h3></div>
