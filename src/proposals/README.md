@@ -6,3 +6,5 @@ Parallel Figma options live under `proposal-one/` and (later) `proposal-two/`. E
 - **Prototype toggle:** `?prototype=proposal-one` (or hash `#prototype=proposal-one`) renders the matching shell without replacing `main` on the default route.
 
 Git branches `proposal-1` and `proposal-2` track ongoing work per chat; shared domain and design tokens stay in `src/` root (`business.ts`, `styles.css`, `refinements.css`, shared components).
+
+**Protected (ASM main only):** do not modify `App.tsx`, `CompaniesView.tsx`, `PermissionsPanel.tsx`, `ApprovalReviewModal.tsx`, or baseline layout CSS from a proposal branch except when ASM main merges a chosen design.
