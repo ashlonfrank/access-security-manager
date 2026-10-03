@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Modal from "./Modal";
 import Avatar from "./Avatar";
+import { companyIndex } from "./business";
 import type { User } from "./App";
 import {
-  permissionsForRole,
   permissionsStorageKey,
+  readStoredPermissions,
   type Permissions,
 } from "./userPermissions";
 import {
@@ -23,7 +24,7 @@ export default function ApprovalReviewModal({
   onApprove: () => void;
 }) {
   const [value, setValue] = useState<Permissions>(() =>
-    permissionsForRole(user.role),
+    readStoredPermissions({ id: user.id, role: user.role }),
   );
 
   function approve() {
@@ -41,7 +42,16 @@ export default function ApprovalReviewModal({
       labelledBy="approval-request-title"
       onClose={onClose}
     >
-      <EditorContext.Provider value={{ editing: true, value, setValue }}>
+      <EditorContext.Provider
+        value={{
+          editing: true,
+          value,
+          setValue,
+          userId: user.id,
+          role: user.role,
+          companyIndex: companyIndex(user.id),
+        }}
+      >
         <div className="permissions-panel editing-permissions approval-review-panel">
           <div
             className="permissions-scroll"

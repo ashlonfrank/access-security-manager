@@ -1,11 +1,20 @@
 import { createContext, useContext, type ReactNode } from "react";
 import assets from "./permission-assets.json";
+import {
+  formatAccountLabel,
+  visibleAccountsForUser,
+  type DemoCompanyAccount,
+} from "./demoAccounts";
 import { paymentTypes, statementTypes, type Permissions } from "./userPermissions";
 
 export const EditorContext = createContext<{
   editing: boolean;
   value: Permissions;
   setValue: React.Dispatch<React.SetStateAction<Permissions>>;
+  userId: string;
+  role: string;
+  /** Company context for account catalog (defaults to user's home company). */
+  companyIndex: number;
 } | null>(null);
 
 export function PermissionItem({
@@ -146,46 +155,52 @@ export function PermissionCategoriesEditor() {
 export function PermissionAccountsEditor() {
   const ctx = useContext(EditorContext);
   if (!ctx) return null;
-  const { editing, value, setValue } = ctx;
+  const { editing, value, setValue, userId, role, companyIndex } = ctx;
+  const rows = visibleAccountsForUser(userId, role, value, companyIndex);
   return (
     <section className="permission-accounts">
       <h3>Has access to these accounts</h3>
       <ul>
-        {value.accounts.map((allowed, index) => (
-          <li key={index}>
-            {editing ? (
-              <label className="permission-option">
-                <input
-                  className="permission-checkbox"
-                  type="checkbox"
-                  aria-label={`Access to Savings account ${index + 1}`}
-                  checked={allowed}
-                  onChange={(event) =>
-                    setValue((previous) => ({
-                      ...previous,
-                      accounts: previous.accounts.map((checked, i) =>
-                        i === index ? event.target.checked : checked,
-                      ),
-                    }))
-                  }
-                />
-                Savings (**0022)
-              </label>
-            ) : (
-              <>
-                <span>Savings (**0022)</span>
-                <span
-                  className={`permission-state-icon ${allowed ? "allowed" : "denied"}`}
-                  role="img"
-                  aria-label={allowed ? "Allowed" : "Not allowed"}
-                  style={{
-                    maskImage: `url(${allowed ? assets.imgSuccessIcoCheckmark : assets.imgActionIcoClose})`,
-                  }}
-                />
-              </>
-            )}
-          </li>
-        ))}
+        {rows.map((account) => {
+          const label = formatAccountLabel(account, userId);
+          const allowed = value.accounts[account.id] ?? false;
+          return (
+            <li key={account.id}>
+              {editing ? (
+                <label className="permission-option">
+                  <input
+                    className="permission-checkbox"
+                    type="checkbox"
+                    aria-label={`Access to ${label}`}
+                    checked={allowed}
+                    onChange={(event) =>
+                      setValue((previous) => ({
+                        ...previous,
+                        accounts: {
+                          ...previous.accounts,
+                          [account.id]: event.target.checked,
+                        },
+                      }))
+                    }
+                  />
+                  {label}
+                </label>
+              ) : (
+                <>
+                  <span>{label}</span>
+                  <span
+                    className={`permission-state-icon ${allowed ? "allowed" : "denied"}`}
+                    role="img"
+                    aria-label={allowed ? "Allowed" : "Not allowed"}
+                    style={{
+                      maskImage: `url(${allowed ? assets.imgSuccessIcoCheckmark : assets.imgActionIcoClose})`,
+                    }}
+                  />
+                </>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

@@ -1,14 +1,14 @@
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import assets from "./permission-assets.json";
 import RoleSelect from "./RoleSelect";
-import { userStatuses } from "./business";
+import { companyIndex, userStatuses } from "./business";
 import Avatar from "./Avatar";
 import type { User } from "./App";
 import {
   paymentTypes,
-  permissionsForRole,
   permissionsStorageKey,
   readStoredPermissions,
+  seedPermissionsForUser,
   type Permissions,
 } from "./userPermissions";
 import {
@@ -18,8 +18,8 @@ import {
 } from "./permissionUi";
 type PanelUser = User;
 export type UserChanges = Pick<User, "name" | "email" | "role" | "job" | "status">;
-function readPermissions(id: string): Permissions {
-  return readStoredPermissions(id);
+function readPermissions(panelUser: PanelUser): Permissions {
+  return readStoredPermissions({ id: panelUser.id, role: panelUser.role });
 }
 export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, onUpdate }: {
   user: PanelUser; onClose: () => void; emailInUse: (email: string) => boolean; onDelete: () => void;
@@ -28,7 +28,7 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
   const panel = useRef<HTMLElement>(null);
   const scroll = useRef<HTMLDivElement>(null);
   const [editing, setEditing] = useState(false);
-  const [value, setValue] = useState<Permissions>(() => readPermissions(user.id));
+  const [value, setValue] = useState<Permissions>(() => readPermissions(user));
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [status, setStatus] = useState(user.status);
@@ -70,19 +70,19 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     };
   }, []);
   useLayoutEffect(() => {
-    setValue(readPermissions(user.id)); setEditing(false); setError("");
+    setValue(readPermissions(user)); setEditing(false); setError("");
     setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email); setStatus(user.status); scroll.current?.scrollTo(0, 0);
   }, [user.id]);
   useEffect(() => { scroll.current?.scrollTo(0, 0); }, [user.email]);
   function beginEdit() {
-    setValue(readPermissions(user.id)); setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email); setStatus(user.status);
+    setValue(readPermissions(user)); setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email); setStatus(user.status);
     setError(""); setEditing(true);
   }
   function updateRole(nextRole: string) {
     setRole(nextRole);
-    setValue(permissionsForRole(nextRole));
+    setValue(seedPermissionsForUser({ id: user.id, role: nextRole }));
   }
-  function cancelEdit() { setValue(readPermissions(user.id)); setEditing(false); setError(""); }
+  function cancelEdit() { setValue(readPermissions(user)); setEditing(false); setError(""); }
   function save() {
     const savedEmail = email.trim().toLowerCase();
     if (!name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(savedEmail)) {
@@ -96,7 +96,8 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     catch { setError("Changes could not be saved. Please try again."); return; }
     onUpdate({ name: name.trim(), email: savedEmail, status, role, job: job.trim() }); setEditing(false); setError("");
   }
-  return <EditorContext.Provider value={{ editing, value, setValue }}>
+  const effectiveRole = editing ? role : user.role;
+  return <EditorContext.Provider value={{ editing, value, setValue, userId: user.id, role: effectiveRole, companyIndex: companyIndex(user.id) }}>
     <aside ref={panel} className={`permissions-panel ${editing ? "editing-permissions" : ""}`} id="permissions-title" aria-label="Permissions">
       <div className="permissions-scroll" ref={scroll} tabIndex={0} aria-label={`Permissions for ${user.name}`}>
         <div className="permission-profile">

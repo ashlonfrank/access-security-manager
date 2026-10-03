@@ -1,3 +1,8 @@
+import {
+  migrateLegacyAccountBooleans,
+  seedAccountAccess,
+} from "./demoAccounts";
+
 export const paymentTypes = [
   "ACH payments",
   "ACH vendor payments",
@@ -25,25 +30,12 @@ export type Permissions = {
   limits: Record<string, string>;
   mfa: boolean;
   token: "Soft token" | "Hard token" | "No token";
-  accounts: boolean[];
+  accounts: Record<string, boolean>;
 };
 
-export function defaultPermissions(): Permissions {
-  return {
-    allowed: Object.fromEntries(
-      permissionNames.map((name) => [
-        name,
-        !["Requires approval", "Merchant services"].includes(name),
-      ]),
-    ),
-    limits: Object.fromEntries(paymentTypes.map((name) => [name, "50000.00"])),
-    mfa: true,
-    token: "Soft token",
-    accounts: [true, true, true, true],
-  };
-}
+export type PermissionUser = { id: string; role: string };
 
-export function permissionsForRole(role: string): Permissions {
+export function permissionsForRole(role: string): Omit<Permissions, "accounts"> {
   const enabled = new Set<string>();
   const allow = (...names: string[]) => names.forEach((name) => enabled.add(name));
   const allMoney = ["Chase QuickDeposit", ...paymentTypes];
@@ -85,39 +77,75 @@ export function permissionsForRole(role: string): Permissions {
     limits: Object.fromEntries(paymentTypes.map((name) => [name, "50000.00"])),
     mfa: true,
     token: "Soft token",
-    accounts:
-      role === "Read Only" ? [true, false, false, false] : [true, true, true, true],
+  };
+}
+
+export function seedPermissionsForUser(user: PermissionUser): Permissions {
+  const base = permissionsForRole(user.role);
+  return {
+    ...base,
+    accounts: seedAccountAccess(user.id, user.role, base),
   };
 }
 
 export const permissionsStorageKey = (id: string) => `asm-permissions-v1-${id}`;
 
-export function readStoredPermissions(id: string): Permissions {
-  const fallback = defaultPermissions();
+function isValidAccountMap(
+  accounts: unknown,
+): accounts is Record<string, boolean> {
+  return (
+    accounts !== null &&
+    typeof accounts === "object" &&
+    !Array.isArray(accounts) &&
+    Object.values(accounts).every((value) => typeof value === "boolean")
+  );
+}
+
+type StoredPermissionsBlob = Omit<Permissions, "accounts"> & {
+  accounts: Permissions["accounts"] | boolean[];
+};
+
+function isValidSavedPermissions(saved: unknown): saved is StoredPermissionsBlob {
+  if (!saved || typeof saved !== "object") return false;
+  const blob = saved as StoredPermissionsBlob;
+  return (
+    typeof blob.mfa === "boolean" &&
+    ["Soft token", "Hard token", "No token"].includes(blob.token) &&
+    permissionNames.every(
+      (name) => typeof blob.allowed?.[name] === "boolean",
+    ) &&
+    paymentTypes.every(
+      (name) =>
+        typeof blob.limits?.[name] === "string" &&
+        Number.isFinite(Number(blob.limits[name])) &&
+        Number(blob.limits[name]) >= 0,
+    ) &&
+    (isValidAccountMap(blob.accounts) ||
+      (Array.isArray(blob.accounts) &&
+        blob.accounts.length === 4 &&
+        blob.accounts.every((value: unknown) => typeof value === "boolean")))
+  );
+}
+
+export function readStoredPermissions(user: PermissionUser): Permissions {
+  const fallback = seedPermissionsForUser(user);
   try {
     const saved = JSON.parse(
-      localStorage.getItem(permissionsStorageKey(id)) || "null",
+      localStorage.getItem(permissionsStorageKey(user.id)) || "null",
     );
-    if (
-      saved &&
-      typeof saved.mfa === "boolean" &&
-      ["Soft token", "Hard token", "No token"].includes(saved.token) &&
-      permissionNames.every(
-        (name) => typeof saved.allowed?.[name] === "boolean",
-      ) &&
-      paymentTypes.every(
-        (name) =>
-          typeof saved.limits?.[name] === "string" &&
-          Number.isFinite(Number(saved.limits[name])) &&
-          Number(saved.limits[name]) >= 0,
-      ) &&
-      Array.isArray(saved.accounts) &&
-      saved.accounts.length === 4 &&
-      saved.accounts.every((value: unknown) => typeof value === "boolean")
-    )
-      return saved;
+    if (!isValidSavedPermissions(saved)) return fallback;
+
+    const accounts = Array.isArray(saved.accounts)
+      ? migrateLegacyAccountBooleans(
+          saved.accounts,
+          user.id,
+          user.role,
+          saved,
+        )
+      : saved.accounts;
+
+    return { ...saved, accounts };
   } catch {
-    /* demo fallback */
+    return fallback;
   }
-  return fallback;
 }
