@@ -1,4 +1,5 @@
 import type { User } from "./App";
+import initialUsers from "./users.json";
 import {
   DEFAULT_PENDING_USER_ID,
   pendingApprovalSeed,
@@ -6,6 +7,9 @@ import {
 } from "./demoPersonas";
 
 export { DEFAULT_PENDING_USER_ID } from "./demoPersonas";
+
+/** Demo inviter for pending-access copy (Maria Gomeze, Admin). */
+export const PENDING_REQUEST_INVITER_ID = "69029";
 
 export function defaultPendingUser(): User {
   return pendingApprovalSeed();
@@ -30,20 +34,17 @@ export function pendingUsers(users: User[]): User[] {
   return users.filter((user) => user.status === "Needs approval");
 }
 
-export function pendingRequestInviterName(users: User[]): string {
-  const leader = users.find(
-    (u) =>
-      u.status === "Active" &&
-      (u.role === "Admin" ||
-        u.role === "Business Partner" ||
-        u.role === "Owner"),
+export function pendingRequestInviterName(): string {
+  const inviter = initialUsers.find(
+    (user) => user.id === PENDING_REQUEST_INVITER_ID,
   );
-  if (!leader) return "Maria G.";
-  const parts = leader.name.trim().split(/\s+/);
+  if (!inviter) return "Maria G.";
+  const parts = inviter.name.trim().split(/\s+/);
   if (parts.length >= 2) return `${parts[0]} ${parts[1][0]}.`;
   return parts[0];
 }
 
-export function pendingRequestLine(user: User, users: User[]): string {
-  return `${user.role} access request by ${pendingRequestInviterName(users)} today`;
+export function pendingRequestLine(user: User): string {
+  const roleLabel = user.role.toLowerCase();
+  return `${pendingRequestInviterName()} added a user and gave ${roleLabel} access.`;
 }

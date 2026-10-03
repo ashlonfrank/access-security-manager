@@ -10,10 +10,8 @@ import ApprovalReviewModal from "./ApprovalReviewModal";
 import CompaniesView from "./CompaniesView";
 import Modal from "./Modal";
 import { normalizeDemoPersonas } from "./demoPersonas";
-import {
-  ensureDefaultPendingApproval,
-  pendingRequestLine,
-} from "./pendingApprovals";
+import { ensureDefaultPendingApproval } from "./pendingApprovals";
+import PendingApprovalsOverview from "./PendingApprovalsOverview";
 import Avatar from "./Avatar";
 import ManageSegments from "./ManageSegments";
 import useStickyRows from "./useStickyRows";
@@ -111,15 +109,19 @@ export default function App() {
   const [sortKey, setSortKey] = useState<"name" | "status">("name");
   const [dialog, setDialog] = useState<DialogState>(null);
   const [reviewId, setReviewId] = useState<string | null>(null);
+  const [companiesApprovalMode, setCompaniesApprovalMode] = useState(false);
   const [notice, setNotice] = useState("");
   const [formError, setFormError] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
-    if (!approval || tab !== "users") return;
+    const shouldRefresh =
+      (tab === "users" && approval) ||
+      (tab === "companies" && companiesApprovalMode);
+    if (!shouldRefresh) return;
     setUsers((previous) =>
       ensureDefaultPendingApproval(normalizeDemoUsers(previous)),
     );
-  }, [approval, tab]);
+  }, [approval, companiesApprovalMode, tab]);
   useEffect(() => {
     try {
       localStorage.setItem(storageKey, JSON.stringify(users));
@@ -166,8 +168,11 @@ export default function App() {
       setReviewId(null);
   }, [query, role, status, approval, tab, users, reviewId]);
   useEffect(() => {
-    if (!approval) setReviewId(null);
-  }, [approval]);
+    const inApprovalMode =
+      (tab === "users" && approval) ||
+      (tab === "companies" && companiesApprovalMode);
+    if (!inApprovalMode) setReviewId(null);
+  }, [approval, companiesApprovalMode, tab]);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
       if (event.key === "Escape" && !dialog) {
@@ -411,66 +416,13 @@ export default function App() {
             </div>
             <div className="users-content">
               {approval ? (
-                <>
-                  <div className="users-table-content pending-approvals">
-                    {pendingVisible.length > 0 ? (
-                      <>
-                        <h2 className="pending-approvals-heading">
-                          Pending approvals
-                        </h2>
-                        <ul
-                          className="pending-approvals-list"
-                          aria-label="Pending approvals"
-                        >
-                          {pendingVisible.map((user) => (
-                            <li
-                              key={user.id}
-                              className={`pending-approval-row ${reviewId === user.id ? "selected-pending" : ""}`}
-                            >
-                              <div className="pending-approval-identity">
-                                <Avatar user={user} />
-                                <div className="pending-approval-name">
-                                  {user.name}
-                                </div>
-                              </div>
-                              <p className="pending-approval-meta">
-                                {pendingRequestLine(user, users)}
-                              </p>
-                              <div className="permission-actions pending-approval-actions">
-                                <button
-                                  type="button"
-                                  className="permission-delete"
-                                  onClick={() =>
-                                    setDialog({ kind: "decline", user })
-                                  }
-                                >
-                                  Decline
-                                </button>
-                                <button
-                                  type="button"
-                                  className="permission-edit"
-                                  aria-expanded={reviewId === user.id}
-                                  aria-controls="approval-request-title"
-                                  onClick={() => setReviewId(user.id)}
-                                >
-                                  Review
-                                </button>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    ) : (
-                      <div className="empty-state">
-                        <h2>No users need approval</h2>
-                        <p>New users awaiting approval will appear here.</p>
-                        <button className="text-button" onClick={resetFilters}>
-                          Show all users
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </>
+                <PendingApprovalsOverview
+                  pendingUsers={pendingVisible}
+                  reviewId={reviewId}
+                  onReview={(user) => setReviewId(user.id)}
+                  onDecline={(user) => setDialog({ kind: "decline", user })}
+                  onShowAll={resetFilters}
+                />
               ) : (
                 <>
                   <div className="users-table-content">
@@ -556,7 +508,15 @@ export default function App() {
         ) : (
           <CompaniesView
             users={users}
-            onUpdate={(user, patch) => setUsers((prev) => prev.map((u) => u.id === user.id ? { ...u, ...patch } : u))}
+            reviewId={reviewId}
+            onReview={(user) => setReviewId(user.id)}
+            onDecline={(user) => setDialog({ kind: "decline", user })}
+            onApprovalModeChange={setCompaniesApprovalMode}
+            onUpdate={(user, patch) =>
+              setUsers((prev) =>
+                prev.map((u) => (u.id === user.id ? { ...u, ...patch } : u)),
+              )
+            }
             onDelete={(user) => setDialog({ kind: "delete", user })}
           />
         )}
