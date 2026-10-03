@@ -290,6 +290,8 @@
 .company-identity > span { opacity: 0; transition: opacity 120ms ease; }
 .company-group-start > img,
 .company-group-start > span,
+.company-row.selected-company-user .company-identity > img,
+.company-row.selected-company-user .company-identity > span,
 .company-row:not(.selected-company-user):hover .company-identity > img,
 .company-row:not(.selected-company-user):hover .company-identity > span,
 .company-row:not(.selected-company-user):focus-within .company-identity > img,
