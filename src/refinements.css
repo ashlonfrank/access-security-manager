@@ -436,8 +436,8 @@
 .permission-info dd { max-width: 58%; text-align: right; }
 .permission-fields { display: flex; flex-direction: column; gap: 16px; }
 .permission-fields label { display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 20px; }
-.permission-fields input, .permission-fields select, .limit-input {
-  font: inherit; color: var(--text); background: white; border: 1px solid var(--control-border); border-radius: 8px; padding: 8px 12px;
+.permission-fields input, .limit-input {
+  font: inherit; color: var(--text); background: white; border: 1px solid var(--control-border); border-radius: 8px; padding: 10px 12px; min-height: 40px; box-sizing: border-box;
 }
 .permission-company { margin: 0; font-size: 13px; color: var(--subdued); }
 .authentication-editor { display: flex; flex-direction: column; gap: 20px; }
@@ -456,9 +456,34 @@
 }
 
 .role-picker { position: relative; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 20px; }
-.role-picker-trigger { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border: 1px solid var(--control-border); border-radius: 8px; background: white; color: #0f171f; text-align: left; }
+.role-picker-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 12px;
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+  background: #fff;
+  color: #0f171f;
+  text-align: left;
+  box-sizing: border-box;
+}
 .role-picker-trigger[aria-expanded="true"] { border-color: var(--interactive); }
-.role-picker-chevron { color: var(--subdued); font-size: 20px; line-height: 20px; }
+.role-picker-chevron {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--subdued);
+  font-size: 18px;
+  line-height: 1;
+}
+.role-picker-option--plain small { display: none; }
 .role-picker-options { position: absolute; z-index: 5; top: 100%; left: 0; right: 0; max-height: 260px; overflow: auto; padding: 4px; margin-top: 4px; border: 1px solid var(--control-border); border-radius: 8px; background: white; box-shadow: 0 8px 24px #002f6c18; }
 .role-picker-option { padding: 10px 12px; border-radius: 6px; cursor: pointer; }
 .role-picker-option.active, .role-picker-option[aria-selected="true"] { background: var(--control-hover); }

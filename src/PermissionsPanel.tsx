@@ -1,6 +1,7 @@
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import assets from "./permission-assets.json";
 import RoleSelect from "./RoleSelect";
+import PanelEnumSelect from "./PanelEnumSelect";
 import { companyIndex, userStatuses } from "./business";
 import Avatar from "./Avatar";
 import type { User } from "./App";
@@ -117,7 +118,12 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
             <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} /></label>
             <RoleSelect value={role} onChange={updateRole} />
             <label>Job title<input aria-label="Job title" value={job} maxLength={80} onChange={(event) => setJob(event.target.value)} /></label>
-            <label>Status<select aria-label="Status" value={status} onChange={(event) => setStatus(event.target.value)}>{userStatuses.map((option) => <option key={option}>{option}</option>)}</select></label>
+            <PanelEnumSelect
+              label="Status"
+              value={status}
+              options={userStatuses}
+              onChange={setStatus}
+            />
           </div> : <dl><div><dt>Role</dt><dd><span className="permission-small-tag">{user.role}</span></dd></div></dl>}
         </section>
         <section className="permission-info">
