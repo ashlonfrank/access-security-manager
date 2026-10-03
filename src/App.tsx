@@ -114,6 +114,9 @@ export default function App() {
   const [formError, setFormError] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
+    if (tab !== "companies") setCompaniesApprovalMode(false);
+  }, [tab]);
+  useEffect(() => {
     const shouldRefresh =
       (tab === "users" && approval) ||
       (tab === "companies" && companiesApprovalMode);
