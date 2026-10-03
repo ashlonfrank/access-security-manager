@@ -1,8 +1,7 @@
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import assets from "./permission-assets.json";
 import RoleSelect from "./RoleSelect";
-import PanelEnumSelect from "./PanelEnumSelect";
-import { companyIndex, userStatuses } from "./business";
+import { companyIndex, statusClass } from "./business";
 import Avatar from "./Avatar";
 import type { User } from "./App";
 import {
@@ -32,7 +31,6 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
   const [value, setValue] = useState<Permissions>(() => readPermissions(user));
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
-  const [status, setStatus] = useState(user.status);
   const [role, setRole] = useState(user.role);
   const [job, setJob] = useState(user.job);
   const [error, setError] = useState("");
@@ -72,11 +70,11 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
   }, []);
   useLayoutEffect(() => {
     setValue(readPermissions(user)); setEditing(false); setError("");
-    setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email); setStatus(user.status); scroll.current?.scrollTo(0, 0);
+    setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email); scroll.current?.scrollTo(0, 0);
   }, [user.id]);
   useEffect(() => { scroll.current?.scrollTo(0, 0); }, [user.email]);
   function beginEdit() {
-    setValue(readPermissions(user)); setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email); setStatus(user.status);
+    setValue(readPermissions(user)); setRole(user.role); setJob(user.job); setName(user.name); setEmail(user.email);
     setError(""); setEditing(true);
   }
   function updateRole(nextRole: string) {
@@ -95,7 +93,7 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     }
     try { localStorage.setItem(permissionsStorageKey(user.id), JSON.stringify(value)); }
     catch { setError("Changes could not be saved. Please try again."); return; }
-    onUpdate({ name: name.trim(), email: savedEmail, status, role, job: job.trim() }); setEditing(false); setError("");
+    onUpdate({ name: name.trim(), email: savedEmail, status: user.status, role, job: job.trim() }); setEditing(false); setError("");
   }
   const effectiveRole = editing ? role : user.role;
   return <EditorContext.Provider value={{ editing, value, setValue, userId: user.id, role: effectiveRole, companyIndex: companyIndex(user.id) }}>
@@ -118,13 +116,11 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
             <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} /></label>
             <RoleSelect value={role} onChange={updateRole} />
             <label>Job title<input aria-label="Job title" value={job} maxLength={80} onChange={(event) => setJob(event.target.value)} /></label>
-            <PanelEnumSelect
-              label="Status"
-              value={status}
-              options={userStatuses}
-              onChange={setStatus}
-            />
-          </div> : <dl><div><dt>Role</dt><dd><span className="permission-small-tag">{user.role}</span></dd></div></dl>}
+            <div className="permission-status-readonly">
+              <span>Status</span>
+              <span className={`tag status-tag ${statusClass(user.status)}`}>{user.status}</span>
+            </div>
+          </div> : <dl><div><dt>Role</dt><dd><span className="permission-small-tag">{user.role}</span></dd></div><div><dt>Status</dt><dd><span className={`tag status-tag ${statusClass(user.status)}`}>{user.status}</span></dd></div></dl>}
         </section>
         <section className="permission-info">
           <h3>User authentication</h3>

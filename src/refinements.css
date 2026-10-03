@@ -436,6 +436,14 @@
 .permission-info dd { max-width: 58%; text-align: right; }
 .permission-fields { display: flex; flex-direction: column; gap: 16px; }
 .permission-fields label { display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 20px; }
+.permission-status-readonly {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.permission-status-readonly .status-tag { align-self: flex-start; }
 .permission-fields input, .limit-input {
   font: inherit; color: var(--text); background: white; border: 1px solid var(--control-border); border-radius: 8px; padding: 10px 12px; min-height: 40px; box-sizing: border-box;
 }
