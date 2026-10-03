@@ -530,7 +530,6 @@ export default function App() {
       {reviewUser && (
         <ApprovalReviewModal
           user={reviewUser}
-          organizationName={organizationName}
           onClose={() => setReviewId(null)}
           onApprove={() => {
             setUsers((prev) =>

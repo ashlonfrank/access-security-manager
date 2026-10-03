@@ -15,12 +15,10 @@ import {
 
 export default function ApprovalReviewModal({
   user,
-  organizationName,
   onClose,
   onApprove,
 }: {
   user: User;
-  organizationName: string;
   onClose: () => void;
   onApprove: () => void;
 }) {
@@ -39,15 +37,12 @@ export default function ApprovalReviewModal({
 
   return (
     <Modal
-      title="Request details"
       className="approval-review-dialog"
+      labelledBy="approval-request-title"
       onClose={onClose}
     >
       <EditorContext.Provider value={{ editing: true, value, setValue }}>
-        <div
-          className="permissions-panel editing-permissions approval-review-panel"
-          id="approval-request-title"
-        >
+        <div className="permissions-panel editing-permissions approval-review-panel">
           <div
             className="permissions-scroll"
             tabIndex={0}
@@ -59,6 +54,13 @@ export default function ApprovalReviewModal({
                 <h3>{user.name}</h3>
                 <p>{user.email}</p>
               </div>
+            </div>
+
+            <div
+              className="approval-review-scroll-heading"
+              id="approval-request-title"
+            >
+              <h3>Request details</h3>
             </div>
 
             <section className="permission-info">
@@ -77,18 +79,6 @@ export default function ApprovalReviewModal({
                   <dd>{user.job}</dd>
                 </div>
               </dl>
-            </section>
-
-            <section className="permission-info approval-review-note">
-              <div className="approval-info-banner" role="note">
-                <span className="approval-info-icon" aria-hidden="true">
-                  i
-                </span>
-                <p>
-                  Existing members who already have access to {organizationName}{" "}
-                  keep their existing permissions.
-                </p>
-              </div>
             </section>
 
             <PermissionCategoriesEditor />

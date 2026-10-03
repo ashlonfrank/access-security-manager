@@ -803,6 +803,7 @@
 }
 /* Advisor review overlay (Mercury-inspired hierarchy, ASM tokens) */
 .approval-review-dialog {
+  position: relative;
   width: min(560px, calc(100vw - 48px));
   max-height: min(92vh, 900px);
   padding: 0;
@@ -816,17 +817,19 @@
   background: rgba(0, 47, 108, 0.12);
   backdrop-filter: blur(6px);
 }
-/* Title aligns with permission-profile / avatar inset (24px). */
+/* Close control only; title lives in the scroll area sticky header. */
 .approval-review-dialog .dialog-heading {
-  padding: 24px 24px 16px;
-  margin-bottom: 0;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
   flex-shrink: 0;
-  border-bottom: 1px solid #d3d9de;
+  border-bottom: 0;
 }
-.approval-review-dialog .dialog-heading h2 {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
+.approval-review-dialog .dialog-heading .close {
+  margin: 0;
 }
 .approval-review-dialog .approval-review-panel {
   display: flex;
@@ -851,26 +854,48 @@
   background: white;
 }
 /* Identity block matches edit panel profile (no in-profile actions). */
-.approval-review-dialog .approval-review-panel.editing-permissions .approval-review-profile {
+.approval-review-dialog .approval-review-panel .approval-review-profile {
+  position: static;
   min-height: 137px;
   height: auto;
+  border-bottom: 0;
 }
 .approval-review-dialog .approval-review-profile .permission-name {
   margin-left: 44px;
+}
+.approval-review-dialog .approval-review-scroll-heading {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: white;
+  border-bottom: 1px solid #d3d9de;
+  padding: 16px 24px;
+}
+.approval-review-dialog .approval-review-scroll-heading h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #0f171f;
 }
 .approval-review-dialog .approval-review-panel .permission-info {
   min-height: 0;
   height: auto;
 }
-.approval-review-dialog .approval-review-note .approval-info-banner {
-  margin: 0;
+.approval-review-dialog .approval-review-panel .permission-info::after {
+  content: none;
+}
+.approval-review-dialog .approval-review-panel .permission-details::after,
+.approval-review-dialog .approval-review-panel .permission-accounts::after {
+  content: none;
 }
 .approval-review-dialog .approval-review-footer {
   flex-shrink: 0;
   margin-top: 0;
   padding: 24px;
   gap: 8px;
-  border-top: 1px solid #d3d9de;
+  border-top: 0;
   background: white;
   justify-content: flex-end;
 }

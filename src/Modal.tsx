@@ -5,11 +5,13 @@ export default function Modal({
   onClose,
   children,
   className,
+  labelledBy,
 }: {
-  title: string;
+  title?: string;
   onClose: () => void;
   children: ReactNode;
   className?: string;
+  labelledBy?: string;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
@@ -25,18 +27,18 @@ export default function Modal({
       ref={ref}
       className={
         className ??
-        (title.startsWith("Delete ") || title.startsWith("Are you sure")
+        (title?.startsWith("Delete ") || title?.startsWith("Are you sure")
           ? "delete-confirmation"
           : undefined)
       }
-      aria-labelledby="dialog-title"
+      aria-labelledby={labelledBy ?? (title ? "dialog-title" : undefined)}
       onCancel={onClose}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div className="dialog-heading">
-        <h2 id="dialog-title">{title}</h2>
+        {title ? <h2 id="dialog-title">{title}</h2> : null}
         <button className="close" onClick={onClose} aria-label="Close dialog">
           ×
         </button>
