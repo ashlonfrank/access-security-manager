@@ -91,13 +91,12 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     if (!job.trim() || paymentTypes.some((name) => value.limits[name].trim() === "" || !Number.isFinite(Number(value.limits[name])) || Number(value.limits[name]) < 0 || Number(value.limits[name]) > 999999999 || !/^\d+(\.\d{1,2})?$/.test(value.limits[name]))) {
       setError("Enter a job title and non-negative daily limits with up to two decimal places."); return;
     }
-    const savedPermissions = value.mfa
+    const savedPermissions: Permissions = value.mfa
       ? {
           ...value,
-          token:
-            value.token === "Hard token" ? "Hard token" : ("Soft token" as const),
+          token: value.token === "Hard token" ? "Hard token" : "Soft token",
         }
-      : { ...value, mfa: false, token: "No token" as const };
+      : { ...value, mfa: false, token: "No token" };
     try { localStorage.setItem(permissionsStorageKey(user.id), JSON.stringify(savedPermissions)); }
     catch { setError("Changes could not be saved. Please try again."); return; }
     setValue(savedPermissions);

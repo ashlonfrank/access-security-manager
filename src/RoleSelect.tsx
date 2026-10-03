@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { businessRoles, roleDescriptions } from "./business";
+import assets from "./permission-assets.json";
 export default function RoleSelect({ value, onChange }: { value: string; onChange: (value: string) => void }) {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
@@ -31,7 +32,7 @@ export default function RoleSelect({ value, onChange }: { value: string; onChang
         else if (event.key === "End" && open) { event.preventDefault(); setActive(options.length - 1); }
         else if ((event.key === "Enter" || event.key === " ") && open) { event.preventDefault(); select(options[active]); }
         else if (event.key === "Tab") setOpen(false);
-      }}>{value}<span className="role-picker-chevron" aria-hidden="true">⌄</span></button>
+      }}><span className="role-picker-value">{value}</span><img className="role-picker-chevron" src={assets.imgMask} alt="" aria-hidden="true" /></button>
     {open && <div id={`${id}-list`} className="role-picker-options" role="listbox" aria-labelledby={`${id}-label`} ref={list}>
       {options.map((role, index) => <div role="option" id={`${id}-option-${index}`} data-index={index} aria-selected={value === role} key={role}
         className={`role-picker-option ${active === index ? "active" : ""}`} onPointerMove={() => setActive(index)}

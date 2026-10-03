@@ -109,7 +109,6 @@ export default function CompaniesView({
     );
   const selectedRow = rows.find((row) => row.id === selected);
   const selectedUser = selectedRow?.user;
-  const pinnedCompany = selectedRow?.company ?? null;
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
       if (event.key === "Escape" && !document.querySelector("dialog[open]"))
@@ -222,7 +221,7 @@ export default function CompaniesView({
                     <div
                       role="row"
                       key={row.id}
-                      className={`company-row ${isInactive(row.user.status) ? "inactive-user" : ""} ${selected === row.id ? "selected-company-user" : ""} ${pinnedCompany === row.company ? "company-label-pinned" : ""}`}
+                      className={`company-row ${isInactive(row.user.status) ? "inactive-user" : ""} ${selected === row.id ? "selected-company-user" : ""}`}
                       onClick={(event) => {
                         if (
                           (event.target as HTMLElement).closest(".company-delete")
@@ -234,9 +233,9 @@ export default function CompaniesView({
                     >
                       <div
                         role="cell"
-                        className={`company-identity ${showCompany ? "company-group-start" : ""}`}
+                        className={`company-identity ${showCompany || selected === row.id ? "company-group-start" : ""}`}
                       >
-                        <img src={companyAssets.imgAvatar} alt="" />
+                        <img src={companyAssets.imgAvatar} alt="" width={36} height={36} />
                         <span>
                           {coffeeCompanies[row.company].name}
                           <small>{coffeeCompanies[row.company].location}</small>
