@@ -654,6 +654,12 @@
 .permission-more-menu-danger {
   color: #b42318 !important;
 }
+
+.permission-more-menu--fixed {
+  position: fixed;
+  right: auto;
+  z-index: 200;
+}
 .permission-info h3, .permission-details > h3, .permission-accounts > h3 { font-size: 12px; line-height: 16px; font-weight: 400; }
 .permissions-panel:not(.editing-permissions) .permission-info { min-height: 129px; }
 .permission-info dt { font-size: 14px; line-height: 20px; font-weight: 600; }
