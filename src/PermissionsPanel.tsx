@@ -91,11 +91,37 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     if (!job.trim() || paymentTypes.some((name) => value.limits[name].trim() === "" || !Number.isFinite(Number(value.limits[name])) || Number(value.limits[name]) < 0 || Number(value.limits[name]) > 999999999 || !/^\d+(\.\d{1,2})?$/.test(value.limits[name]))) {
       setError("Enter a job title and non-negative daily limits with up to two decimal places."); return;
     }
-    try { localStorage.setItem(permissionsStorageKey(user.id), JSON.stringify(value)); }
+    const savedPermissions = value.mfa
+      ? {
+          ...value,
+          token:
+            value.token === "Hard token" ? "Hard token" : ("Soft token" as const),
+        }
+      : { ...value, mfa: false, token: "No token" as const };
+    try { localStorage.setItem(permissionsStorageKey(user.id), JSON.stringify(savedPermissions)); }
     catch { setError("Changes could not be saved. Please try again."); return; }
+    setValue(savedPermissions);
     onUpdate({ name: name.trim(), email: savedEmail, status: user.status, role, job: job.trim() }); setEditing(false); setError("");
   }
   const effectiveRole = editing ? role : user.role;
+  const authenticationType = value.mfa
+    ? value.token === "Hard token"
+      ? "Hard token"
+      : "Soft token"
+    : "No token";
+  function setMfa(enabled: boolean) {
+    setValue((current) => {
+      if (!enabled) {
+        return { ...current, mfa: false, token: "No token" };
+      }
+      return {
+        ...current,
+        mfa: true,
+        token:
+          current.token === "Hard token" ? "Hard token" : "Soft token",
+      };
+    });
+  }
   return <EditorContext.Provider value={{ editing, value, setValue, userId: user.id, role: effectiveRole, companyIndex: companyIndex(user.id) }}>
     <aside ref={panel} className={`permissions-panel ${editing ? "editing-permissions" : ""}`} id="permissions-title" aria-label="Permissions">
       <div className="permissions-scroll" ref={scroll} tabIndex={0} aria-label={`Permissions for ${user.name}`}>
@@ -125,9 +151,26 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
         <section className="permission-info">
           <h3>User authentication</h3>
           {editing ? <div className="authentication-editor">
-            <label className="permission-option"><input className="permission-checkbox" type="checkbox" checked={value.mfa} onChange={(event) => setValue({ ...value, mfa: event.target.checked })} />Multi-factor authentication</label>
-            <fieldset><legend>Authentication type</legend>{(["Soft token", "Hard token", "No token"] as const).map((token) => <label className="permission-option" key={token}><input type="radio" name={`token-${user.id}`} checked={value.token === token} onChange={() => setValue({ ...value, token })} />{token}</label>)}</fieldset>
-          </div> : <dl><div><dt>Multi-factor authentication</dt><dd>{value.mfa ? "Enabled" : "Disabled"}</dd></div><div><dt>Authentication type</dt><dd><span className="permission-small-tag">{value.token}</span></dd></div></dl>}
+            <label className="permission-option"><input className="permission-checkbox" type="checkbox" checked={value.mfa} onChange={(event) => setMfa(event.target.checked)} />Multi-factor authentication</label>
+            <fieldset>
+              <legend>Authentication type</legend>
+              {value.mfa ? (
+                (["Soft token", "Hard token"] as const).map((token) => (
+                  <label className="permission-option" key={token}>
+                    <input
+                      type="radio"
+                      name={`token-${user.id}`}
+                      checked={authenticationType === token}
+                      onChange={() => setValue({ ...value, token })}
+                    />
+                    {token}
+                  </label>
+                ))
+              ) : (
+                <p className="permission-auth-implied">No token</p>
+              )}
+            </fieldset>
+          </div> : <dl><div><dt>Multi-factor authentication</dt><dd>{value.mfa ? "Enabled" : "Disabled"}</dd></div><div><dt>Authentication type</dt><dd><span className="permission-small-tag">{authenticationType}</span></dd></div></dl>}
         </section>
         <PermissionCategoriesEditor />
         <PermissionAccountsEditor />
