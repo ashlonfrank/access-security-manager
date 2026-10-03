@@ -9,7 +9,10 @@ import PermissionsPanel from "./PermissionsPanel";
 import ApprovalRequestPanel from "./ApprovalRequestPanel";
 import CompaniesView from "./CompaniesView";
 import Modal from "./Modal";
-import { pendingRequestLine } from "./pendingApprovals";
+import {
+  ensureDefaultPendingApproval,
+  pendingRequestLine,
+} from "./pendingApprovals";
 import Avatar from "./Avatar";
 import ManageSegments from "./ManageSegments";
 import useStickyRows from "./useStickyRows";
@@ -65,11 +68,11 @@ function readUsers(): User[] {
             initialUsers.some((v) => v.avatar === u.avatar) || /^\/assets\/imgJp[1-9]\.png$/.test(u.avatar)),
       )
     )
-      return normalizeDemoUsers(saved);
+      return ensureDefaultPendingApproval(normalizeDemoUsers(saved));
   } catch {
     /* Use design data when storage is unavailable. */
   }
-  return initialUsers;
+  return ensureDefaultPendingApproval(normalizeDemoUsers(initialUsers));
 }
 function Icon({ src, inverse = false }: { src: string; inverse?: boolean }) {
   return inverse ? (
@@ -85,7 +88,11 @@ function Icon({ src, inverse = false }: { src: string; inverse?: boolean }) {
 export default function App() {
   const listRef = useStickyRows();
   const [users, setUsers] = useState<User[]>(readUsers);
-  useEffect(() => { setUsers((previous) => normalizeDemoUsers(previous)); }, []);
+  useEffect(() => {
+    setUsers((previous) =>
+      ensureDefaultPendingApproval(normalizeDemoUsers(previous)),
+    );
+  }, []);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [tab, setTab] = useState<"users" | "companies">("users");
@@ -100,6 +107,10 @@ export default function App() {
   const [formError, setFormError] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
+    if (!approval || tab !== "users") return;
+    setUsers((previous) => ensureDefaultPendingApproval(previous));
+  }, [approval, tab]);
+  useEffect(() => {
     try {
       localStorage.setItem(storageKey, JSON.stringify(users));
     } catch {
@@ -111,19 +122,26 @@ export default function App() {
     const t = setTimeout(() => setNotice(""), 5000);
     return () => clearTimeout(t);
   }, [notice]);
+  const matchesSearch = (u: User) =>
+    `${u.name} ${u.email} ${u.role} ${u.job}`
+      .toLowerCase()
+      .includes(query.trim().toLowerCase());
   const visible = users.filter(
     (u) =>
       (!approval || u.status === "Needs approval") &&
       (!role.length || role.includes(u.role)) &&
-      (!status.length || status.includes(u.status)) &&
-      `${u.name} ${u.email} ${u.role} ${u.job}`
-        .toLowerCase()
-        .includes(query.trim().toLowerCase()),
+      (!approval && (!status.length || status.includes(u.status))) &&
+      matchesSearch(u),
   );
   if (nameSort) visible.sort((a, b) => (nameSort === "ascending" ? 1 : -1) * a[sortKey].localeCompare(b[sortKey], undefined, { sensitivity: "base" }));
   const selectedUser = users.find((user) => user.id === selectedId);
   const reviewUser = users.find((user) => user.id === reviewId);
-  const pendingVisible = visible.filter((user) => user.status === "Needs approval");
+  const pendingVisible = users.filter(
+    (user) =>
+      user.status === "Needs approval" &&
+      (!role.length || role.includes(user.role)) &&
+      matchesSearch(user),
+  );
   useEffect(() => {
     if (selectedId && !visible.some((user) => user.id === selectedId))
       setSelectedId(null);
