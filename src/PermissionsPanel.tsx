@@ -4,71 +4,19 @@ import RoleSelect from "./RoleSelect";
 import { userStatuses } from "./business";
 import Avatar from "./Avatar";
 import type { User } from "./App";
+import {
+  paymentTypes,
+  permissionNames,
+  permissionsForRole,
+  permissionsStorageKey,
+  readStoredPermissions,
+  statementTypes,
+  type Permissions,
+} from "./userPermissions";
 type PanelUser = User;
 export type UserChanges = Pick<User, "name" | "email" | "role" | "job" | "status">;
-const paymentTypes = ["ACH payments", "ACH vendor payments", "Bill pay", "CashFlow 360", "Transfers and payments", "Wires"];
-const statementTypes = ["See activity and balances", "See check images", "See statements and documents"];
-const permissionNames = [...statementTypes, "Chase QuickDeposit", ...paymentTypes, "Requires approval", "Card access", "Merchant services"];
-type Permissions = {
-  allowed: Record<string, boolean>;
-  limits: Record<string, string>;
-  mfa: boolean;
-  token: "Soft token" | "Hard token" | "No token";
-  accounts: boolean[];
-};
-function defaults(): Permissions {
-  return { allowed: Object.fromEntries(permissionNames.map((name) => [name, !["Requires approval", "Merchant services"].includes(name)])),
-    limits: Object.fromEntries(paymentTypes.map((name) => [name, "50000.00"])),
-    mfa: true, token: "Soft token", accounts: [true, true, true, true] };
-}
-function permissionsForRole(role: string): Permissions {
-  const enabled = new Set<string>();
-  const allow = (...names: string[]) => names.forEach((name) => enabled.add(name));
-  const statements = statementTypes;
-  const allMoney = ["Chase QuickDeposit", ...paymentTypes];
-
-  switch (role) {
-    case "Admin":
-    case "CFO":
-      allow(...statements, ...allMoney, "Card access", "Merchant services");
-      break;
-    case "Business Partner":
-      allow(...statements, "Card access", "Merchant services");
-      break;
-    case "Finance Lead":
-      allow(...statements, "Chase QuickDeposit", "ACH payments", "ACH vendor payments", "Bill pay", "CashFlow 360");
-      break;
-    case "Money Mover":
-      allow(...statements, ...allMoney);
-      break;
-    case "Accountant":
-      allow(...statements, "Chase QuickDeposit", "CashFlow 360");
-      break;
-    case "Read Only":
-    default:
-      allow(...statements, "Card access");
-      break;
-  }
-
-  return {
-    allowed: Object.fromEntries(permissionNames.map((name) => [name, enabled.has(name)])),
-    limits: Object.fromEntries(paymentTypes.map((name) => [name, "50000.00"])),
-    mfa: true,
-    token: "Soft token",
-    accounts: role === "Read Only" ? [true, false, false, false] : [true, true, true, true],
-  };
-}
-const storageKey = (id: string) => `asm-permissions-v1-${id}`;
 function readPermissions(id: string): Permissions {
-  const fallback = defaults();
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey(id)) || "null");
-    if (saved && typeof saved.mfa === "boolean" && ["Soft token", "Hard token", "No token"].includes(saved.token) &&
-      permissionNames.every((name) => typeof saved.allowed?.[name] === "boolean") &&
-      paymentTypes.every((name) => typeof saved.limits?.[name] === "string" && Number.isFinite(Number(saved.limits[name])) && Number(saved.limits[name]) >= 0) &&
-      Array.isArray(saved.accounts) && saved.accounts.length === 4 && saved.accounts.every((value: unknown) => typeof value === "boolean")) return saved;
-  } catch { /* Use the demo defaults when saved data is unavailable. */ }
-  return fallback;
+  return readStoredPermissions(id);
 }
 const EditorContext = createContext<{ editing: boolean; value: Permissions; setValue: React.Dispatch<React.SetStateAction<Permissions>> } | null>(null);
 function PermissionItem({ text, limit = false }: { text: string; limit?: boolean }) {
@@ -164,7 +112,7 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     if (!job.trim() || paymentTypes.some((name) => value.limits[name].trim() === "" || !Number.isFinite(Number(value.limits[name])) || Number(value.limits[name]) < 0 || Number(value.limits[name]) > 999999999 || !/^\d+(\.\d{1,2})?$/.test(value.limits[name]))) {
       setError("Enter a job title and non-negative daily limits with up to two decimal places."); return;
     }
-    try { localStorage.setItem(storageKey(user.id), JSON.stringify(value)); }
+    try { localStorage.setItem(permissionsStorageKey(user.id), JSON.stringify(value)); }
     catch { setError("Changes could not be saved. Please try again."); return; }
     onUpdate({ name: name.trim(), email: savedEmail, status, role, job: job.trim() }); setEditing(false); setError("");
   }

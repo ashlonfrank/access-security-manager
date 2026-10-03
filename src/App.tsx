@@ -6,7 +6,7 @@ import {
 } from "react";
 import assets from "./assets.json";
 import PermissionsPanel from "./PermissionsPanel";
-import ApprovalRequestPanel from "./ApprovalRequestPanel";
+import ApprovalReviewModal from "./ApprovalReviewModal";
 import CompaniesView from "./CompaniesView";
 import Modal from "./Modal";
 import {
@@ -341,9 +341,7 @@ export default function App() {
       <main
         id="main"
         className={
-          tab === "users" && (selectedUser || reviewUser)
-            ? "has-permissions"
-            : ""
+          tab === "users" && selectedUser ? "has-permissions" : ""
         }
       >
         <div className="management-heading">
@@ -404,9 +402,7 @@ export default function App() {
             <div className="users-content">
               {approval ? (
                 <>
-                  <div
-                    className={`users-table-content pending-approvals ${reviewUser ? "has-review-panel" : ""}`}
-                  >
+                  <div className="users-table-content pending-approvals">
                     {pendingVisible.length > 0 ? (
                       <>
                         <h2 className="pending-approvals-heading">
@@ -464,26 +460,6 @@ export default function App() {
                       </div>
                     )}
                   </div>
-                  {reviewUser && (
-                    <ApprovalRequestPanel
-                      user={reviewUser}
-                      organizationName={organizationName}
-                      onClose={() => setReviewId(null)}
-                      onApprove={() => {
-                        setUsers((prev) =>
-                          prev.map((u) =>
-                            u.id === reviewUser.id
-                              ? { ...u, status: "Active" }
-                              : u,
-                          ),
-                        );
-                        setReviewId(null);
-                        setNotice(
-                          `${reviewUser.name} approved and activated.`,
-                        );
-                      }}
-                    />
-                  )}
                 </>
               ) : (
                 <>
@@ -578,6 +554,22 @@ export default function App() {
       <div className="toast" role="status">
         {notice && <span>{notice}</span>}
       </div>
+      {reviewUser && (
+        <ApprovalReviewModal
+          user={reviewUser}
+          organizationName={organizationName}
+          onClose={() => setReviewId(null)}
+          onApprove={() => {
+            setUsers((prev) =>
+              prev.map((u) =>
+                u.id === reviewUser.id ? { ...u, status: "Active" } : u,
+              ),
+            );
+            setReviewId(null);
+            setNotice(`${reviewUser.name} approved and activated.`);
+          }}
+        />
+      )}
       {dialog && (
         <Modal
           title={
