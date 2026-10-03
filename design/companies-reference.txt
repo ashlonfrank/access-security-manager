@@ -1,0 +1,1018 @@
+const imgIcon = "https://www.figma.com/api/mcp/asset/e1a5aec7-9744-4eb5-95f8-3c969bb237e6.svg";
+const imgIcon1 = "https://www.figma.com/api/mcp/asset/1bc957b1-3f41-42d0-829e-e34b92939abe.svg";
+const imgSuccessIcoCheckmark = "https://www.figma.com/api/mcp/asset/82be8c10-dafb-494f-a3cb-340a58958d31.svg";
+const imgIcon2 = "https://www.figma.com/api/mcp/asset/44e11f33-a82d-4285-823a-56c33deeb2e3.svg";
+const imgIcon3 = "https://www.figma.com/api/mcp/asset/b217610a-1597-4819-a22a-3a5cf44939b3.svg";
+const imgActionIcoClose = "https://www.figma.com/api/mcp/asset/c0cfd74a-31e2-4a91-9ddd-af207d49a5c9.svg";
+const imgIcon4 = "https://www.figma.com/api/mcp/asset/80964e56-f5bd-4035-9bf7-5ce83c6307d5.svg";
+const imgMask = "https://www.figma.com/api/mcp/asset/b0fb3fcf-ee33-438b-86a9-52db18a62e3f.svg";
+const imgMask1 = "https://www.figma.com/api/mcp/asset/38dcf2a1-f308-492a-8945-f89885f79652.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/82373a99-dd49-4360-9274-e5ba170eee62.svg";
+const imgMask2 = "https://www.figma.com/api/mcp/asset/63c2ca14-c948-4e6c-8dce-f832c2026fd3.svg";
+
+export default function Group1073714978() {
+  return (
+    <div className="contents relative size-full" data-node-id="1:69000">
+      <div className="absolute h-[683px] left-[calc(50%+2px)] top-[332px] w-[458px]" data-node-id="1:69001">
+        <div className="absolute bg-[var(--color\/background\/brandinteractivesecondary,rgba(0,94,184,0.08))] h-[683px] left-0 rounded-tl-[8px] rounded-tr-[8px] top-0 w-[458px]" data-node-id="1:69002" />
+        <p className="[word-break:break-word] absolute font-['Open_Sans:Semibold'] leading-[16px] left-[39px] not-italic text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[8px] w-[94px]" data-node-id="1:69003">
+          Permissions
+        </p>
+        <div className="absolute h-[627px] left-[16px] overflow-x-clip overflow-y-auto rounded-[8px] top-[40px] w-[426px]" data-node-id="1:69004" data-name="Curved Short">
+          <div className="absolute bg-[var(--color\/background\/primary,white)] h-[1347px] left-0 rounded-tl-[8px] rounded-tr-[8px] top-0 w-[426px]" data-node-id="I1:69004;137:10323" data-name="White frame" />
+          <div className="absolute contents left-0 top-[161px]" data-node-id="I1:69004;137:10347">
+            <p className="[word-break:break-word] absolute font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,16px)] left-[24px] text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/bodysmall,12px)] top-[161px] w-[368px]" data-node-id="I1:69004;137:10348" style={{ fontVariationSettings: '"wdth" 100' }}>
+              User info
+            </p>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] items-center left-0 px-[24px] py-[4px] top-[185px] w-[426px]" data-node-id="I1:69004;137:10349" data-name="MDS Legacy List Item">
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:SemiBold'] font-semibold leading-[20px] min-w-px relative text-[14px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;137:10349;37229:24325" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Role
+              </p>
+              <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69004;137:10349;37289:24211" data-name="MDS Tag">
+                <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,16px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,12px)]" data-node-id="I1:69004;137:10349;37289:24211;5152:9381" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  CFO
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="absolute h-px left-0 rounded-[8px] top-[265px] w-[426px]" data-node-id="I1:69004;137:10351" data-name="Divider: Line">
+            <div className="absolute bg-[var(--color\/border\/decorative,#d3d9de)] inset-0 shadow-[0px_1px_0px_0px_rgba(255,255,255,0.14)]" data-node-id="I1:69004;137:10351;22:2319" data-name="Divider" />
+          </div>
+          <div className="absolute contents left-0 top-[290px]" data-node-id="I1:69004;137:10352">
+            <p className="[word-break:break-word] absolute font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,16px)] left-[24px] text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/bodysmall,12px)] top-[290px] w-[355px]" data-node-id="I1:69004;137:10353" style={{ fontVariationSettings: '"wdth" 100' }}>
+              User authentication
+            </p>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start justify-center left-0 pl-[24px] pr-[16px] py-[4px] top-[314px] w-[426px]" data-node-id="I1:69004;137:10354" data-name="MDS Legacy List Item">
+              <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="I1:69004;137:10354;4047:15937">
+                <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-node-id="I1:69004;137:10354;4047:15938">
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] whitespace-nowrap" data-node-id="I1:69004;137:10354;4047:15939" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Multi-factor authentication
+                  </p>
+                </div>
+                <div className="content-stretch flex flex-col items-end justify-center px-[8px] relative shrink-0" data-node-id="I1:69004;137:10354;4047:15940">
+                  <p className="[word-break:break-word] font-['Open_Sans:Medium'] leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] text-right w-[155.5px]" data-node-id="I1:69004;137:10354;4047:15942">
+                    Enabled
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute h-px left-0 rounded-[8px] top-[394px] w-[426px]" data-node-id="I1:69004;137:10355" data-name="Divider: Line">
+            <div className="absolute bg-[var(--color\/border\/decorative,#d3d9de)] inset-0 shadow-[0px_1px_0px_0px_rgba(255,255,255,0.14)]" data-node-id="I1:69004;137:10355;22:2319" data-name="Divider" />
+          </div>
+          <p className="[word-break:break-word] absolute font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,16px)] left-[24px] text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/bodysmall,12px)] top-[419px] w-[368px]" data-node-id="I1:69004;137:10356" style={{ fontVariationSettings: '"wdth" 100' }}>
+            User permissions
+          </p>
+          <p className="[word-break:break-word] absolute font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,16px)] left-[24px] text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/bodysmall,12px)] top-[1119px] w-[370px]" data-node-id="I1:69004;137:10357" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Has access to these accounts
+          </p>
+          <div className="absolute h-px left-[16px] rounded-[8px] top-[1071px] w-[394px]" data-node-id="I1:69004;137:10358" data-name="Divider: Line">
+            <div className="absolute bg-[var(--color\/border\/decorative,#d3d9de)] inset-0 shadow-[0px_1px_0px_0px_rgba(255,255,255,0.14)]" data-node-id="I1:69004;137:10358;22:2319" data-name="Divider" />
+          </div>
+          <div className="absolute content-stretch flex flex-col items-start left-0 top-[1143px] w-[426px]" data-node-id="I1:69004;137:10359">
+            <div className="h-[48px] relative shrink-0 w-full" data-node-id="I1:69004;137:10360" data-name="MDS List Item">
+              <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col gap-[15px] items-start justify-center left-0 pl-[24px] pt-[16px] top-0 w-[426px]" data-node-id="I1:69004;137:10360;30:6887" data-name="MDS Legacy List Item">
+                <div className="content-stretch flex gap-[8px] items-center pr-[16px] relative shrink-0 w-full" data-node-id="I1:69004;137:10360;30:6887;4142:1169" data-name="Content">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:SemiBold'] font-semibold h-[16px] leading-[20px] min-w-px relative text-[14px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;137:10360;30:6887;4142:1170" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Savings (**0022)
+                  </p>
+                  <div className="relative shrink-0 size-[12px]" data-node-id="I1:69004;137:10360;30:6887;4142:1171" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col h-px items-start justify-end relative shrink-0 w-full" data-node-id="I1:69004;137:10360;30:6887;103519:5078" data-name="Divider">
+                  <div className="absolute border border-[var(--color\/border\/decorative,#d3d9de)] border-solid bottom-0 h-px left-0 right-[16px]" data-node-id="I1:69004;137:10360;30:6887;4142:1172" data-name="Divider" />
+                </div>
+              </div>
+              <div className="absolute h-[16px] left-[270px] top-[16px] w-[126px]" data-node-id="I1:69004;137:10360;99:12510" data-name="Right" />
+            </div>
+            <div className="h-[48px] relative shrink-0 w-full" data-node-id="I1:69004;137:10361" data-name="MDS List Item">
+              <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col gap-[15px] items-start justify-center left-0 pl-[24px] pt-[16px] top-0 w-[426px]" data-node-id="I1:69004;137:10361;30:6887" data-name="MDS Legacy List Item">
+                <div className="content-stretch flex gap-[8px] items-center pr-[16px] relative shrink-0 w-full" data-node-id="I1:69004;137:10361;30:6887;4142:1169" data-name="Content">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:SemiBold'] font-semibold h-[16px] leading-[20px] min-w-px relative text-[14px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;137:10361;30:6887;4142:1170" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Savings (**0022)
+                  </p>
+                  <div className="relative shrink-0 size-[12px]" data-node-id="I1:69004;137:10361;30:6887;4142:1171" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col h-px items-start justify-end relative shrink-0 w-full" data-node-id="I1:69004;137:10361;30:6887;103519:5078" data-name="Divider">
+                  <div className="absolute border border-[var(--color\/border\/decorative,#d3d9de)] border-solid bottom-0 h-px left-0 right-[16px]" data-node-id="I1:69004;137:10361;30:6887;4142:1172" data-name="Divider" />
+                </div>
+              </div>
+              <div className="absolute h-[16px] left-[270px] top-[16px] w-[126px]" data-node-id="I1:69004;137:10361;99:12510" data-name="Right" />
+            </div>
+            <div className="h-[48px] relative shrink-0 w-full" data-node-id="I1:69004;137:10362" data-name="MDS List Item">
+              <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col gap-[15px] items-start justify-center left-0 pl-[24px] pt-[16px] top-0 w-[426px]" data-node-id="I1:69004;137:10362;30:6887" data-name="MDS Legacy List Item">
+                <div className="content-stretch flex gap-[8px] items-center pr-[16px] relative shrink-0 w-full" data-node-id="I1:69004;137:10362;30:6887;4142:1169" data-name="Content">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:SemiBold'] font-semibold h-[16px] leading-[20px] min-w-px relative text-[14px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;137:10362;30:6887;4142:1170" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Savings (**0022)
+                  </p>
+                  <div className="relative shrink-0 size-[12px]" data-node-id="I1:69004;137:10362;30:6887;4142:1171" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col h-px items-start justify-end relative shrink-0 w-full" data-node-id="I1:69004;137:10362;30:6887;103519:5078" data-name="Divider">
+                  <div className="absolute border border-[var(--color\/border\/decorative,#d3d9de)] border-solid bottom-0 h-px left-0 right-[16px]" data-node-id="I1:69004;137:10362;30:6887;4142:1172" data-name="Divider" />
+                </div>
+              </div>
+              <div className="absolute h-[16px] left-[270px] top-[16px] w-[126px]" data-node-id="I1:69004;137:10362;99:12510" data-name="Right" />
+            </div>
+            <div className="h-[48px] relative shrink-0 w-full" data-node-id="I1:69004;137:10363" data-name="MDS List Item">
+              <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start justify-center left-0 pl-[24px] py-[16px] top-0 w-[426px]" data-node-id="I1:69004;137:10363;30:6887" data-name="MDS Legacy List Item">
+                <div className="content-stretch flex gap-[8px] items-center pr-[16px] relative shrink-0 w-full" data-node-id="I1:69004;137:10363;30:6887;28204:26613" data-name="Content">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:SemiBold'] font-semibold h-[16px] leading-[20px] min-w-px relative text-[14px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;137:10363;30:6887;28204:26614" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Savings (**0022)
+                  </p>
+                  <div className="relative shrink-0 size-[12px]" data-node-id="I1:69004;137:10363;30:6887;28204:26615" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute h-[16px] left-[270px] top-[16px] w-[126px]" data-node-id="I1:69004;137:10363;99:12510" data-name="Right" />
+            </div>
+          </div>
+          <div className="absolute contents left-0 top-[342px]" data-node-id="I1:69004;137:10369">
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start justify-center left-0 pl-[24px] pr-[16px] py-[4px] top-[342px] w-[426px]" data-node-id="I1:69004;137:10370" data-name="MDS Legacy List Item">
+              <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="I1:69004;137:10370;4047:15937">
+                <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-node-id="I1:69004;137:10370;4047:15938">
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] whitespace-nowrap" data-node-id="I1:69004;137:10370;4047:15939" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Authentication type
+                  </p>
+                </div>
+                <div className="content-stretch flex flex-col h-[16px] items-end justify-center pr-[8px] relative shrink-0 w-[171.5px]" data-node-id="I1:69004;137:10370;4047:15940" />
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/infosecondary,#edeff7)] content-stretch flex items-center justify-center left-[332px] min-w-[20px] pb-[3px] pt-px px-[6px] rounded-[var(--border-radius\/round,999px)] top-[346px]" data-node-id="I1:69004;137:10371" data-name="MDS Tag">
+              <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,16px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,12px)]" data-node-id="I1:69004;137:10371;5152:9381" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Soft token
+              </p>
+            </div>
+          </div>
+          <div className="absolute contents left-0 top-[213px]" data-node-id="I1:69004;272:7598">
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start justify-center left-0 pl-[24px] pr-[16px] py-[4px] top-[213px] w-[426px]" data-node-id="I1:69004;272:7626" data-name="MDS Legacy List Item">
+              <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="I1:69004;272:7626;4047:15937">
+                <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-node-id="I1:69004;272:7626;4047:15938">
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] whitespace-nowrap" data-node-id="I1:69004;272:7626;4047:15939" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Company
+                  </p>
+                </div>
+                <div className="content-stretch flex flex-col items-end justify-center px-[8px] relative shrink-0" data-node-id="I1:69004;272:7626;4047:15940">
+                  <p className="[word-break:break-word] font-['Open_Sans:Medium'] leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] text-right w-[155.5px]" data-node-id="I1:69004;272:7626;4047:15942">
+                    Company Name
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute content-stretch flex flex-col gap-[24px] items-start left-0 top-[459px] w-[427px]" data-node-id="I1:69004;272:7648">
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7649">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7650" data-name="Categorization">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] items-start px-[24px] py-[4px] relative shrink-0 w-full" data-node-id="I1:69004;272:7650;30:6357" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7650;30:6357;4142:1848" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon1} />
+                  </div>
+                  <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7650;30:6357;4142:1849" data-name="Text">
+                    <p className="font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7650;30:6357;4142:1850" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Statements and documents
+                    </p>
+                    <p className="font-['Open_Sans:Regular'] font-normal leading-[16px] relative shrink-0 text-[10px] text-[color:var(--color\/text\/subdued,#5b6c7b)] w-full" data-node-id="I1:69004;272:7650;30:6357;4142:1851" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      1 liner explaining money movement
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[28px] items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7651" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7651;29:6814" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7651;29:6814;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSuccessIcoCheckmark} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7651;29:6814;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7651;29:6814;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>{`See activity and balances `}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[28px] items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7652" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7652;29:6814" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7652;29:6814;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSuccessIcoCheckmark} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7652;29:6814;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7652;29:6814;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>{`See check Images `}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[28px] items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7653" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7653;29:6814" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7653;29:6814;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSuccessIcoCheckmark} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7653;29:6814;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7653;29:6814;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>{`See statments and documents `}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="I1:69004;272:7654">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7655" data-name="Categorization">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] items-start px-[24px] py-[4px] relative shrink-0 w-full" data-node-id="I1:69004;272:7655;30:6357" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7655;30:6357;4142:1848" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon2} />
+                  </div>
+                  <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7655;30:6357;4142:1849" data-name="Text">
+                    <p className="font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7655;30:6357;4142:1850" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Money movement
+                    </p>
+                    <p className="font-['Open_Sans:Regular'] font-normal leading-[16px] relative shrink-0 text-[10px] text-[color:var(--color\/text\/subdued,#5b6c7b)] w-full" data-node-id="I1:69004;272:7655;30:6357;4142:1851" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      1 liner explaining money movement
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[28px] items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7656" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7656;29:6814" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7656;29:6814;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSuccessIcoCheckmark} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7656;29:6814;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7656;29:6814;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>{`Chase QuickDeposit `}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[28px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7657" data-name="MDS List Item">
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center left-0 pl-[24px] pr-[16px] py-[4px] top-0 w-[426px]" data-node-id="I1:69004;272:7657;94:9776" data-name="MDS Legacy List Item" />
+                <p className="-translate-x-full [word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[335px] text-[10px] text-[color:var(--color\/text\/subdued,#434f5b)] text-right top-[6px] w-[60px]" data-node-id="I1:69004;272:7657;94:11601" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Daily limit
+                </p>
+                <div className="absolute left-[24px] size-[24px] top-[2px]" data-node-id="I1:69004;272:7657;94:9786" data-name="Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                </div>
+                <div className="absolute content-stretch flex items-start left-[56px] top-[4px] w-[200px]" data-node-id="I1:69004;272:7657;94:9787" data-name="Text">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[20px] min-w-px relative text-[12px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;272:7657;94:9788" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    ACH payments
+                  </p>
+                </div>
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] border-[0.5px] border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] items-start left-[343px] px-[4px] rounded-[4px] top-[6px]" data-node-id="I1:69004;272:7657;94:11588" data-name="Field">
+                  <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal justify-center leading-[0] relative shrink-0 text-[#414042] text-[10px] whitespace-nowrap" data-node-id="I1:69004;272:7657;94:11590" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[var(--font\/line-height\/bodysmall,16px)]">$500,00.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[28px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7658" data-name="MDS List Item">
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center left-0 pl-[24px] pr-[16px] py-[4px] top-0 w-[426px]" data-node-id="I1:69004;272:7658;94:9776" data-name="MDS Legacy List Item" />
+                <p className="-translate-x-full [word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[335px] text-[10px] text-[color:var(--color\/text\/subdued,#434f5b)] text-right top-[6px] w-[60px]" data-node-id="I1:69004;272:7658;94:11601" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Daily limit
+                </p>
+                <div className="absolute left-[24px] size-[24px] top-[2px]" data-node-id="I1:69004;272:7658;94:9786" data-name="Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                </div>
+                <div className="absolute content-stretch flex items-start left-[56px] top-[4px] w-[200px]" data-node-id="I1:69004;272:7658;94:9787" data-name="Text">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[20px] min-w-px relative text-[12px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;272:7658;94:9788" style={{ fontVariationSettings: '"wdth" 100' }}>{`ACH vendor payments `}</p>
+                </div>
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] border-[0.5px] border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] items-start left-[343px] px-[4px] rounded-[4px] top-[6px]" data-node-id="I1:69004;272:7658;94:11588" data-name="Field">
+                  <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal justify-center leading-[0] relative shrink-0 text-[#414042] text-[10px] whitespace-nowrap" data-node-id="I1:69004;272:7658;94:11590" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[var(--font\/line-height\/bodysmall,16px)]">$500,00.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[28px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7659" data-name="MDS List Item">
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center left-0 pl-[24px] pr-[16px] py-[4px] top-0 w-[426px]" data-node-id="I1:69004;272:7659;94:9776" data-name="MDS Legacy List Item" />
+                <p className="-translate-x-full [word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[335px] text-[10px] text-[color:var(--color\/text\/subdued,#434f5b)] text-right top-[6px] w-[60px]" data-node-id="I1:69004;272:7659;94:11601" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Daily limit
+                </p>
+                <div className="absolute left-[24px] size-[24px] top-[2px]" data-node-id="I1:69004;272:7659;94:9786" data-name="Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                </div>
+                <div className="absolute content-stretch flex items-start left-[56px] top-[4px] w-[200px]" data-node-id="I1:69004;272:7659;94:9787" data-name="Text">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[20px] min-w-px relative text-[12px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;272:7659;94:9788" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Bill pay
+                  </p>
+                </div>
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] border-[0.5px] border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] items-start left-[343px] px-[4px] rounded-[4px] top-[6px]" data-node-id="I1:69004;272:7659;94:11588" data-name="Field">
+                  <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal justify-center leading-[0] relative shrink-0 text-[#414042] text-[10px] whitespace-nowrap" data-node-id="I1:69004;272:7659;94:11590" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[var(--font\/line-height\/bodysmall,16px)]">$500,00.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[28px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7660" data-name="MDS List Item">
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center left-0 pl-[24px] pr-[16px] py-[4px] top-0 w-[426px]" data-node-id="I1:69004;272:7660;94:9776" data-name="MDS Legacy List Item" />
+                <p className="-translate-x-full [word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[335px] text-[10px] text-[color:var(--color\/text\/subdued,#434f5b)] text-right top-[6px] w-[60px]" data-node-id="I1:69004;272:7660;94:11601" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Daily limit
+                </p>
+                <div className="absolute left-[24px] size-[24px] top-[2px]" data-node-id="I1:69004;272:7660;94:9786" data-name="Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                </div>
+                <div className="absolute content-stretch flex items-start left-[56px] top-[4px] w-[200px]" data-node-id="I1:69004;272:7660;94:9787" data-name="Text">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[20px] min-w-px relative text-[12px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;272:7660;94:9788" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    CashFlow 360
+                  </p>
+                </div>
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] border-[0.5px] border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] items-start left-[343px] px-[4px] rounded-[4px] top-[6px]" data-node-id="I1:69004;272:7660;94:11588" data-name="Field">
+                  <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal justify-center leading-[0] relative shrink-0 text-[#414042] text-[10px] whitespace-nowrap" data-node-id="I1:69004;272:7660;94:11590" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[var(--font\/line-height\/bodysmall,16px)]">$500,00.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[28px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7661" data-name="MDS List Item">
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center left-0 pl-[24px] pr-[16px] py-[4px] top-0 w-[426px]" data-node-id="I1:69004;272:7661;94:9776" data-name="MDS Legacy List Item" />
+                <p className="-translate-x-full [word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[335px] text-[10px] text-[color:var(--color\/text\/subdued,#434f5b)] text-right top-[6px] w-[60px]" data-node-id="I1:69004;272:7661;94:11601" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Daily limit
+                </p>
+                <div className="absolute left-[24px] size-[24px] top-[2px]" data-node-id="I1:69004;272:7661;94:9786" data-name="Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                </div>
+                <div className="absolute content-stretch flex items-start left-[56px] top-[4px] w-[200px]" data-node-id="I1:69004;272:7661;94:9787" data-name="Text">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[20px] min-w-px relative text-[12px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;272:7661;94:9788" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Transfers and payments
+                  </p>
+                </div>
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] border-[0.5px] border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] items-start left-[343px] px-[4px] rounded-[4px] top-[6px]" data-node-id="I1:69004;272:7661;94:11588" data-name="Field">
+                  <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal justify-center leading-[0] relative shrink-0 text-[#414042] text-[10px] whitespace-nowrap" data-node-id="I1:69004;272:7661;94:11590" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[var(--font\/line-height\/bodysmall,16px)]">$500,00.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[28px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7662" data-name="MDS List Item">
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center left-0 pl-[24px] pr-[16px] py-[4px] top-0 w-[426px]" data-node-id="I1:69004;272:7662;94:9776" data-name="MDS Legacy List Item" />
+                <p className="-translate-x-full [word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[335px] text-[10px] text-[color:var(--color\/text\/subdued,#434f5b)] text-right top-[6px] w-[60px]" data-node-id="I1:69004;272:7662;94:11601" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Daily limit
+                </p>
+                <div className="absolute left-[24px] size-[24px] top-[2px]" data-node-id="I1:69004;272:7662;94:9786" data-name="Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                </div>
+                <div className="absolute content-stretch flex items-start left-[56px] top-[4px] w-[200px]" data-node-id="I1:69004;272:7662;94:9787" data-name="Text">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[20px] min-w-px relative text-[12px] text-[color:var(--color\/text\/regular,#0f171f)]" data-node-id="I1:69004;272:7662;94:9788" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Wires
+                  </p>
+                </div>
+                <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] border-[0.5px] border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] items-start left-[343px] px-[4px] rounded-[4px] top-[6px]" data-node-id="I1:69004;272:7662;94:11588" data-name="Field">
+                  <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal justify-center leading-[0] relative shrink-0 text-[#414042] text-[10px] whitespace-nowrap" data-node-id="I1:69004;272:7662;94:11590" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[var(--font\/line-height\/bodysmall,16px)]">$500,00.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[36px] items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7663" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[36px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[427px]" data-node-id="I1:69004;272:7663;30:6429" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7663;30:6429;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgActionIcoClose} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7663;30:6429;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7663;30:6429;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Requires approval
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7664">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7665" data-name="Categorization">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] items-start px-[24px] py-[4px] relative shrink-0 w-full" data-node-id="I1:69004;272:7665;30:6357" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7665;30:6357;4142:1848" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon4} />
+                  </div>
+                  <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7665;30:6357;4142:1849" data-name="Text">
+                    <p className="font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7665;30:6357;4142:1850" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Credit cards
+                    </p>
+                    <p className="font-['Open_Sans:Regular'] font-normal leading-[16px] relative shrink-0 text-[10px] text-[color:var(--color\/text\/subdued,#5b6c7b)] w-full" data-node-id="I1:69004;272:7665;30:6357;4142:1851" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      1 liner explaining money movement
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[32px] items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7666" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[28px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[426px]" data-node-id="I1:69004;272:7666;29:6814" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7666;29:6814;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSuccessIcoCheckmark} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7666;29:6814;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7666;29:6814;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Card access
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7667">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7668" data-name="Categorization">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] items-start px-[24px] py-[4px] relative shrink-0 w-full" data-node-id="I1:69004;272:7668;30:6357" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7668;30:6357;4142:1848" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon4} />
+                  </div>
+                  <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7668;30:6357;4142:1849" data-name="Text">
+                    <p className="font-['Open_Sans:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7668;30:6357;4142:1850" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Merchant services
+                    </p>
+                    <p className="font-['Open_Sans:Regular'] font-normal leading-[16px] relative shrink-0 text-[10px] text-[color:var(--color\/text\/subdued,#5b6c7b)] w-full" data-node-id="I1:69004;272:7668;30:6357;4142:1851" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      1 liner explaining money movement
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-[32px] items-start relative shrink-0 w-full" data-node-id="I1:69004;272:7669" data-name="MDS List Item">
+                <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex gap-[8px] h-[36px] items-center pl-[24px] pr-[16px] py-[4px] relative shrink-0 w-[427px]" data-node-id="I1:69004;272:7669;30:6429" data-name="MDS Legacy List Item">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I1:69004;272:7669;30:6429;4142:1889" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgActionIcoClose} />
+                  </div>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative" data-node-id="I1:69004;272:7669;30:6429;4142:1890" data-name="Text">
+                    <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[20px] relative shrink-0 text-[12px] text-[color:var(--color\/text\/regular,#0f171f)] w-full" data-node-id="I1:69004;272:7669;30:6429;4142:1891" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Merchant services
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute bg-white h-[137px] left-0 rounded-tl-[8px] rounded-tr-[8px] top-0 w-[426px]" data-node-id="I1:69004;311:28112">
+            <div className="absolute contents left-0 top-0" data-node-id="I1:69004;311:27995">
+              <div className="absolute bg-white h-px left-0 rounded-[8px] top-[136px] w-[426px]" data-node-id="I1:69004;137:10346" data-name="Divider: Line">
+                <div className="absolute bg-[var(--color\/border\/decorative,#d3d9de)] inset-0 shadow-[0px_1px_0px_0px_rgba(255,255,255,0.14)]" data-node-id="I1:69004;137:10346;22:2319" data-name="Divider" />
+              </div>
+              <div className="absolute bg-white content-stretch flex gap-[8px] items-center left-[24px] rounded-tl-[8px] rounded-tr-[8px] top-[84px]" data-node-id="I1:69004;137:10365">
+                <div className="content-stretch flex items-start relative shrink-0" data-node-id="I1:69004;137:11370" data-name="MDS ButtonLink">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I1:69004;137:11370;1:68939" data-name="MDS ButtonLink">
+                    <div className="bg-[var(--color\/background\/transparent,rgba(0,0,0,0))] border border-[var(--color\/border\/brandinteractive,#005eb8)] border-solid content-stretch flex gap-[4px] items-center justify-center overflow-clip px-[8px] py-[4px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69004;137:11370;1:68939;1385:2254" data-name="MDS Button">
+                      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-node-id="I1:69004;137:11370;1:68939;1385:2254;7075:10125" data-name="MDS Icon">
+                        <div className="flex-[1_0_0] h-full min-w-px relative" data-node-id="I1:69004;137:11370;1:68939;1385:2254;7075:10125;36:4930" data-name="Mask">
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMask} />
+                        </div>
+                      </div>
+                      <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodymedium,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/bodymediumheavier,normal)] justify-center leading-[0] relative shrink-0 text-[color:var(--color\/text\/brandinteractive,#005eb8)] text-[length:var(--font\/size\/bodymedium,14px)] whitespace-nowrap" data-node-id="I1:69004;137:11370;1:68939;1385:2254;7075:10126">
+                        <p className="leading-[var(--font\/line-height\/bodymedium,20px)]">Edit</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex items-start relative shrink-0" data-node-id="I1:69004;137:10368" data-name="MDS ButtonLink">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I1:69004;137:10368;1:68946" data-name="MDS ButtonLink">
+                    <div className="bg-[var(--color\/background\/transparent,rgba(0,0,0,0))] content-stretch flex gap-[4px] items-center justify-center overflow-clip px-[8px] py-[4px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69004;137:10368;1:68946;1385:2254" data-name="MDS Button">
+                      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[16px]" data-node-id="I1:69004;137:10368;1:68946;1385:2254;7075:10295" data-name="MDS Icon">
+                        <div className="flex-[1_0_0] h-full min-w-px relative" data-node-id="I1:69004;137:10368;1:68946;1385:2254;7075:10295;36:4930" data-name="Mask">
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMask1} />
+                        </div>
+                      </div>
+                      <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodymedium,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/bodymediumheavier,normal)] justify-center leading-[0] relative shrink-0 text-[color:var(--color\/text\/loss,#b20009)] text-[length:var(--font\/size\/bodymedium,14px)] whitespace-nowrap" data-node-id="I1:69004;137:10368;1:68946;1385:2254;7075:10296">
+                        <p className="leading-[var(--font\/line-height\/bodymedium,20px)]">Delete user</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute bg-white content-stretch flex flex-col items-start left-0 rounded-tl-[8px] rounded-tr-[8px] top-0 w-[426px]" data-node-id="I1:69004;137:10374">
+                <div className="bg-white h-[68px] overflow-clip rounded-tl-[8px] rounded-tr-[8px] shrink-0 sticky top-0 w-full" data-node-id="I1:69004;137:10375">
+                  <div className="absolute contents left-[8px] top-[24px]" data-node-id="I1:69004;137:10376">
+                    <div className="absolute h-[36px] left-[8px] top-[24px] w-[254px]" data-node-id="I1:69004;137:10377" data-name="Content">
+                      <div className="absolute content-stretch flex flex-col items-start left-[16px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69004;137:10378" data-name="Image">
+                        <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69004;137:10378;8135:120" data-name="Avatar">
+                          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69004;137:10378;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                            derrick.lawson@example.com
+                          </p>
+                          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69004;137:10378;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                            Derrick Lawson
+                          </p>
+                          <div className="absolute contents left-0 top-0" data-node-id="I1:69004;137:10378;8135:123" data-name="Avatar">
+                            <div className="absolute h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69004;137:10378;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute content-stretch flex items-center justify-center left-[390px] overflow-clip size-[20px] top-[24px]" data-node-id="I1:69004;157:13969" data-name="MDS Icon">
+                    <div className="flex-[1_0_0] h-full min-w-px relative" data-node-id="I1:69004;157:13969;36:4930" data-name="Mask">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMask2} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgAvatar = "https://www.figma.com/api/mcp/asset/7863131e-9767-49f7-b60a-e97ffefdec1a.svg";
+const imgIcon = "https://www.figma.com/api/mcp/asset/9d9364f2-3930-4f2c-8ae1-52898dd9e1f5.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/2a1d6930-483d-4bdd-a97a-f7a1ed3bf46a.svg";
+
+type ManageCompaniesAdminProps = {
+  className?: string;
+  property1?: "Variant7";
+};
+
+function ManageCompaniesAdmin({ className, property1 = "Variant7" }: ManageCompaniesAdminProps) {
+  return (
+    <div className={className || "bg-[var(--color\\/background\\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] w-[450px]"} data-node-id="1:68208">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="1:68209">
+        <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[130px]" data-node-id="1:68210" data-name="Content">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="1:68211" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:68211;8135:99" data-name="Avatar">
+              <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:68211;8135:102" data-name="Avatar">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] tracking-[0.4px] w-[121px]" data-node-id="1:68212" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Company name
+          </p>
+        </div>
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="1:68213" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="1:68214" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="1:68215" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="1:68216" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="1:68217" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68217;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68217;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68217;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ManageCompaniesAdmin1() {
+  return <ManageCompaniesAdmin className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" />;
+}
+const imgAvatar = "https://www.figma.com/api/mcp/asset/d4258c63-2624-4d0b-89b0-34630f509378.svg";
+const imgIcon = "https://www.figma.com/api/mcp/asset/cc52d99d-f98f-4658-adc0-0d6ae6cdafae.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/6a6599de-1a3d-4412-806d-4d7440f7d8d2.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <button className="bg-[var(--color\/background\/subduedinteractivesecondaryhover,rgba(67,79,91,0.04))] content-stretch cursor-pointer flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68985" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68985;154:11895">
+        <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[130px]" data-node-id="I1:68985;154:11896" data-name="Content">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="I1:68985;154:11897" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:68985;154:11897;8135:99" data-name="Avatar">
+              <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:68985;154:11897;8135:102" data-name="Avatar">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] text-left tracking-[0.4px] w-[121px]" data-node-id="I1:68985;154:11898" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Company name
+          </p>
+        </div>
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68985;154:11899" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68985;154:11900" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] text-left top-[18px] w-[228px]" data-node-id="I1:68985;154:11901" style={{ fontVariationSettings: '"wdth" 100' }}>
+            derrick.lawson@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] text-left top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68985;154:11902" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Derrick Lawson
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68985;154:11903" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68985;154:11903;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68985;154:11903;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68985;154:11903;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/4ab21410-9dde-436b-b005-58ff5bf2b86a.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/83a829c0-94e6-488d-b461-dd0118bd25ed.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68986" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68986;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68986;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68986;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68986;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68986;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68986;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68986;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68986;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68986;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68986;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/85e0a218-d1a1-460c-913e-d68374203530.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/458b6083-164e-4877-874d-5a41f996981a.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68987" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68987;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68987;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68987;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68987;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68987;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68987;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68987;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68987;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68987;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68987;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/67736242-0c46-4f65-b276-f2a8e4b4b08e.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/135a13bd-1509-48db-ac4f-1498ec451fdb.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68988" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68988;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68988;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68988;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68988;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68988;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68988;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68988;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68988;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68988;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68988;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/a416bb89-fd85-46b8-b52f-2c5f6d67994e.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/0cb3a473-038d-4165-a113-0ddbe414be81.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68989" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68989;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68989;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68989;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68989;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68989;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68989;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68989;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68989;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68989;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68989;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/98e855b7-ffc5-40d4-90e1-4e4574122000.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/8b04d63e-440e-4d67-aaed-3c9e46afda5f.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68990" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68990;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68990;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68990;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68990;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68990;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68990;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68990;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68990;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68990;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68990;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/45fb81b0-6f30-43bc-9d2c-37889e5e2947.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/423eb688-e579-4232-8acc-0feff308d3d0.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68991" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68991;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68991;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68991;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68991;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68991;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68991;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68991;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68991;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68991;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68991;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/2093a398-c8c7-4361-9ad7-4d38b0b5e906.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/71e1959c-76af-4936-abcb-0239b372fc0c.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68992" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68992;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68992;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68992;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68992;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68992;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68992;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68992;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68992;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68992;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68992;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/f03897f7-fff5-4878-aa1a-3fea989c3781.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/eb8338d2-05ed-4c90-ac0a-07b1b1a463cb.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68993" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68993;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68993;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68993;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68993;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68993;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68993;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68993;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68993;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68993;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68993;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/eddfcbf1-1e9e-4343-bd9c-0d90cc2396e6.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/4784004a-e515-4a97-9777-15a9782c7cc1.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68994" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68994;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68994;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68994;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68994;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68994;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68994;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68994;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68994;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68994;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68994;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/0bae9cd4-78a3-4964-b645-912ffb576081.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/35f5e92d-c8d7-424e-bb10-939bc69faaf9.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68995" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68995;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68995;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68995;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68995;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68995;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68995;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68995;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68995;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68995;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68995;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgIcon = "https://www.figma.com/api/mcp/asset/ebf82349-bb49-40af-88a4-f1dcac0531e6.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/2f1c1831-ec37-4a66-bd62-1a9caab95ba5.svg";
+
+export default function ManageCompaniesAdmin() {
+  return (
+    <div className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" data-node-id="1:68996" data-name="Manage companies, admin">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="I1:68996;154:11861">
+        <div className="h-[36px] relative shrink-0 w-[130px]" data-node-id="I1:68996;154:11862" data-name="Content" />
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:68996;154:11865" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="I1:68996;154:11866" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="I1:68996;154:11867" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:68996;154:11868" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:68996;154:11869" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68996;154:11869;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68996;154:11869;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68996;154:11869;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const imgAvatar = "https://www.figma.com/api/mcp/asset/2251d0cd-dd82-4aba-be8d-7d13ee2f7e99.svg";
+const imgIcon = "https://www.figma.com/api/mcp/asset/25b16de8-38e3-4892-9735-7a1dc053c727.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/8ca05c12-782b-4904-9607-ae60213c4569.svg";
+
+type ManageCompaniesAdminProps = {
+  className?: string;
+  property1?: "Variant7";
+};
+
+function ManageCompaniesAdmin({ className, property1 = "Variant7" }: ManageCompaniesAdminProps) {
+  return (
+    <div className={className || "bg-[var(--color\\/background\\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] w-[450px]"} data-node-id="1:68208">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="1:68209">
+        <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[130px]" data-node-id="1:68210" data-name="Content">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="1:68211" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:68211;8135:99" data-name="Avatar">
+              <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:68211;8135:102" data-name="Avatar">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] tracking-[0.4px] w-[121px]" data-node-id="1:68212" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Company name
+          </p>
+        </div>
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="1:68213" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="1:68214" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="1:68215" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="1:68216" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="1:68217" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68217;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68217;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68217;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ManageCompaniesAdmin1() {
+  return <ManageCompaniesAdmin className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" />;
+}
+const imgAvatar = "https://www.figma.com/api/mcp/asset/317b00e3-6276-4466-8720-f6a44a356d85.svg";
+const imgIcon = "https://www.figma.com/api/mcp/asset/60953367-4a64-4bed-9bd9-8b42ceb027f6.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/2694af38-1462-41d0-989e-641661f72915.svg";
+
+type ManageCompaniesAdminProps = {
+  className?: string;
+  property1?: "Variant7";
+};
+
+function ManageCompaniesAdmin({ className, property1 = "Variant7" }: ManageCompaniesAdminProps) {
+  return (
+    <div className={className || "bg-[var(--color\\/background\\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] w-[450px]"} data-node-id="1:68208">
+      <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-full" data-node-id="1:68209">
+        <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[130px]" data-node-id="1:68210" data-name="Content">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="1:68211" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:68211;8135:99" data-name="Avatar">
+              <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:68211;8135:102" data-name="Avatar">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] tracking-[0.4px] w-[121px]" data-node-id="1:68212" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Company name
+          </p>
+        </div>
+        <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="1:68213" data-name="Content">
+          <div className="absolute left-[206px] size-[16px] top-[10px]" data-node-id="1:68214" data-name="Icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[31px] text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[18px] w-[228px]" data-node-id="1:68215" style={{ fontVariationSettings: '"wdth" 100' }}>
+            maria.gomez@example.com
+          </p>
+          <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[31px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="1:68216" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Maria Gomeze
+          </p>
+          <div className="absolute content-stretch flex flex-col items-start left-[-13px] rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="1:68217" data-name="Image">
+            <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:68217;8135:120" data-name="Avatar">
+              <div className="absolute contents left-0 top-0" data-node-id="I1:68217;8135:123" data-name="Avatar">
+                <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:68217;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ManageCompaniesAdmin1() {
+  return <ManageCompaniesAdmin className="bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start py-[16px] relative rounded-[8px] size-full" />;
+}

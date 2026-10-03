@@ -1,0 +1,987 @@
+const imgNavigationIcoChevronLeft = "https://www.figma.com/api/mcp/asset/0ea3b504-c002-4fff-8f27-adec1c4821a6.svg";
+const imgJp = "https://www.figma.com/api/mcp/asset/0fa7ccdf-492f-4101-8657-4d23175d756a.svg";
+const imgIcon = "https://www.figma.com/api/mcp/asset/7855125a-0f23-408b-8ecf-7ba40e0127c3.svg";
+const imgAvatar = "https://www.figma.com/api/mcp/asset/45c88c3c-64b9-47b0-9a52-16f674d3564f.svg";
+const imgMask = "https://www.figma.com/api/mcp/asset/4adad7a1-e1ce-428b-b884-8e3101e26a6e.svg";
+const imgActionIcoSearch = "https://www.figma.com/api/mcp/asset/858135fe-dcd8-4864-baa7-4f4eac41ab08.svg";
+const imgMask1 = "https://www.figma.com/api/mcp/asset/2edcabca-3f66-4462-9b98-6f197ff7aacf.svg";
+const imgFill = "https://www.figma.com/api/mcp/asset/3c36b4d7-934a-486e-bbdc-cc03ccd8a6ae.svg";
+const imgGroup = "https://www.figma.com/api/mcp/asset/721b75c8-b912-4491-998f-ab3a40a91a0b.svg";
+const imgFill1 = "https://www.figma.com/api/mcp/asset/9b258cb4-5858-45fb-bd9c-ddc97ca2f824.svg";
+const imgFill2 = "https://www.figma.com/api/mcp/asset/7e39f62b-1b7d-4752-8613-8e477cc69c66.svg";
+const imgFill3 = "https://www.figma.com/api/mcp/asset/758f6cb1-94ab-4ce4-a0a3-9b10e6c490c8.svg";
+const imgFill4 = "https://www.figma.com/api/mcp/asset/765e138c-ef04-45f8-8003-ea9bcdbedeb9.svg";
+const imgFill5 = "https://www.figma.com/api/mcp/asset/f130386a-59ff-488e-8aa8-8eb72fabe780.svg";
+
+function NavigationIcoChevronLeft({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[48px]"} data-node-id="1:2698" data-name="navigation / ico_chevron_left">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgNavigationIcoChevronLeft} />
+    </div>
+  );
+}
+
+export default function ManageUser() {
+  return (
+    <div className="bg-[var(--color\/background\/secondary,#f5f7fa)] relative size-full" data-node-id="1:69140" data-name="Manage User">
+      <div className="absolute h-[652px] left-[260px] overflow-x-clip overflow-y-auto top-[372px] w-[920px]" data-node-id="1:69141">
+        <div className="absolute h-[652px] left-0 top-0 w-[920px]" data-node-id="1:69142">
+          <div className="absolute contents left-0 top-0" data-node-id="1:69143">
+            <a className="absolute bg-[var(--color\/background\/raisedprimary,white)] block cursor-pointer h-[68px] left-0 rounded-[8px] top-[76px] w-[920px]" data-node-id="1:69144" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69144;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69144;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69144;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69144;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] text-left top-[18px] w-[228px]" data-node-id="I1:69144;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        derrick.lawson@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] text-left top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69144;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Derrick Lawson
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69144;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69144;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69144;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69144;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)] text-left" data-node-id="I1:69144;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      CFO
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69144;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69144;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69144;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)] text-left" data-node-id="I1:69144;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69144;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[152px] w-[920px]" data-node-id="1:69145" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69145;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69145;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69145;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69145;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69145;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        tanya.brooks@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69145;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Tanya Brooks
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69145;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69145;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69145;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69145;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69145;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Co-owner
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69145;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69145;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69145;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69145;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69145;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[228px] w-[920px]" data-node-id="1:69146" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69146;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69146;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69146;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69146;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69146;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        evan.chen@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69146;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Evan Chen
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69146;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69146;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69146;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69146;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69146;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Employee
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69146;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69146;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69146;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69146;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69146;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[304px] w-[920px]" data-node-id="1:69147" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69147;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69147;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69147;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69147;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69147;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        shelly.rivera@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69147;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Shelly Rivera
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69147;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69147;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69147;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69147;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69147;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Read only
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69147;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69147;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69147;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69147;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69147;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[456px] w-[920px]" data-node-id="1:69148" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69148;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69148;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69148;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69148;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69148;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        kira.dawson@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69148;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Kira Dawson
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69148;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69148;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69148;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69148;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69148;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>{` Co-owner`}</p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69148;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69148;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69148;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69148;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69148;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[532px] w-[920px]" data-node-id="1:69149" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69149;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69149;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69149;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69149;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69149;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        hannah.price@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69149;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Hannah Price
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69149;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69149;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69149;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69149;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69149;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Accountant
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69149;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69149;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69149;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69149;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69149;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[608px] w-[920px]" data-node-id="1:69150" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69150;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69150;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69150;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69150;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69150;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        victor.singh@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69150;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Victor Singh
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69150;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69150;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69150;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69150;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69150;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Bookkeeper
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69150;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69150;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69150;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69150;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69150;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[684px] w-[920px]" data-node-id="1:69151" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69151;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69151;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69151;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69151;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69151;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        jordan.ellis@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69151;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Jordan Ellis
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69151;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69151;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69151;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69151;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69151;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Custom user
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69151;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69151;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69151;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69151;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69151;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[836px] w-[920px]" data-node-id="1:69152" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69152;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69152;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69152;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69152;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69152;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        priya.malhotra@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69152;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Priya Malhotra
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69152;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69152;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69152;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69152;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69152;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Employee
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69152;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69152;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69152;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69152;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69152;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[912px] w-[920px]" data-node-id="1:69153" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69153;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69153;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69153;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69153;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69153;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        samuel.ortega@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69153;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Samuel Ortega
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69153;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69153;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69153;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69153;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69153;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Read only
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69153;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69153;360:16522">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69153;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69153;360:16523;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69153;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[988px] w-[920px]" data-node-id="1:69154" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69154;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69154;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69154;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69154;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69154;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        linda.carver@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69154;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Linda Carver
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69154;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69154;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69154;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69154;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69154;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Custom user
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69154;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69154;360:16522">
+                      <div className="bg-[var(--color\/background\/tertiary,#eff2f5)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69154;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69154;360:16523;5152:9405" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Removed
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69154;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] h-[68px] left-0 rounded-[8px] top-[1064px] w-[920px]" data-node-id="1:69155" data-name="Manage companies, user">
+              <div className="absolute h-[36px] left-0 top-[16px] w-[555px]" data-node-id="I1:69155;360:16516">
+                <div className="absolute h-[36px] left-[309px] top-0 w-[219px]" data-node-id="I1:69155;360:16517" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69155;360:16518" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69155;360:16518;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69155;360:16518;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        nolan.reyes@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69155;360:16518;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Nolan Reyes
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69155;360:16518;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69155;360:16518;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex items-center justify-between left-[618px] top-[6px] w-[392px]" data-node-id="I1:69155;360:16519">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69155;360:16520" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69155;360:16520;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Accountant
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69155;360:16521">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69155;360:16522">
+                      <div className="bg-[var(--color\/background\/tertiary,#eff2f5)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69155;360:16523" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69155;360:16523;5152:9405" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Removed
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69155;360:16524" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start left-0 py-[16px] rounded-[8px] top-[380px] w-[920px]" data-node-id="1:69156" data-name="Manage companies, admin">
+              <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-[439px]" data-node-id="I1:69156;142:12380">
+                <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[219px]" data-node-id="I1:69156;142:12518" data-name="Content">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="I1:69156;142:12519" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:69156;142:12519;8135:99" data-name="Avatar">
+                      <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:69156;142:12519;8135:102" data-name="Avatar">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] tracking-[0.4px] w-[157px]" data-node-id="I1:69156;142:12520" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Company name
+                  </p>
+                </div>
+                <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:69156;142:12509" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69156;142:12510" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69156;142:12510;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69156;142:12510;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        maria.gomez@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69156;142:12510;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Maria Gomeze
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69156;142:12510;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69156;142:12510;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex items-center justify-between relative shrink-0 w-[392px]" data-node-id="I1:69156;142:12383">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69156;142:12384" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69156;142:12384;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Admin
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69156;142:12385">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69156;142:12387">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69156;142:12388" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69156;142:12388;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69156;142:12389" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start left-0 py-[16px] rounded-[8px] top-[760px] w-[920px]" data-node-id="1:69157" data-name="Manage companies, admin">
+              <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-[439px]" data-node-id="I1:69157;142:12380">
+                <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[219px]" data-node-id="I1:69157;142:12518" data-name="Content">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="I1:69157;142:12519" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:69157;142:12519;8135:99" data-name="Avatar">
+                      <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:69157;142:12519;8135:102" data-name="Avatar">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] tracking-[0.4px] w-[157px]" data-node-id="I1:69157;142:12520" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Company name
+                  </p>
+                </div>
+                <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:69157;142:12509" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69157;142:12510" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69157;142:12510;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69157;142:12510;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        maria.gomez@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69157;142:12510;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Maria Gomeze
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69157;142:12510;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69157;142:12510;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex items-center justify-between relative shrink-0 w-[392px]" data-node-id="I1:69157;142:12383">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69157;142:12384" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69157;142:12384;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Admin
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69157;142:12385">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69157;142:12387">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69157;142:12388" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69157;142:12388;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69157;142:12389" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bg-[var(--color\/background\/raisedprimary,white)] content-stretch flex flex-col items-start left-0 py-[16px] rounded-[8px] top-0 w-[920px]" data-node-id="1:69158" data-name="Manage companies, admin">
+              <div className="content-stretch flex gap-[90px] items-center relative shrink-0 w-[439px]" data-node-id="I1:69158;142:12380">
+                <div className="content-stretch flex gap-[10px] items-center px-[16px] relative shrink-0 w-[219px]" data-node-id="I1:69158;142:12518" data-name="Content">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-[36px]" data-node-id="I1:69158;142:12519" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-[272px]" data-node-id="I1:69158;142:12519;8135:99" data-name="Avatar">
+                      <div className="absolute left-0 size-[36px] top-0" data-node-id="I1:69158;142:12519;8135:102" data-name="Avatar">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAvatar} />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[16px] relative shrink-0 text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] tracking-[0.4px] w-[157px]" data-node-id="I1:69158;142:12520" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    Company name
+                  </p>
+                </div>
+                <div className="h-[36px] relative shrink-0 w-[219px]" data-node-id="I1:69158;142:12509" data-name="Content">
+                  <div className="absolute content-stretch flex flex-col items-start left-0 rounded-bl-[12px] rounded-br-[12px] rounded-tl-[2px] rounded-tr-[12px] top-0 w-[36px]" data-node-id="I1:69158;142:12510" data-name="Image">
+                    <div className="h-[36px] relative shrink-0 w-full" data-node-id="I1:69158;142:12510;8135:120" data-name="Avatar">
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[16px] left-[44px] text-[12px] text-[color:var(--color\/text\/subdued,#5b6c7b)] top-[18px] w-[228px]" data-node-id="I1:69158;142:12510;8135:121" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        maria.gomez@example.com
+                      </p>
+                      <p className="[word-break:break-word] absolute font-['Open_Sans:SemiBold'] font-semibold leading-[16px] left-[44px] text-[14px] text-[color:var(--color\/text\/regular,#0f171f)] top-0 tracking-[0.4px] w-[228px]" data-node-id="I1:69158;142:12510;8135:122" style={{ fontVariationSettings: '"wdth" 100' }}>
+                        Maria Gomeze
+                      </p>
+                      <div className="absolute contents left-0 top-0" data-node-id="I1:69158;142:12510;8135:123" data-name="Avatar">
+                        <div className="absolute bg-[#c4c4c4] h-[45px] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[36px_36px] top-0 w-[36px]" data-node-id="I1:69158;142:12510;8135:126" style={{ maskImage: `url("${imgJp}")` }} data-name="JP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex items-center justify-between relative shrink-0 w-[392px]" data-node-id="I1:69158;142:12383">
+                  <div className="bg-[var(--color\/background\/infosecondary,#edeff7)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69158;142:12384" data-name="MDS Tag">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/info,#402145)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69158;142:12384;23377:23938" style={{ fontVariationSettings: '"wdth" 100' }}>
+                      Admin
+                    </p>
+                  </div>
+                  <div className="content-stretch flex items-center justify-center relative shrink-0 w-[323px]" data-node-id="I1:69158;142:12385">
+                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[127px]" data-node-id="I1:69158;142:12387">
+                      <div className="bg-[var(--color\/background\/successsecondary,#eafbf7)] content-stretch flex items-center justify-center min-w-[20px] pb-[3px] pt-px px-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69158;142:12388" data-name="MDS Tag">
+                        <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font\/font-family\/bodysmall,'Open_Sans:Regular')] font-normal leading-[var(--font\/line-height\/bodysmall,20px)] min-w-px relative text-[color:var(--color\/text\/success,#16695f)] text-[length:var(--font\/size\/bodysmall,14px)]" data-node-id="I1:69158;142:12388;5152:9441" style={{ fontVariationSettings: '"wdth" 100' }}>
+                          Active
+                        </p>
+                      </div>
+                      <div className="relative shrink-0 size-[16px]" data-node-id="I1:69158;142:12389" data-name="Icon">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color\/background\/secondary,#f5f7fa)] h-[208px] left-[260px] overflow-clip top-[164px] w-[920px]" data-node-id="1:69159">
+        <div className="absolute h-[36px] left-0 top-[32px] w-[318px]" data-node-id="1:69160" data-name="Segment">
+          <div className="absolute contents left-0 top-0" data-node-id="I1:69160;1:69547">
+            <div className="absolute bg-[var(--color\/background\/brandinteractivesecondary,rgba(0,47,108,0.08))] content-stretch flex h-[36px] items-center left-[116px] pl-[4px] pr-[2px] py-[2px] rounded-[999px] top-0" data-node-id="I1:69160;1:69548" data-name="SegmentedController">
+              <a className="content-stretch cursor-pointer flex gap-[4px] h-[20px] items-center justify-center px-[8px] py-[4px] relative rounded-[999px] shrink-0" data-node-id="I1:69160;1:69549" data-name="Segmented Control Base / Properties">
+                <div className="relative shrink-0 size-[14px]" data-node-id="I1:69160;1:69549;406:13247" data-name="Icon" />
+                <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="I1:69160;1:69549;406:13248" data-name="Text">
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[14px] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/dark,#101820)] text-ellipsis text-left tracking-[0.1px] whitespace-nowrap" data-node-id="I1:69160;1:69549;406:13249" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    users
+                  </p>
+                </div>
+              </a>
+              <div className="bg-[var(--color\/background\/primary,white)] content-stretch flex gap-[4px] items-center p-[8px] relative rounded-[999px] shrink-0" data-node-id="I1:69160;1:69550" data-name="Segmented Control Base / Properties">
+                <div className="relative shrink-0 size-[14px]" data-node-id="I1:69160;1:69550;406:13247" data-name="Icon" />
+                <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="I1:69160;1:69550;406:13248" data-name="Text">
+                  <p className="[word-break:break-word] font-['Open_Sans:SemiBold'] font-semibold leading-[14px] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/dark,#101820)] text-ellipsis tracking-[0.1px] whitespace-nowrap" data-node-id="I1:69160;1:69550;406:13249" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    companies
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute contents left-0 top-0" data-node-id="I1:69160;1:69551">
+              <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-[family-name:var(--font\/font-family\/titlelarge,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/titlelargeheavier,normal)] justify-center leading-[0] left-0 text-[color:var(--color\/text\/regular,#0f171f)] text-[length:var(--font\/size\/titlelarge,28px)] top-[18px] whitespace-nowrap" data-node-id="I1:69160;1:69552">
+                <p className="leading-[var(--font\/line-height\/titlelarge,36px)]">Manage</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute contents left-0 top-[33px]" data-node-id="1:69161">
+          <div className="absolute bg-[var(--color\/background\/secondary,#f5f7fa)] content-stretch flex gap-[8px] items-center left-0 top-[109px] w-[911.078px]" data-node-id="1:69162">
+            <div className="content-stretch flex items-start relative shrink-0" data-node-id="1:69163" data-name="Selection">
+              <div className="bg-[var(--color\/background\/brandinteractivesecondary,rgba(0,47,108,0.08))] border-2 border-[var(--color\/border\/brandinteractive,#005eb8)] border-solid content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69163;6:70743" data-name="MDS Pill">
+                <div className="content-stretch flex gap-[4px] items-center justify-center overflow-clip px-[16px] py-[8px] relative shrink-0" data-node-id="I1:69163;6:70743;7633:21020" data-name="<Container>">
+                  <p className="[word-break:break-word] font-[family-name:var(--font\/font-family\/bodymedium,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/bodymediumheavier,normal)] leading-[var(--font\/line-height\/bodymedium,20px)] relative shrink-0 text-[color:var(--color\/text\/brandinteractive,#005eb8)] text-[length:var(--font\/size\/bodymedium,14px)] text-center whitespace-nowrap" data-node-id="I1:69163;6:70743;7633:21023">
+                    All users
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex items-start relative shrink-0" data-node-id="1:69164" data-name="Selection">
+              <div className="bg-[var(--color\/background\/raisedprimary,white)] border border-[var(--color\/border\/subdued,#768799)] border-solid content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69164;6:70647" data-name="MDS Pill">
+                <div className="content-stretch flex gap-[4px] items-center justify-center overflow-clip px-[16px] py-[8px] relative shrink-0" data-node-id="I1:69164;6:70647;7633:21015" data-name="<Container>">
+                  <p className="[word-break:break-word] font-[family-name:var(--font\/font-family\/bodymedium,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/bodymediumheavier,normal)] leading-[var(--font\/line-height\/bodymedium,20px)] relative shrink-0 text-[color:var(--color\/text\/subdued,#5b6c7b)] text-[length:var(--font\/size\/bodymedium,14px)] text-center whitespace-nowrap" data-node-id="I1:69164;6:70647;7633:21018">
+                    Needs approval
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex items-start relative shrink-0" data-node-id="1:69165" data-name="Filter">
+              <div className="bg-[var(--color\/background\/raisedprimary,white)] border border-[var(--color\/border\/subdued,#768799)] border-solid content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69165;6:70901" data-name="MDS Pill">
+                <div className="content-stretch flex gap-[4px] items-center justify-center overflow-clip px-[16px] py-[8px] relative shrink-0" data-node-id="I1:69165;6:70901;7633:21015" data-name="<Container>">
+                  <div className="content-stretch flex h-[16px] items-center justify-center relative shrink-0 w-[12px]" data-node-id="I1:69165;6:70901;7633:21016" data-name="MDS Icon">
+                    <div className="absolute content-stretch flex items-center justify-center left-[-4px] overflow-clip size-[16px] top-0" data-node-id="I1:69165;6:70901;7633:21017" data-name="MDS Icon">
+                      <div className="flex-[1_0_0] h-full min-w-px relative" data-node-id="I1:69165;6:70901;7633:21017;36:4925" data-name="Mask">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMask} />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="[word-break:break-word] font-[family-name:var(--font\/font-family\/bodymedium,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/bodymediumheavier,normal)] leading-[var(--font\/line-height\/bodymedium,20px)] relative shrink-0 text-[color:var(--color\/text\/subdued,#5b6c7b)] text-[length:var(--font\/size\/bodymedium,14px)] text-center whitespace-nowrap" data-node-id="I1:69165;6:70901;7633:21018">
+                    Filter
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-[var(--color\/background\/raisedprimary,white)] border border-[var(--color\/border\/input,#768799)] border-solid content-stretch flex gap-[8px] h-[36px] items-center px-[16px] py-[8px] relative rounded-[999px] shrink-0 w-[585px]" data-node-id="1:69166" data-name="MDS Legacy Search Box">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I1:69166;3953:21700" data-name="Prefix">
+                <div className="absolute left-0 size-[24px] top-0" data-node-id="I1:69166;3953:21701" data-name="action / ico_search">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgActionIcoSearch} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[24px] relative shrink-0 text-[16px] text-[color:var(--color\/text\/subdued,#5b6c7b)] w-[136px]" data-node-id="I1:69166;3953:21702" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Search for users
+              </p>
+            </div>
+          </div>
+          <div className="absolute bg-[var(--color\/background\/secondary,#f5f7fa)] content-stretch flex h-[36px] items-start left-[777px] top-[33px] w-[143px]" data-node-id="1:69167" data-name="MDS ButtonLink">
+            <div className="content-stretch flex items-start relative rounded-[222px] shrink-0 w-[143px]" data-node-id="I1:69167;1:68903" data-name="MDS ButtonLink">
+              <div className="bg-[var(--color\/background\/brandinteractive,#002f6c)] content-stretch flex gap-[8px] items-center justify-center overflow-clip px-[16px] py-[6px] relative rounded-[var(--border-radius\/round,999px)] shrink-0" data-node-id="I1:69167;1:68903;1385:2254" data-name="MDS Button">
+                <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0 size-[20px]" data-node-id="I1:69167;1:68903;1385:2254;7075:9971" data-name="MDS Icon">
+                  <div className="flex-[1_0_0] h-full min-w-px relative" data-node-id="I1:69167;1:68903;1385:2254;7075:9971;36:4975" data-name="Mask">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMask1} />
+                  </div>
+                </div>
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font\/font-family\/bodylarge,'Open_Sans:Semibold')] font-[var(--font\/font-weight\/bodylargeheavier,normal)] justify-center leading-[0] relative shrink-0 text-[color:var(--color\/text\/regularinverse,white)] text-[length:var(--font\/size\/bodylarge,16px)] whitespace-nowrap" data-node-id="I1:69167;1:68903;1385:2254;7075:9972">
+                  <p className="leading-[var(--font\/line-height\/bodylarge,24px)]">Add a user</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute contents left-0 top-[84px]" data-node-id="1:69168">
+            <div className="absolute bg-[var(--color\/background\/secondary,#f5f7fa)] h-[1.01px] left-0 rounded-[8px] top-[84px] w-[920px]" data-node-id="1:69169" data-name="Divider: Line">
+              <div className="absolute bg-[var(--dividers\/decorative,#e2e4e5)] inset-0 shadow-[0px_1px_0px_0px_rgba(255,255,255,0.14)]" data-node-id="I1:69169;22:2319" data-name="Divider" />
+            </div>
+          </div>
+          <div className="absolute bottom-0 h-[7px] left-0 pointer-events-none top-[169px]" data-node-id="1:69170">
+            <div className="bg-[var(--color\/background\/secondary,#f5f7fa)] h-[40px] pointer-events-auto rounded-tl-[999px] rounded-tr-[999px] sticky top-0 w-[911.078px]">
+              <div className="absolute bg-[var(--color\/background\/primary,white)] content-stretch flex h-[32px] items-start left-0 p-[16px] top-[-1px] w-[920px]" data-node-id="1:69171" data-name="MDS List Header" />
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Semibold'] leading-[16px] left-[60px] not-italic text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[8px] w-[94px]" data-node-id="1:69173">
+                Name
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Semibold'] leading-[16px] left-[309px] not-italic text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[8px] w-[94px]" data-node-id="1:69174">
+                Role
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Semibold'] leading-[16px] left-[590px] not-italic text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[8px] w-[94px]" data-node-id="1:69175">
+                Job
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Semibold'] leading-[16px] left-[793px] not-italic text-[12px] text-[color:var(--color\/text\/subdued,#434f5b)] top-[8px] w-[127px]" data-node-id="1:69176">
+                Status
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute contents left-0 top-0" data-node-id="1:69177" data-name="Header">
+        <div className="absolute bg-[var(--color\/background\/brand,#002f6c)] h-[60px] left-0 top-0 w-[1440px]" data-node-id="1:69178" data-name="MDS Legacy Brand Bar">
+          <div className="-translate-y-1/2 absolute content-stretch flex gap-[16px] items-center left-[24px] top-1/2" data-node-id="I1:69178;3869:25250" data-name="Left Controls">
+            <div className="content-stretch flex items-start justify-center p-[4px] relative shrink-0" data-node-id="I1:69178;3869:25251" data-name="Menu Button">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I1:69178;3869:25251;4149:22190" data-name="Icon">
+                <div className="bg-[var(--color\/icon\/inverse,white)] col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[20px_20px] ml-0 mt-0 relative row-1 size-[20px]" data-node-id="I1:69178;3869:25251;4149:22193" style={{ maskImage: `url("${imgFill}")` }} data-name="Fill" />
+              </div>
+            </div>
+            <div className="relative shrink-0 size-[24px]" data-node-id="I1:69178;21801:22121" data-name="MDS Brand Bar Logo">
+              <div className="absolute h-[24px] left-0 overflow-clip top-0 w-[288px]" data-node-id="I1:69178;21801:22121;21871:22930" data-name="logo_chase_for_business_wht">
+                <div className="absolute h-[24px] left-0 overflow-clip top-0 w-[288px]" data-node-id="I1:69178;21801:22121;21871:22931" data-name="logo_chase_for_business">
+                  <div className="absolute h-[24px] left-0 overflow-clip top-0 w-[288px]" data-node-id="I1:69178;21801:22121;21871:22932" data-name="logo_chase_for_business 1">
+                    <div className="absolute inset-[0_0.15%_3.23%_0]" data-node-id="I1:69178;21801:22121;21871:22933" data-name="Group">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute content-stretch flex gap-[16px] items-center right-[24px] top-[16px]" data-node-id="I1:69178;3869:25262" data-name="Right Controls">
+            <div className="content-stretch flex items-start justify-center p-[4px] relative shrink-0" data-node-id="I1:69178;4149:17150" data-name="MDS Legacy Button">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I1:69178;4149:17150;4149:22190" data-name="Icon">
+                <div className="bg-[var(--color\/icon\/inverse,white)] col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[20px_20px] ml-0 mt-0 relative row-1 size-[20px]" data-node-id="I1:69178;4149:17150;4149:22193" style={{ maskImage: `url("${imgFill1}")` }} data-name="Fill" />
+              </div>
+            </div>
+            <div className="content-stretch flex items-start justify-center p-[4px] relative shrink-0" data-node-id="I1:69178;21801:22195" data-name="MDS Legacy Button">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I1:69178;21801:22195;4149:22190" data-name="Icon">
+                <div className="bg-[var(--color\/icon\/inverse,white)] col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[20px_20px] ml-0 mt-0 relative row-1 size-[20px]" data-node-id="I1:69178;21801:22195;4149:22193" style={{ maskImage: `url("${imgFill2}")` }} data-name="Fill" />
+              </div>
+            </div>
+            <div className="relative shrink-0 size-[28px]" data-node-id="I1:69178;21846:22073" data-name="Convo Deck Button">
+              <div className="absolute content-stretch flex items-start justify-center left-0 p-[4px] top-0" data-node-id="I1:69178;21846:22074" data-name="MDS Legacy Button">
+                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I1:69178;21846:22074;4149:22190" data-name="Icon">
+                  <div className="bg-[var(--color\/icon\/inverse,white)] col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[20px_20px] ml-0 mt-0 relative row-1 size-[20px]" data-node-id="I1:69178;21846:22074;4149:22193" style={{ maskImage: `url("${imgFill3}")` }} data-name="Fill" />
+                </div>
+              </div>
+              <div className="absolute bg-[var(--color\/background\/brand,#002f6c)] border border-[var(--color\/background\/raisedprimary,white)] border-solid content-stretch flex flex-col items-center left-[17px] px-[6.5px] py-[3px] rounded-[10px] top-[-3px]" data-node-id="I1:69178;21846:22075" data-name="MDS Legacy Badge">
+                <p className="[word-break:break-word] font-['Open_Sans:Semibold'] leading-[14px] not-italic relative shrink-0 text-[12px] text-[color:var(--color\/text\/regularinverse,white)] text-center whitespace-nowrap" data-node-id="I1:69178;21846:22075;275:7820">
+                  5
+                </p>
+              </div>
+            </div>
+            <div className="content-stretch flex items-start justify-center p-[4px] relative shrink-0" data-node-id="I1:69178;4149:16925" data-name="MDS Legacy Button">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I1:69178;4149:16925;4149:22190" data-name="Icon">
+                <div className="bg-[var(--color\/icon\/inverse,white)] col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[20px_20px] ml-0 mt-0 relative row-1 size-[20px]" data-node-id="I1:69178;4149:16925;4149:22193" style={{ maskImage: `url("${imgFill4}")` }} data-name="Fill" />
+              </div>
+            </div>
+            <div className="bg-[var(--color\/background\/brandinteractiveinverse,white)] content-stretch flex items-start justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-node-id="I1:69178;4149:16927" data-name="MDS Legacy Button">
+              <div className="[word-break:break-word] flex flex-col font-['Open_Sans:Semibold'] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-[color:var(--color\/text\/brandinteractiveoninverse,#005eb8)] whitespace-nowrap" data-node-id="I1:69178;4149:16927;3870:24537">
+                <p className="leading-[20px]">Open an account</p>
+              </div>
+            </div>
+            <div className="content-stretch flex items-start justify-center px-[8px] py-[4px] relative shrink-0" data-node-id="I1:69178;21801:22128" data-name="MDS Legacy Button">
+              <div className="[word-break:break-word] flex flex-col font-['Open_Sans:Semibold'] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-[color:var(--color\/text\/brandinteractiveinverse,white)] whitespace-nowrap" data-node-id="I1:69178;21801:22128;3870:24501">
+                <p className="leading-[20px]">Sign out</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bg-[var(--color\/background\/brand,#002f6c)] h-[44px] left-0 overflow-clip top-[60px] w-[1440px]" data-node-id="1:69179" data-name="MDS Navigation Bar">
+          <div className="absolute content-stretch flex h-[44px] items-center left-0 pl-[24px] top-0" data-node-id="I1:69179;20151:22343" data-name="L1 Items Group">
+            <div className="bg-[var(--color\/background\/brand,#002f6c)] content-stretch flex flex-col items-center p-[8px] relative shrink-0" data-node-id="I1:69179;20151:22344" data-name="MDS Navigation Bar - Elements / Primary Option">
+              <div className="content-stretch flex items-start px-[8px] py-[4px] relative shrink-0" data-node-id="I1:69179;20151:22344;20151:22209" data-name="Pill">
+                <p className="[word-break:break-word] font-['Open_Sans:Semibold'] leading-[20px] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/text\/regularinverse,white)] whitespace-nowrap" data-node-id="I1:69179;20151:22344;20151:22210">
+                  Account
+                </p>
+              </div>
+            </div>
+            <div className="bg-[var(--color\/background\/brand,#002f6c)] content-stretch flex flex-col items-center p-[8px] relative shrink-0" data-node-id="I1:69179;20151:22345" data-name="MDS Navigation Bar - Elements / Primary Option">
+              <div className="content-stretch flex items-start px-[8px] py-[4px] relative shrink-0" data-node-id="I1:69179;20151:22345;20151:22209" data-name="Pill">
+                <p className="[word-break:break-word] font-['Open_Sans:Semibold'] leading-[20px] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/text\/regularinverse,white)] whitespace-nowrap" data-node-id="I1:69179;20151:22345;20151:22210">{`Pay & transfer`}</p>
+              </div>
+            </div>
+            <div className="bg-[var(--color\/background\/brand,#002f6c)] content-stretch flex flex-col items-center p-[8px] relative shrink-0" data-node-id="I1:69179;20151:22346" data-name="MDS Navigation Bar - Elements / Primary Option">
+              <div className="content-stretch flex items-start px-[8px] py-[4px] relative shrink-0" data-node-id="I1:69179;20151:22346;20151:22209" data-name="Pill">
+                <p className="[word-break:break-word] font-['Open_Sans:Semibold'] leading-[20px] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/text\/regularinverse,white)] whitespace-nowrap" data-node-id="I1:69179;20151:22346;20151:22210">{`Collect & deposit`}</p>
+              </div>
+            </div>
+            <div className="bg-[var(--color\/background\/brand,#002f6c)] content-stretch flex flex-col items-center p-[8px] relative shrink-0" data-node-id="I1:69179;20151:22347" data-name="MDS Navigation Bar - Elements / Primary Option">
+              <div className="content-stretch flex items-start px-[8px] py-[4px] relative shrink-0" data-node-id="I1:69179;20151:22347;20151:22209" data-name="Pill">
+                <p className="[word-break:break-word] font-['Open_Sans:Semibold'] leading-[20px] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/text\/regularinverse,white)] whitespace-nowrap" data-node-id="I1:69179;20151:22347;20151:22210">{`Tools & insights`}</p>
+              </div>
+            </div>
+            <div className="bg-[var(--color\/background\/brand,#002f6c)] content-stretch flex flex-col items-center p-[8px] relative shrink-0" data-node-id="I1:69179;20151:22348" data-name="MDS Navigation Bar - Elements / Primary Option">
+              <div className="content-stretch flex items-start px-[8px] py-[4px] relative shrink-0" data-node-id="I1:69179;20151:22348;20151:22209" data-name="Pill">
+                <p className="[word-break:break-word] font-['Open_Sans:Semibold'] leading-[20px] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/text\/regularinverse,white)] whitespace-nowrap" data-node-id="I1:69179;20151:22348;20151:22210">{`Access & security`}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 h-[60px] left-0 pointer-events-none top-[104px]" data-node-id="1:69180">
+          <div className="bg-[var(--color\/background\/header,#f5f7fa)] content-stretch flex items-center justify-center pointer-events-auto sticky top-0 w-[1440px]" data-name="MDS Navigation Bar - Desktop Back Navigation">
+            <div className="content-stretch flex flex-col items-start px-[24px] py-[16px] relative shrink-0 w-[125px]" data-node-id="I1:69180;22067:22796" data-name="Previous">
+              <div className="content-stretch flex gap-[4px] items-center leading-[0] overflow-clip px-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[140px]" data-node-id="I1:69180;22067:22797" data-name="Back button">
+                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-node-id="I1:69180;22067:22798" data-name="Leading Icon">
+                  <div className="bg-[var(--color\/icon\/regular,#5b6c7b)] col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[16px_16px] ml-0 mt-0 relative row-1 size-[16px]" data-node-id="I1:69180;22067:22801" style={{ maskImage: `url("${imgFill5}")` }} data-name="Fill" />
+                </div>
+                <div className="[word-break:break-word] flex flex-col font-['Open_Sans:Semibold'] justify-center not-italic relative shrink-0 text-[14px] text-[color:var(--color\/text\/subdued,#5b6c7b)] whitespace-nowrap" data-node-id="I1:69180;22067:22802">
+                  <p className="leading-[20px]">Back</p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] h-[60px] items-center justify-center min-w-px px-[110px] relative" data-node-id="I1:69180;22067:22803" data-name="Title">
+              <div className="[word-break:break-word] flex flex-col font-['Open_Sans:Semibold'] justify-center leading-[0] not-italic relative shrink-0 text-[#101820] text-[18px] text-center w-[320px]" data-node-id="I1:69180;22067:22804">
+                <p className="leading-[28px]">{`Access & Security Manager`}</p>
+              </div>
+            </div>
+            <div className="h-[60px] relative shrink-0 w-[125px]" data-node-id="I1:69180;22067:22805" data-name="Back" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Body/Medium: Font(family: "Font/Font Family/bodyMedium", style: Font/Font Weight/bodyMedium, size: Font/Size/bodyMedium, weight: 400, lineHeight: Font/Line height/bodyMedium, letterSpacing: 0), Title/Large Heavier: Font(family: "Font/Font Family/titleLarge", style: Font/Font Weight/titleLargeHeavier, size: Font/Size/titleLarge, weight: 600, lineHeight: Font/Line height/titleLarge, letterSpacing: 0), Body/Medium Heavier: Font(family: "Font/Font Family/bodyMedium", style: Font/Font Weight/bodyMediumHeavier, size: Font/Size/bodyMedium, weight: 600, lineHeight: Font/Line height/bodyMedium, letterSpacing: 0), Body/Large Heavier: Font(family: "Font/Font Family/bodyLarge", style: Font/Font Weight/bodyLargeHeavier, size: Font/Size/bodyLarge, weight: 600, lineHeight: Font/Line height/bodyLarge, letterSpacing: 0), Subtitle/Medium Heavier: Font(family: "Open Sans", style: Semibold, size: 18, weight: 600, lineHeight: 28, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## MDS Tag
+**Node ID:** 1:13470
+
+Tag is a descriptive label that categorizes or highlights an element.
+
+[Storybook >](https://mds-web-ui.apps.test.na-9z.gap.jpmchase.net/?path=/story/released-web-ui-tag-tag--api)
+
+**Documentation:**
+- [http://manhattan.gaiacloud.jpmchase.net/components/composable/tag-composable](http://manhattan.gaiacloud.jpmchase.net/components/composable/tag-composable)
+
+## MDS Pill
+**Node ID:** 1:28407
+
+Pill is a small button-style component that shows 1 or more selected items to label, sort or filter for quick recognition.
+
+[**Storybook >**](https://www.figma.com/design/2XjME5j1ilgDT1Mi2lfX6t/branch/DKZuld78lEafd2dcBQKIjF/MDS-Composable-Component-Library?node-id=4250-793&p=f&t=5FxHRVvrA3pkCPkA-11)
+
+**Documentation:**
+- [https://manhattan.gaiacloud.jpmchase.net/components/composable/pill-composable](https://manhattan.gaiacloud.jpmchase.net/components/composable/pill-composable)
+
+## MDS Icon
+**Node ID:** 1:12170
+
+Wrapper component to control iconography used in the MDS design system.
+
+[**Storybook >**](https://mds-web-ui.apps.test.na-9z.gap.jpmchase.net/?path=/story/released-web-ui-icons-icons--api)
+
+**Documentation:**
+- [https://manhattan.gaiacloud.jpmchase.net/components/composable/icons-composable](https://manhattan.gaiacloud.jpmchase.net/components/composable/icons-composable)
+
+## MDS Legacy Search Box
+**Node ID:** 1:12682
+
+**Documentation:**
+- [https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/search-box](https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/search-box)
+
+## MDS ButtonLink
+**Node ID:** 1:19501
+
+Button-link enables a user to trigger a link that visually looks like a button.
+
+[**Storybook >**](https://mds-web-ui.apps.test.na-9z.gap.jpmchase.net/?path=/story/released-web-ui-button-link-buttonlink--api)
+
+**Documentation:**
+- [https://manhattan.gaiacloud.jpmchase.net/components/composable/button-link-composable](https://manhattan.gaiacloud.jpmchase.net/components/composable/button-link-composable)
+
+## MDS Button
+**Node ID:** 1:13953
+
+A button allows a user to trigger an action.
+
+[Storybook >](https://Storybook >)
+
+**Documentation:**
+- [https://manhattan.gaiacloud.jpmchase.net/components/composable/button-composable](https://manhattan.gaiacloud.jpmchase.net/components/composable/button-composable)
+
+## MDS Icon
+**Node ID:** 1:7598
+
+Wrapper component to control iconography used in the MDS design system.
+
+[**Storybook >**](https://mds-web-ui.apps.test.na-9z.gap.jpmchase.net/?path=/story/released-web-ui-icons-icons--api)
+
+**Documentation:**
+- [https://manhattan.gaiacloud.jpmchase.net/components/composable/icons-composable](https://manhattan.gaiacloud.jpmchase.net/components/composable/icons-composable)
+
+## MDS Legacy Brand Bar
+**Node ID:** 1:1736
+
+**Documentation:**
+- [https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/brand-bar](https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/brand-bar)
+
+## MDS Legacy Button
+**Node ID:** 1:315
+
+**Documentation:**
+- [https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/button](https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/button)
+
+## MDS Brand Bar Logo
+**Node ID:** 1:38
+
+**Documentation:**
+- [https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/brand-bar](https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/brand-bar)
+
+## MDS Legacy Badge
+**Node ID:** 1:308
+
+**Documentation:**
+- [https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/badge](https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/badge)
+
+## Secondary Navigation=False, Menu=Closed, Secondary Navigation Type=None
+**Node ID:** 1:3876
+
+Navigation Bar - Example - L1 Row
+
+## MDS Navigation Bar
+**Node ID:** 1:3875
+
+**Documentation:**
+- [https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/navigation-bar](https://mds-documentation.apps.test.na-9z.gap.jpmchase.net/doc/components/navigation-bar)
+
+## State=Default, Selected=False, Badge Icon=False
+**Node ID:** 1:2391
+
+Navigation Bar - L1 Item
+
+## MDS Navigation Bar - Elements / Primary Option
+**Node ID:** 1:2374
+
+**Documentation:**
+- [http://manhattan.jpmchase.net/navigation-bar](http://manhattan.jpmchase.net/navigation-bar)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

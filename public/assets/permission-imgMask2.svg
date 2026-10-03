@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mask">
+<mask id="mask0_0_962" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<g id="Icon">
+<g id="action / ico_close">
+<path id="Vector" d="M16.8631 4.48688L15.5313 3.16563L10.0744 8.66813L4.46875 3.01562L3.13688 4.33625L8.75375 10L3.13688 15.6637L4.46875 16.9844L10.0744 11.3319L15.5313 16.8344L16.8631 15.5131L11.395 10L16.8631 4.48688Z" fill="#5B6C7B"/>
+</g>
+</g>
+</mask>
+<g mask="url(#mask0_0_962)">
+<path id="Fill" d="M0 0H1086.57V1086.57H0V0Z" fill="#5B6C7B"/>
+</g>
+</g>
+</svg>

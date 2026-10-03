@@ -1,0 +1,73 @@
+import { chromium, expect } from '@playwright/test';
+import assert from 'node:assert/strict';
+const browser = await chromium.launch({headless:true,...(process.platform==='darwin'?{channel:'chrome'}:{})});
+const page = await browser.newPage({viewport:{width:1440,height:1024}});
+try {
+  await page.goto(process.env.PREVIEW_URL || 'http://127.0.0.1:5173/');
+  for (const view of ['users','companies']) {
+    if (view === 'companies') await page.getByRole('tab',{name:'companies',exact:true}).click();
+    const header=page.locator(view==='users'?'.list-header':'.company-list-header');
+    const before=await header.boundingBox();
+    await page.getByRole('button',{name:'Filter',exact:true}).click();
+    const popup=page.locator('.filter-dropdown');
+    assert.deepEqual(await header.boundingBox(),before,'Filter must not shift table');
+    await expect(popup.getByRole('button',{name:'Clear filters',exact:true})).toHaveCount(1);
+    await popup.getByRole('checkbox',{name:'Accountant',exact:true}).check();
+    await expect(page.locator('.list-body .user-name')).toHaveCount(13);
+    await popup.getByRole('checkbox',{name:'CFO',exact:true}).check();
+    await popup.getByRole('tab',{name:'Status',exact:true}).click();
+    await popup.getByRole('checkbox',{name:'Removed',exact:true}).check();
+    await popup.getByRole('button',{name:'Apply',exact:true}).click();
+    await expect(popup).toHaveCount(0);
+    await expect(page.locator('.list-body .status-tag')).toHaveText(['Removed']);
+    await page.getByRole('button',{name:'Filter',exact:true}).click();
+    await expect(popup.getByRole('checkbox',{name:'Removed',exact:true})).toBeChecked();
+    await popup.getByRole('checkbox',{name:'Active',exact:true}).check();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.list-body .user-name')).toHaveCount(1);
+    await page.getByRole('button',{name:'Filter',exact:true}).click();
+    await expect(popup.getByRole('checkbox',{name:'Active',exact:true})).not.toBeChecked();
+    await popup.getByRole('checkbox',{name:'Active',exact:true}).check();
+    await popup.getByRole('button',{name:'Apply',exact:true}).click();
+    await expect(page.locator('.list-body .user-name')).toHaveCount(3);
+    await page.getByRole('button',{name:'Filter',exact:true}).click();
+    await popup.getByRole('button',{name:'Clear filters',exact:true}).click();
+    await expect(page.locator('.list-body .user-name')).toHaveCount(3);
+    await popup.getByRole('button',{name:'Apply',exact:true}).click();
+    await expect(page.locator('.list-body .user-name')).toHaveCount(13);
+    await page.getByRole('button',{name:'Filter',exact:true}).click();
+    await popup.getByRole('tab',{name:'Role',exact:true}).click();
+    await popup.getByRole('button',{name:'Select all',exact:true}).click();
+    await expect(popup.locator('input:checked')).toHaveCount(7);
+    await expect(popup.getByRole('button',{name:'Select all',exact:true})).toBeDisabled();
+    await popup.getByRole('button',{name:'Clear filters',exact:true}).click();
+    await expect(popup.locator('input:checked')).toHaveCount(0);
+    if(view==='users')await page.screenshot({path:'verification/filter-dropdown.png'});
+    await page.keyboard.press('Escape');
+    await expect(popup).toHaveCount(0);
+    await expect(page.getByRole('button',{name:'Filter',exact:true})).toBeFocused();
+    for(const direction of ['A to Z','Z to A']) {
+      await page.getByRole('button',{name:`Sort by status ${direction}`,exact:true}).click();
+      const statuses=await page.locator('.list-body .status-tag').allTextContents();
+      const expected=[...statuses].sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'})*(direction==='A to Z'?1:-1));
+      assert.deepEqual(statuses,expected);
+      await expect(header.getByRole('columnheader').filter({has:page.getByRole('button',{name:/Sort by status/})})).toHaveAttribute('aria-sort',direction==='A to Z'?'ascending':'descending');
+    }
+    await page.getByRole('button',{name:/Sort by name A to Z/}).click();
+    const names=await page.locator('.list-body .user-name').allTextContents();
+    assert.deepEqual(names,[...names].sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'})));
+    await page.getByRole('button',{name:/View Derrick Lawson/}).click();
+    await page.getByRole('button',{name:'Filter',exact:true}).click();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.permissions-panel')).toBeVisible();
+    await page.getByRole('button',{name:'Close permissions'}).click();
+  }
+  await page.setViewportSize({width:390,height:844});
+  await page.getByRole('button',{name:'Filter',exact:true}).click();
+  const mobile=await page.locator('.filter-dropdown').boundingBox();
+  assert.ok(mobile.x>=16 && mobile.x+mobile.width<=374);
+  await page.screenshot({path:'verification/filter-dropdown-mobile.png'});
+  await page.getByRole('heading',{name:'Manage your',exact:true}).click();
+  await expect(page.locator('.filter-dropdown')).toHaveCount(0);
+  console.log('PASS: draft-and-Apply multiselect role/status filters, unapplied changes discarded, one clear/select all, no layout shift, status/name sorting, Escape/outside dismissal, panel preservation, and mobile.');
+}finally{await browser.close();}

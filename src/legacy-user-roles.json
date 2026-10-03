@@ -1,0 +1,54 @@
+{
+  "69029": {
+    "role": "Admin",
+    "job": "Business Owner"
+  },
+  "69030": {
+    "role": "CFO",
+    "job": "Finance Lead"
+  },
+  "69031": {
+    "role": "Co-owner",
+    "job": "Bookkeeper"
+  },
+  "69032": {
+    "role": "Employee",
+    "job": "Business Partner"
+  },
+  "69033": {
+    "role": "Read only",
+    "job": "Business Partner"
+  },
+  "69034": {
+    "role": "Co-Owner",
+    "job": "Business Partner"
+  },
+  "69035": {
+    "role": "Accountant",
+    "job": "Business Partner"
+  },
+  "69036": {
+    "role": "Bookkeeper",
+    "job": "Business Partner"
+  },
+  "69037": {
+    "role": "Custom user",
+    "job": "Business Partner"
+  },
+  "69038": {
+    "role": "Employee",
+    "job": "Store Manager"
+  },
+  "69039": {
+    "role": "Read only",
+    "job": "Front Desk"
+  },
+  "69040": {
+    "role": "Custom user",
+    "job": "Store Manager"
+  },
+  "69041": {
+    "role": "Accountant",
+    "job": "Bookkeeper"
+  }
+}
