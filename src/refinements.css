@@ -805,11 +805,12 @@
 .approval-review-dialog {
   width: min(560px, calc(100vw - 48px));
   max-height: min(92vh, 900px);
-  padding: 0 0 8px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   border-radius: 12px;
+  background: white;
 }
 .approval-review-dialog::backdrop {
   background: rgba(0, 47, 108, 0.12);
@@ -817,9 +818,10 @@
 }
 /* Title aligns with permission-profile / avatar inset (24px). */
 .approval-review-dialog .dialog-heading {
-  padding: 24px 24px 0;
+  padding: 24px 24px 16px;
   margin-bottom: 0;
   flex-shrink: 0;
+  border-bottom: 1px solid #d3d9de;
 }
 .approval-review-dialog .dialog-heading h2 {
   font-size: 24px;
@@ -834,43 +836,42 @@
   height: auto;
   max-height: none;
   position: static;
-  padding: 8px 8px 0;
-  background: #e2e8f0;
-  border-radius: 12px;
-  margin: 8px 8px 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
 }
 .approval-review-dialog .approval-review-panel .permissions-scroll {
   flex: 1;
   min-height: 0;
-  max-height: min(640px, calc(92vh - 180px));
+  max-height: min(640px, calc(92vh - 160px));
   height: auto;
-  border-radius: 8px;
+  margin: 0 0 0;
+  border-radius: 0;
+  background: white;
 }
-.approval-review-dialog .approval-review-profile {
+/* Identity block matches edit panel profile (no in-profile actions). */
+.approval-review-dialog .approval-review-panel.editing-permissions .approval-review-profile {
+  min-height: 137px;
   height: auto;
-  min-height: 0;
-  padding: 24px;
 }
 .approval-review-dialog .approval-review-profile .permission-name {
   margin-left: 44px;
 }
-.approval-review-dialog .approval-review-note {
+.approval-review-dialog .approval-review-panel .permission-info {
   min-height: 0;
   height: auto;
-  padding-top: 0;
 }
 .approval-review-dialog .approval-review-note .approval-info-banner {
   margin: 0;
 }
-.approval-review-dialog .approval-review-panel .permission-accounts {
-  margin: var(--space-section) 0 12px;
-  padding: var(--space-section) 24px 0;
-}
 .approval-review-dialog .approval-review-footer {
+  flex-shrink: 0;
   margin-top: 0;
-  padding: 16px 16px 8px;
-  border-top: 0;
-  background: transparent;
+  padding: 24px;
+  gap: 8px;
+  border-top: 1px solid #d3d9de;
+  background: white;
   justify-content: flex-end;
 }
 .approval-review-dialog .approval-review-footer .permission-edit.primary-button {

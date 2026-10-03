@@ -1,27 +1,29 @@
 import type { User } from "./App";
-import initialUsers from "./users.json";
+import {
+  DEFAULT_PENDING_USER_ID,
+  pendingApprovalSeed,
+  applyPendingPersona,
+} from "./demoPersonas";
 
-export const DEFAULT_PENDING_USER_ID = "69042";
+export { DEFAULT_PENDING_USER_ID } from "./demoPersonas";
 
 export function defaultPendingUser(): User {
-  const seed = initialUsers.find((u) => u.id === DEFAULT_PENDING_USER_ID);
-  if (!seed) {
-    throw new Error("Missing default pending approval seed user");
-  }
-  return { ...seed, status: "Needs approval" };
+  return pendingApprovalSeed();
 }
 
-/** Demo: keep at least one pending approval (Pico Accountants) for the Needs approval tab. */
 export function ensureDefaultPendingApproval(users: User[]): User[] {
-  if (users.some((user) => user.status === "Needs approval")) return users;
-  const template = defaultPendingUser();
-  const index = users.findIndex((user) => user.id === template.id);
+  const normalized = users.map(applyPendingPersona);
+  if (normalized.some((user) => user.status === "Needs approval")) {
+    return normalized;
+  }
+  const template = pendingApprovalSeed();
+  const index = normalized.findIndex((user) => user.id === template.id);
   if (index >= 0) {
-    const next = users.slice();
-    next[index] = { ...next[index], status: "Needs approval" };
+    const next = normalized.slice();
+    next[index] = template;
     return next;
   }
-  return [...users, template];
+  return [...normalized, template];
 }
 
 export function pendingUsers(users: User[]): User[] {

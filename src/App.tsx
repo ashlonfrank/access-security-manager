@@ -9,6 +9,7 @@ import PermissionsPanel from "./PermissionsPanel";
 import ApprovalReviewModal from "./ApprovalReviewModal";
 import CompaniesView from "./CompaniesView";
 import Modal from "./Modal";
+import { normalizeDemoPersonas } from "./demoPersonas";
 import {
   ensureDefaultPendingApproval,
   pendingRequestLine,
@@ -42,14 +43,21 @@ const organizationName = "Bean & Branch";
 const roles = businessRoles;
 const storageKey = "asm-demo-users-v1";
 function normalizeDemoUsers(users: User[]): User[] {
-  return users.map((user: User) => {
-        const legacy = legacyRoles[user.id as keyof typeof legacyRoles];
-        const current = initialUsers.find((u) => u.id === user.id);
-        const refreshed = current ? { ...user, avatar: current.avatar } : user;
-        const updated = legacy && current && user.role === legacy.role && user.job === legacy.job
-          ? { ...refreshed, role: current.role, job: current.job } : refreshed;
-        return { ...updated, role: normalizeRole(updated.role) };
-      });
+  return normalizeDemoPersonas(
+    users.map((user: User) => {
+      const legacy = legacyRoles[user.id as keyof typeof legacyRoles];
+      const current = initialUsers.find((u) => u.id === user.id);
+      const refreshed = current ? { ...user, avatar: current.avatar } : user;
+      const updated =
+        legacy &&
+        current &&
+        user.role === legacy.role &&
+        user.job === legacy.job
+          ? { ...refreshed, role: current.role, job: current.job }
+          : refreshed;
+      return { ...updated, role: normalizeRole(updated.role) };
+    }),
+  );
 }
 function readUsers(): User[] {
   try {
@@ -108,7 +116,9 @@ export default function App() {
   const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (!approval || tab !== "users") return;
-    setUsers((previous) => ensureDefaultPendingApproval(previous));
+    setUsers((previous) =>
+      ensureDefaultPendingApproval(normalizeDemoUsers(previous)),
+    );
   }, [approval, tab]);
   useEffect(() => {
     try {
