@@ -34,25 +34,25 @@ export default function ApprovalRequestPanel({
     if (!element) return;
     let frame = 0;
     const measure = () => {
-      const bounds = element.parentElement?.getBoundingClientRect();
-      if (bounds) {
-        const anchor =
-          element.parentElement?.querySelector<HTMLElement>(
-            ".pending-approvals-heading, .pending-approvals",
-          )?.getBoundingClientRect() ?? bounds;
-        element.style.setProperty(
-          "--permissions-top",
-          `${Math.max(32, anchor.top)}px`,
-        );
-        element.style.setProperty(
-          "--permissions-left",
-          `${anchor.left + anchor.width / 2 + 2}px`,
-        );
-        element.style.setProperty(
-          "--permissions-width",
-          `${anchor.width / 2 - 2}px`,
-        );
-      }
+      const content = element.parentElement;
+      const bounds = content?.getBoundingClientRect();
+      if (!bounds || !content) return;
+      const list = content.querySelector<HTMLElement>(
+        ".users-table-content.pending-approvals",
+      );
+      const anchor = list?.getBoundingClientRect() ?? bounds;
+      element.style.setProperty(
+        "--permissions-top",
+        `${Math.max(32, anchor.top)}px`,
+      );
+      element.style.setProperty(
+        "--permissions-left",
+        `${anchor.left + anchor.width / 2 + 2}px`,
+      );
+      element.style.setProperty(
+        "--permissions-width",
+        `${anchor.width / 2 - 2}px`,
+      );
     };
     const schedule = () => {
       cancelAnimationFrame(frame);
@@ -85,16 +85,16 @@ export default function ApprovalRequestPanel({
       ref={panel}
       className="permissions-panel approval-request-panel"
       id="approval-request-title"
-      aria-label="Access request details"
+      aria-label="Advisor request details"
     >
       <div
         className="permissions-scroll"
         ref={scroll}
         tabIndex={0}
-        aria-label={`Access request from ${user.name}`}
+        aria-label={`Advisor request from ${user.name}`}
       >
         <div className="approval-request-header">
-          <h2>Access request details</h2>
+          <h2>Advisor request details</h2>
           <button
             className="permission-close"
             aria-label="Close access request"
@@ -113,8 +113,8 @@ export default function ApprovalRequestPanel({
         <section className="permission-info approval-permissions-section">
           <h3>Permissions</h3>
           <p className="approval-permissions-intro">
-            New users can get up to these permissions below. Users with access
-            can invite other members.
+            New advisors can get up to these permissions below. Advisors can
+            invite members.
           </p>
           <div className="approval-info-banner" role="note">
             <span className="approval-info-icon" aria-hidden="true">

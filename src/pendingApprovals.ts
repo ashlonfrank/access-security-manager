@@ -28,7 +28,20 @@ export function pendingUsers(users: User[]): User[] {
   return users.filter((user) => user.status === "Needs approval");
 }
 
-export function pendingRequestLine(user: User): string {
-  const inviter = user.id === "69042" ? "Maria G." : "Maria Gomeze";
-  return `${user.role} access request by ${inviter} today`;
+export function pendingRequestInviterName(users: User[]): string {
+  const leader = users.find(
+    (u) =>
+      u.status === "Active" &&
+      (u.role === "Admin" ||
+        u.role === "Business Partner" ||
+        u.role === "Owner"),
+  );
+  if (!leader) return "Maria G.";
+  const parts = leader.name.trim().split(/\s+/);
+  if (parts.length >= 2) return `${parts[0]} ${parts[1][0]}.`;
+  return parts[0];
+}
+
+export function pendingRequestLine(user: User, users: User[]): string {
+  return `${user.role} access request by ${pendingRequestInviterName(users)} today`;
 }
