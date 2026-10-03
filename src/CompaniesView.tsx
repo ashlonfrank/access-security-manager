@@ -107,7 +107,9 @@ export default function CompaniesView({
             sensitivity: "base",
           }) || a.company - b.company,
     );
-  const selectedUser = rows.find((row) => row.id === selected)?.user;
+  const selectedRow = rows.find((row) => row.id === selected);
+  const selectedUser = selectedRow?.user;
+  const pinnedCompany = selectedRow?.company ?? null;
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
       if (event.key === "Escape" && !document.querySelector("dialog[open]"))
@@ -220,7 +222,15 @@ export default function CompaniesView({
                     <div
                       role="row"
                       key={row.id}
-                      className={`company-row ${isInactive(row.user.status) ? "inactive-user" : ""} ${selected === row.id ? "selected-company-user" : ""}`}
+                      className={`company-row ${isInactive(row.user.status) ? "inactive-user" : ""} ${selected === row.id ? "selected-company-user" : ""} ${pinnedCompany === row.company ? "company-label-pinned" : ""}`}
+                      onClick={(event) => {
+                        if (
+                          (event.target as HTMLElement).closest(".company-delete")
+                        ) {
+                          return;
+                        }
+                        setSelected(row.id);
+                      }}
                     >
                       <div
                         role="cell"

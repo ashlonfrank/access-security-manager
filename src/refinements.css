@@ -261,7 +261,7 @@
 .company-list-header, .company-row { display: grid; grid-template-columns: 22.5% calc(27.5% - 10px) 25% minmax(0, 1fr) 24px; align-items: center; }
 .company-list-header { height: 32px; border-radius: 8px; background: white; color: var(--subdued); font-size: 12px; line-height: 20px; }
 .company-list-header > span:first-child { padding-left: 62px; }
-.company-row { position: relative; height: 68px; background: white; border-radius: 8px; transition: background-color 120ms ease; }
+.company-row { position: relative; height: 68px; background: white; border-radius: 8px; transition: background-color 120ms ease; cursor: pointer; }
 .company-row:hover { background: #edf2f7; }
 .company-row.selected-company-user { background: #edf2f7; }
 .company-identity, .company-user { display: flex; align-items: center; min-width: 0; }
@@ -290,12 +290,14 @@
 .company-identity > span { opacity: 0; transition: opacity 120ms ease; }
 .company-group-start > img,
 .company-group-start > span,
+.company-row.company-label-pinned .company-identity > img,
+.company-row.company-label-pinned .company-identity > span,
 .company-row.selected-company-user .company-identity > img,
 .company-row.selected-company-user .company-identity > span,
-.company-row:not(.selected-company-user):hover .company-identity > img,
-.company-row:not(.selected-company-user):hover .company-identity > span,
-.company-row:not(.selected-company-user):focus-within .company-identity > img,
-.company-row:not(.selected-company-user):focus-within .company-identity > span { opacity: 1; }
+.company-row:not(.selected-company-user):not(.company-label-pinned):hover .company-identity > img,
+.company-row:not(.selected-company-user):not(.company-label-pinned):hover .company-identity > span,
+.company-row:not(.selected-company-user):not(.company-label-pinned):focus-within .company-identity > img,
+.company-row:not(.selected-company-user):not(.company-label-pinned):focus-within .company-identity > span { opacity: 1; }
 .company-row-link > img { opacity: 0; transition: opacity 120ms ease; }
 .company-row:hover .company-row-link > img,
 .company-row:focus-within .company-row-link > img,
@@ -608,7 +610,7 @@
 .permission-close img { width: 20px; height: 20px; }
 
 .company-delete { position: relative; z-index: 2; flex: 0 0 26px; width: 26px; height: 26px; padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: var(--subdued); opacity: 0; pointer-events: none; }
-.company-group-start .company-delete, .company-row:not(.selected-company-user):hover .company-delete, .company-row:focus-within .company-delete { opacity: 1; pointer-events: auto; }
+.company-group-start .company-delete, .company-row.company-label-pinned .company-delete, .company-row:not(.selected-company-user):hover .company-delete, .company-row:focus-within .company-delete { opacity: 1; pointer-events: auto; }
 .company-delete:hover { color: #b20009; background: #b200090d; }
 .company-identity > span { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .company-identity small { overflow: hidden; text-overflow: ellipsis; }
