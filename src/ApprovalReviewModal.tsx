@@ -57,17 +57,17 @@ export default function ApprovalReviewModal({
               <div className="permission-actions">
                 <button
                   type="button"
-                  className="permission-delete"
-                  onClick={onClose}
-                >
-                  Decline
-                </button>
-                <button
-                  type="button"
                   className="permission-edit primary-button"
                   onClick={approve}
                 >
                   Approve access
+                </button>
+                <button
+                  type="button"
+                  className="permission-delete"
+                  onClick={onClose}
+                >
+                  Decline
                 </button>
               </div>
             </div>
