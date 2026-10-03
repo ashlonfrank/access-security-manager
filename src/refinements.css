@@ -360,7 +360,7 @@
 .heading-tabs { flex-direction: column; align-items: flex-start; gap: 10px; min-height: 60px; }
 .segments { height: 30px; border-radius: 8px; padding: 2px; }
 .segments button { height: 26px; border-radius: 6px; padding-top: 3px; padding-bottom: 3px; }
-.primary-button, .search, .permission-actions button { border-radius: 8px; }
+.search { border-radius: 8px; }
 .permissions-panel { border-radius: 8px; }
 .list-header, .company-list-header { background: transparent; border-radius: 8px; }
 @media (min-width: 701px) {
@@ -605,7 +605,11 @@
 
 /* Pill shapes distinguish navigation and primary actions from filters. */
 .segments, .segments button { border-radius: 999px; }
-.primary-button, .filter-apply, .editing-permissions .permission-edit { border-radius: 999px; }
+.primary-button,
+.filter-apply,
+.permission-actions button,
+.pending-approval-actions .permission-edit,
+.editing-permissions .permission-edit { border-radius: 999px; }
 
 /* Preserve the action row's position when switching between viewing and editing. */
 .permissions-panel .permission-profile { min-height: 137px; }
@@ -812,7 +816,7 @@
   backdrop-filter: blur(6px);
 }
 .approval-review-dialog .dialog-heading {
-  padding: 24px 28px 0;
+  padding: 20px 16px 0;
   margin-bottom: 0;
   flex-shrink: 0;
 }
@@ -821,37 +825,60 @@
   line-height: 32px;
   font-weight: 600;
 }
-.approval-review-body {
-  overflow-y: auto;
-  padding: 20px 28px 8px;
+.approval-review-dialog .approval-review-shell {
   flex: 1;
   min-height: 0;
+  height: auto;
+  max-height: min(680px, calc(100vh - 220px));
+  margin: 12px 8px 0;
+  border-radius: 8px;
 }
-.approval-review-footer {
-  padding: 16px 28px 24px;
-  margin-top: 0;
-  border-top: 1px solid #e2e4e5;
-  flex-shrink: 0;
+.approval-review-dialog .approval-review-profile {
+  min-height: 137px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: white;
 }
-.approval-section-label {
-  margin: 0 0 8px;
-  font-size: var(--text-secondary-size);
-  line-height: var(--text-secondary-line);
-  font-weight: 600;
-  color: #0f171f;
+.approval-review-dialog .permission-info {
+  padding: 24px;
 }
-.approval-review-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 4px;
+.approval-review-dialog .approval-review-intro {
+  padding-top: 0;
 }
-.approval-review-dialog .approval-request-card {
-  margin: 0 0 24px;
+.approval-review-dialog .approval-review-intro .approval-permissions-intro {
+  margin-bottom: 16px;
 }
-.approval-review-dialog .approval-request-card .role-tag {
-  margin-top: 8px;
+.approval-review-dialog .approval-info-banner {
+  margin-bottom: 0;
+}
+.approval-review-footer {
+  padding: 16px 16px 20px;
+  margin-top: 0;
+  border-top: 0;
+  flex-shrink: 0;
+  background: transparent;
+  justify-content: flex-end;
+}
+.approval-review-footer .permission-edit.primary-button {
+  background: var(--brand);
+  color: white;
+  border: 1px solid var(--brand);
+  padding: 4px 16px;
+  min-height: 32px;
+}
+.approval-review-footer .permission-edit.primary-button:hover {
+  background: #00265a;
+  border-color: #00265a;
+}
+.pending-approval-actions .permission-edit {
+  border: 1px solid var(--interactive);
+  background: transparent;
+  padding: 4px 16px;
+  min-height: 32px;
+}
+.pending-approval-actions .permission-edit:hover {
+  background: var(--control-hover);
 }
 .approval-request-card {
   display: flex;
@@ -988,9 +1015,5 @@
   }
   .pending-approval-actions {
     justify-content: flex-start;
-  }
-  .has-permissions .pending-approvals.has-review-panel {
-    width: 100%;
-    clip-path: none;
   }
 }

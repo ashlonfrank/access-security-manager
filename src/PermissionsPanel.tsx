@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef, useEffect, useLayoutEffect, useState } from "react";
+import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import assets from "./permission-assets.json";
 import RoleSelect from "./RoleSelect";
 import { userStatuses } from "./business";
@@ -6,40 +6,20 @@ import Avatar from "./Avatar";
 import type { User } from "./App";
 import {
   paymentTypes,
-  permissionNames,
   permissionsForRole,
   permissionsStorageKey,
   readStoredPermissions,
-  statementTypes,
   type Permissions,
 } from "./userPermissions";
+import {
+  EditorContext,
+  PermissionAccountsEditor,
+  PermissionCategoriesEditor,
+} from "./permissionUi";
 type PanelUser = User;
 export type UserChanges = Pick<User, "name" | "email" | "role" | "job" | "status">;
 function readPermissions(id: string): Permissions {
   return readStoredPermissions(id);
-}
-const EditorContext = createContext<{ editing: boolean; value: Permissions; setValue: React.Dispatch<React.SetStateAction<Permissions>> } | null>(null);
-function PermissionItem({ text, limit = false }: { text: string; limit?: boolean }) {
-  const { editing, value, setValue } = useContext(EditorContext)!;
-  const allowed = value.allowed[text];
-  return <li className={`permission-item ${limit ? "with-limit" : ""}`}>
-    {editing ? <input type="checkbox" className="permission-checkbox" aria-label={text} checked={allowed}
-      onChange={(event) => setValue((previous) => ({ ...previous, allowed: { ...previous.allowed, [text]: event.target.checked } }))} />
-      : <span className={`permission-state-icon ${allowed ? "allowed" : "denied"}`} role="img" aria-label={allowed ? "Allowed" : "Not allowed"}
-          style={{ maskImage: `url(${allowed ? assets.imgSuccessIcoCheckmark : assets.imgActionIcoClose})` }} />}
-    <span>{text}</span>
-    {limit && <><span className="daily-limit">Daily limit</span>
-      {editing ? <input className="limit-input" type="number" min="0" max="999999999" step="0.01" inputMode="decimal" required aria-label={`${text} daily limit`}
-        disabled={!allowed} value={value.limits[text]} onChange={(event) => setValue((previous) => ({ ...previous, limits: { ...previous.limits, [text]: event.target.value } }))} />
-        : <span className="limit-value">{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(Number(value.limits[text]))}</span>}
-    </>}
-  </li>;
-}
-function Category({ title, icon, children }: { title: string; icon: string; children: React.ReactNode }) {
-  return <section className="permission-category"><div className="category-heading">
-    <span className="permission-category-icon" aria-hidden="true" style={{ maskImage: `url(${icon})` }} />
-    <div><h4>{title}</h4><p>{{ "Statements and documents": "Balances, statements, and account records", "Money movement": "Payments, transfers, and daily limits", "Credit cards": "Business card access", "Merchant services": "Coffee shop payment processing" }[title]}</p></div>
-  </div><ul>{children}</ul></section>;
 }
 export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, onUpdate }: {
   user: PanelUser; onClose: () => void; emailInUse: (email: string) => boolean; onDelete: () => void;
@@ -146,16 +126,8 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
             <fieldset><legend>Authentication type</legend>{(["Soft token", "Hard token", "No token"] as const).map((token) => <label className="permission-option" key={token}><input type="radio" name={`token-${user.id}`} checked={value.token === token} onChange={() => setValue({ ...value, token })} />{token}</label>)}</fieldset>
           </div> : <dl><div><dt>Multi-factor authentication</dt><dd>{value.mfa ? "Enabled" : "Disabled"}</dd></div><div><dt>Authentication type</dt><dd><span className="permission-small-tag">{value.token}</span></dd></div></dl>}
         </section>
-        <section className="permission-details"><h3>User permissions</h3><div className="permission-categories">
-          <Category title="Statements and documents" icon={assets.imgIcon1}>{statementTypes.map((text) => <PermissionItem key={text} text={text} />)}</Category>
-          <Category title="Money movement" icon={assets.imgIcon2}><PermissionItem text="Chase QuickDeposit" />{paymentTypes.map((text) => <PermissionItem key={text} text={text} limit />)}<PermissionItem text="Requires approval" /></Category>
-          <Category title="Credit cards" icon={assets.imgIcon4}><PermissionItem text="Card access" /></Category>
-          <Category title="Merchant services" icon={assets.imgIcon4}><PermissionItem text="Merchant services" /></Category>
-        </div></section>
-        <section className="permission-accounts"><h3>Has access to these accounts</h3><ul>{value.accounts.map((allowed, index) => <li key={index}>
-          {editing ? <label className="permission-option"><input className="permission-checkbox" type="checkbox" aria-label={`Access to Savings account ${index + 1}`} checked={allowed} onChange={(event) => setValue((previous) => ({ ...previous, accounts: previous.accounts.map((checked, i) => i === index ? event.target.checked : checked) }))} />Savings (**0022)</label>
-            : <><span>Savings (**0022)</span><span className={`permission-state-icon ${allowed ? "allowed" : "denied"}`} role="img" aria-label={allowed ? "Allowed" : "Not allowed"} style={{ maskImage: `url(${allowed ? assets.imgSuccessIcoCheckmark : assets.imgActionIcoClose})` }} /></>}
-        </li>)}</ul></section>
+        <PermissionCategoriesEditor />
+        <PermissionAccountsEditor />
       </div>
     </aside>
   </EditorContext.Provider>;
