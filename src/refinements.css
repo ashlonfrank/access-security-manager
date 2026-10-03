@@ -803,9 +803,9 @@
 }
 /* Advisor review overlay (Mercury-inspired hierarchy, ASM tokens) */
 .approval-review-dialog {
-  width: min(720px, calc(100vw - 48px));
-  max-height: min(900px, calc(100vh - 48px));
-  padding: 0;
+  width: min(560px, calc(100vw - 48px));
+  max-height: min(92vh, 900px);
+  padding: 0 0 8px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -815,8 +815,9 @@
   background: rgba(0, 47, 108, 0.12);
   backdrop-filter: blur(6px);
 }
+/* Title aligns with permission-profile / avatar inset (24px). */
 .approval-review-dialog .dialog-heading {
-  padding: 20px 16px 0;
+  padding: 24px 24px 0;
   margin-bottom: 0;
   flex-shrink: 0;
 }
@@ -825,49 +826,61 @@
   line-height: 32px;
   font-weight: 600;
 }
-.approval-review-dialog .approval-review-shell {
+.approval-review-dialog .approval-review-panel {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   min-height: 0;
   height: auto;
-  max-height: min(680px, calc(100vh - 220px));
-  margin: 12px 8px 0;
+  max-height: none;
+  position: static;
+  padding: 8px 8px 0;
+  background: #e2e8f0;
+  border-radius: 12px;
+  margin: 8px 8px 0;
+}
+.approval-review-dialog .approval-review-panel .permissions-scroll {
+  flex: 1;
+  min-height: 0;
+  max-height: min(640px, calc(92vh - 180px));
+  height: auto;
   border-radius: 8px;
 }
 .approval-review-dialog .approval-review-profile {
-  min-height: 137px;
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background: white;
-}
-.approval-review-dialog .permission-info {
+  height: auto;
+  min-height: 0;
   padding: 24px;
 }
-.approval-review-dialog .approval-review-intro {
+.approval-review-dialog .approval-review-profile .permission-name {
+  margin-left: 44px;
+}
+.approval-review-dialog .approval-review-note {
+  min-height: 0;
+  height: auto;
   padding-top: 0;
 }
-.approval-review-dialog .approval-review-intro .approval-permissions-intro {
-  margin-bottom: 16px;
+.approval-review-dialog .approval-review-note .approval-info-banner {
+  margin: 0;
 }
-.approval-review-dialog .approval-info-banner {
-  margin-bottom: 0;
+.approval-review-dialog .approval-review-panel .permission-accounts {
+  margin: var(--space-section) 0 12px;
+  padding: var(--space-section) 24px 0;
 }
-.approval-review-footer {
-  padding: 16px 16px 20px;
+.approval-review-dialog .approval-review-footer {
   margin-top: 0;
+  padding: 16px 16px 8px;
   border-top: 0;
-  flex-shrink: 0;
   background: transparent;
   justify-content: flex-end;
 }
-.approval-review-footer .permission-edit.primary-button {
+.approval-review-dialog .approval-review-footer .permission-edit.primary-button {
   background: var(--brand);
   color: white;
   border: 1px solid var(--brand);
-  padding: 4px 16px;
-  min-height: 32px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
-.approval-review-footer .permission-edit.primary-button:hover {
+.approval-review-dialog .approval-review-footer .permission-edit.primary-button:hover {
   background: #00265a;
   border-color: #00265a;
 }

@@ -39,71 +39,74 @@ export default function ApprovalReviewModal({
 
   return (
     <Modal
-      title="Request detail"
+      title="Request details"
       className="approval-review-dialog"
       onClose={onClose}
     >
       <EditorContext.Provider value={{ editing: true, value, setValue }}>
         <div
-          className="approval-review-shell permissions-scroll"
+          className="permissions-panel editing-permissions approval-review-panel"
           id="approval-request-title"
-          tabIndex={0}
-          aria-label={`Request detail for ${user.name}`}
         >
-          <div className="permission-profile approval-review-profile">
-            <Avatar user={user} />
-            <div className="permission-name">
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
+          <div
+            className="permissions-scroll"
+            tabIndex={0}
+            aria-label={`Request details for ${user.name}`}
+          >
+            <div className="permission-profile approval-review-profile">
+              <Avatar user={user} />
+              <div className="permission-name">
+                <h3>{user.name}</h3>
+                <p>{user.email}</p>
+              </div>
             </div>
+
+            <section className="permission-info">
+              <div className="permission-info-heading">
+                <h3>User info</h3>
+              </div>
+              <dl>
+                <div>
+                  <dt>Role</dt>
+                  <dd>
+                    <span className="permission-small-tag">{user.role}</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Job</dt>
+                  <dd>{user.job}</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section className="permission-info approval-review-note">
+              <div className="approval-info-banner" role="note">
+                <span className="approval-info-icon" aria-hidden="true">
+                  i
+                </span>
+                <p>
+                  Existing members who already have access to {organizationName}{" "}
+                  keep their existing permissions.
+                </p>
+              </div>
+            </section>
+
+            <PermissionCategoriesEditor />
+            <PermissionAccountsEditor />
           </div>
 
-          <section className="permission-info approval-review-intro">
-            <p className="approval-permissions-intro">
-              Review the access this advisor is requesting for {organizationName}
-              .
-            </p>
-            <div className="approval-info-banner" role="note">
-              <span className="approval-info-icon" aria-hidden="true">
-                i
-              </span>
-              <p>
-                Existing members who already have access to {organizationName}{" "}
-                keep their existing permissions.
-              </p>
-            </div>
-          </section>
-
-          <section className="permission-info">
-            <dl>
-              <div>
-                <dt>Role</dt>
-                <dd>
-                  <span className="permission-small-tag">{user.role}</span>
-                </dd>
-              </div>
-              <div>
-                <dt>Job</dt>
-                <dd>{user.job}</dd>
-              </div>
-            </dl>
-          </section>
-
-          <PermissionCategoriesEditor />
-          <PermissionAccountsEditor />
-        </div>
-
-        <div className="permission-actions approval-review-footer">
-          <button type="button" onClick={onClose}>
-            Cancel
-          </button>
-          <button
-            type="button"
-            className="permission-edit primary-button"
-            onClick={approve}
-          >
-            Approve access
-          </button>
+          <div className="permission-actions approval-review-footer">
+            <button type="button" onClick={onClose}>
+              Cancel
+            </button>
+            <button
+              type="button"
+              className="permission-edit primary-button"
+              onClick={approve}
+            >
+              Approve access
+            </button>
+          </div>
         </div>
       </EditorContext.Provider>
     </Modal>
