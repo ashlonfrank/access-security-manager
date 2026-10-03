@@ -209,6 +209,7 @@
   border-color: var(--control-border);
 }
 .permission-accounts {
+  border-top: 0;
   margin-top: var(--space-section);
   padding-top: var(--space-section);
 }
@@ -817,7 +818,7 @@
   background: rgba(0, 47, 108, 0.12);
   backdrop-filter: blur(6px);
 }
-/* Close control only; title lives in the scroll area sticky header. */
+/* Close control only; dialog label is the profile name in the scroll area. */
 .approval-review-dialog .dialog-heading {
   position: absolute;
   top: 16px;
@@ -856,39 +857,22 @@
 /* Identity block matches edit panel profile (no in-profile actions). */
 .approval-review-dialog .approval-review-panel .approval-review-profile {
   position: static;
-  min-height: 137px;
+  min-height: 0;
   height: auto;
   border-bottom: 0;
+  padding-bottom: 16px;
 }
 .approval-review-dialog .approval-review-profile .permission-name {
   margin-left: 44px;
-}
-.approval-review-dialog .approval-review-scroll-heading {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: white;
-  border-bottom: 1px solid #d3d9de;
-  padding: 16px 24px;
-}
-.approval-review-dialog .approval-review-scroll-heading h3 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: #0f171f;
 }
 .approval-review-dialog .approval-review-panel .permission-info {
   min-height: 0;
   height: auto;
 }
-.approval-review-dialog .approval-review-panel .permission-info::after {
-  content: none;
-}
-.approval-review-dialog .approval-review-panel .permission-details::after,
-.approval-review-dialog .approval-review-panel .permission-accounts::after {
-  content: none;
+.approval-review-dialog .approval-review-panel .permission-accounts {
+  border-top: 0;
+  margin-top: var(--space-section);
+  padding-top: 0;
 }
 .approval-review-dialog .approval-review-footer {
   flex-shrink: 0;

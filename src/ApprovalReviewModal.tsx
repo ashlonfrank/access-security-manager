@@ -46,21 +46,14 @@ export default function ApprovalReviewModal({
           <div
             className="permissions-scroll"
             tabIndex={0}
-            aria-label={`Request details for ${user.name}`}
+            aria-label={`Access review for ${user.name}`}
           >
             <div className="permission-profile approval-review-profile">
               <Avatar user={user} />
               <div className="permission-name">
-                <h3>{user.name}</h3>
+                <h3 id="approval-request-title">{user.name}</h3>
                 <p>{user.email}</p>
               </div>
-            </div>
-
-            <div
-              className="approval-review-scroll-heading"
-              id="approval-request-title"
-            >
-              <h3>Request details</h3>
             </div>
 
             <section className="permission-info">
