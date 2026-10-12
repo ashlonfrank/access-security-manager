@@ -16,9 +16,19 @@
 .permission-name h3 {
   font-size: var(--text-primary-size);
   line-height: var(--text-primary-line);
-  font-weight: 400;
   letter-spacing: 0;
   margin-bottom: 0;
+}
+.user-name {
+  font-weight: 400;
+}
+.user-row .user-name,
+.company-user .user-name,
+.pending-approval-name {
+  font-weight: 600;
+}
+.permission-name h3 {
+  font-weight: 400;
 }
 .user-email,
 .permission-name p {
@@ -804,7 +814,7 @@
 .pending-approval-name {
   font-size: var(--text-primary-size);
   line-height: var(--text-primary-line);
-  font-weight: 400;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
