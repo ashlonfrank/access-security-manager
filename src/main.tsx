@@ -1,7 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "@fontsource/open-sans/400.css";
-import "@fontsource/open-sans/600.css";
+import "./fonts.css";
 import App from "./App";
 import ProposalOneApp from "./proposals/proposal-one/ProposalOneApp";
 import "./styles.css";
