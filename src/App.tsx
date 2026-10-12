@@ -5,7 +5,7 @@ import {
   type FormEvent,
 } from "react";
 import assets from "./assets.json";
-import PermissionsPanel from "./PermissionsPanel";
+import PermissionsPanel, { permissionsMotionMs, usePermissionsPresence } from "./PermissionsPanel";
 import ApprovalReviewModal from "./ApprovalReviewModal";
 import CompaniesView from "./CompaniesView";
 import Modal from "./Modal";
@@ -151,6 +151,33 @@ export default function App() {
   );
   if (nameSort) visible.sort((a, b) => (nameSort === "ascending" ? 1 : -1) * a[sortKey].localeCompare(b[sortKey], undefined, { sensitivity: "base" }));
   const selectedUser = users.find((user) => user.id === selectedId);
+  const usersPresence = usePermissionsPresence(selectedUser);
+  const [companyPanelOpen, setCompanyPanelOpen] = useState(false);
+  const tabTimer = useRef(0);
+  const approvalTimer = useRef(0);
+  // A segment click while the panel is open waits for the close animation.
+  // Any later pointerdown is a different choice and must cancel that wait,
+  // otherwise Users flips to Companies, or All users flips to Needs approval.
+  useEffect(() => {
+    const cancelDeferredSegment = () => {
+      window.clearTimeout(tabTimer.current);
+      window.clearTimeout(approvalTimer.current);
+    };
+    document.addEventListener("pointerdown", cancelDeferredSegment, true);
+    return () => document.removeEventListener("pointerdown", cancelDeferredSegment, true);
+  }, []);
+  function changeTab(next: "users" | "companies") {
+    window.clearTimeout(tabTimer.current);
+    if (next === tab) return;
+    const panelOpen = tab === "users" ? Boolean(selectedId) : companyPanelOpen;
+    if (tab === "users") setSelectedId(null);
+    if (tab === "companies") setPermissionsDismiss((count) => count + 1);
+    if (!panelOpen) {
+      setTab(next);
+      return;
+    }
+    tabTimer.current = window.setTimeout(() => setTab(next), permissionsMotionMs + 40);
+  }
   const reviewUser = users.find((user) => user.id === reviewId);
   const pendingVisible = users.filter(
     (user) =>
@@ -360,16 +387,13 @@ export default function App() {
       <main
         id="main"
         className={
-          tab === "users" && selectedUser ? "has-permissions" : ""
+          tab === "users" && usersPresence.visible ? "has-permissions" : ""
         }
       >
         <div className="management-heading">
           <div className="heading-tabs">
             <h1>Manage your</h1>
-            <ManageSegments value={tab} onChange={(next) => {
-              if (next === "companies") setSelectedId(null);
-              setTab(next);
-            }} />
+            <ManageSegments value={tab} onChange={changeTab} />
           </div>
           <button
             className="primary-button"
@@ -391,6 +415,7 @@ export default function App() {
                 className={`pill ${!approval ? "active" : ""}`}
                 aria-pressed={!approval}
                 onClick={() => {
+                  window.clearTimeout(approvalTimer.current);
                   setApproval(false);
                   setReviewId(null);
                 }}
@@ -401,8 +426,13 @@ export default function App() {
                 className={`pill ${approval ? "active" : ""}`}
                 aria-pressed={approval}
                 onClick={() => {
-                  setSelectedId(null);
-                  setApproval(true);
+                  window.clearTimeout(approvalTimer.current);
+                  if (selectedId) {
+                    setSelectedId(null);
+                    approvalTimer.current = window.setTimeout(() => setApproval(true), permissionsMotionMs + 40);
+                  } else {
+                    setApproval(true);
+                  }
                 }}
               >
                 Needs approval
@@ -496,14 +526,15 @@ export default function App() {
                       </div>
                     )}
                   </div>
-                  {selectedUser && (
+                  {usersPresence.visible && (
                     <PermissionsPanel
-                      user={selectedUser}
-                      onUpdate={(patch) => setUsers((prev) => prev.map((u) => u.id === selectedUser.id ? { ...u, ...patch } : u))}
+                      user={usersPresence.visible}
+                      open={usersPresence.open}
+                      onUpdate={(patch) => setUsers((prev) => prev.map((u) => u.id === usersPresence.visible!.id ? { ...u, ...patch } : u))}
                       onClose={() => setSelectedId(null)}
-                      emailInUse={(email) => users.some((u) => u.id !== selectedUser.id && u.email.toLowerCase() === email)}
+                      emailInUse={(email) => users.some((u) => u.id !== usersPresence.visible!.id && u.email.toLowerCase() === email)}
                       onDelete={() =>
-                        setDialog({ kind: "delete", user: selectedUser })
+                        setDialog({ kind: "delete", user: usersPresence.visible! })
                       }
                     />
                   )}
@@ -519,6 +550,7 @@ export default function App() {
             onReview={(user) => setReviewId(user.id)}
             onDecline={(user) => setDialog({ kind: "decline", user })}
             onApprovalModeChange={setCompaniesApprovalMode}
+            onPanelOpenChange={setCompanyPanelOpen}
             onUpdate={(user, patch) =>
               setUsers((prev) =>
                 prev.map((u) => (u.id === user.id ? { ...u, ...patch } : u)),

@@ -143,7 +143,7 @@ try {
   await page.getByRole("heading", { name: "No company users found" }).waitFor();
   await page.getByRole("button", { name: "Show all users" }).click();
   await page.getByRole("button", { name: "Filter", exact: true }).click();
-  await page.locator(".filter-dropdown").getByRole("checkbox", { name: "CFO", exact: true }).check();
+  await page.locator(".filter-dropdown").getByRole("checkbox", { name: "Business Partner", exact: true }).check();
   await page.getByRole("button", { name: "Apply", exact: true }).click();
   assert.equal(await page.locator(".company-row").count(), 1);
   await page.getByRole("button", { name: "Filter", exact: true }).click();

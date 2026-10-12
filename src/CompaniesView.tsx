@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import assets from "./assets.json";
 import companyAssets from "./company-assets.json";
-import PermissionsPanel, { type UserChanges } from "./PermissionsPanel";
+import PermissionsPanel, { permissionsMotionMs, usePermissionsPresence, type UserChanges } from "./PermissionsPanel";
 import type { User } from "./App";
 import Avatar from "./Avatar";
 import useStickyRows from "./useStickyRows";
@@ -25,6 +25,7 @@ export default function CompaniesView({
   onReview,
   onDecline,
   onApprovalModeChange,
+  onPanelOpenChange,
   permissionsDismiss = 0,
 }: {
   users: User[];
@@ -34,6 +35,7 @@ export default function CompaniesView({
   onReview: (user: User) => void;
   onDecline: (user: User) => void;
   onApprovalModeChange?: (active: boolean) => void;
+  onPanelOpenChange?: (open: boolean) => void;
   permissionsDismiss?: number;
 }) {
   const listRef = useStickyRows();
@@ -58,6 +60,12 @@ export default function CompaniesView({
   const [selected, setSelected] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [approval, setApproval] = useState(false);
+  const approvalTimer = useRef(0);
+  useEffect(() => {
+    const cancelDeferredApproval = () => window.clearTimeout(approvalTimer.current);
+    document.addEventListener("pointerdown", cancelDeferredApproval, true);
+    return () => document.removeEventListener("pointerdown", cancelDeferredApproval, true);
+  }, []);
   const [role, setRole] = useState<string[]>([]);
   const [status, setStatus] = useState<string[]>([]);
   const [nameSort, setNameSort] = useState<"ascending" | "descending" | null>(
@@ -70,8 +78,8 @@ export default function CompaniesView({
   }, [approval, onApprovalModeChange]);
 
   useEffect(() => {
-    if (approval) setSelected(null);
-  }, [approval]);
+    onPanelOpenChange?.(Boolean(selected));
+  }, [selected, onPanelOpenChange]);
 
   useEffect(() => {
     if (permissionsDismiss) setSelected(null);
@@ -115,6 +123,7 @@ export default function CompaniesView({
     );
   const selectedRow = rows.find((row) => row.id === selected);
   const selectedUser = selectedRow?.user;
+  const presence = usePermissionsPresence(selectedUser);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
       if (event.key === "Escape" && !document.querySelector("dialog[open]"))
@@ -134,20 +143,31 @@ export default function CompaniesView({
       id="companies-panel"
       role="tabpanel"
       aria-labelledby="companies-tab"
-      className={`companies-view ${selectedUser && !approval ? "has-permissions" : ""}`}
+      className={`companies-view ${presence.visible && !approval ? "has-permissions" : ""}`}
     >
       <div className="toolbar">
         <button
           className={`pill ${!approval ? "active" : ""}`}
           aria-pressed={!approval}
-          onClick={() => setApproval(false)}
+          onClick={() => {
+            window.clearTimeout(approvalTimer.current);
+            setApproval(false);
+          }}
         >
           All users
         </button>
         <button
           className={`pill ${approval ? "active" : ""}`}
           aria-pressed={approval}
-          onClick={() => setApproval(true)}
+          onClick={() => {
+            window.clearTimeout(approvalTimer.current);
+            if (selected) {
+              setSelected(null);
+              approvalTimer.current = window.setTimeout(() => setApproval(true), permissionsMotionMs + 40);
+            } else {
+              setApproval(true);
+            }
+          }}
         >
           Needs approval
         </button>
@@ -323,19 +343,20 @@ export default function CompaniesView({
                 </div>
               )}
             </div>
-            {selectedUser && (
+            {presence.visible && (
               <PermissionsPanel
-                user={selectedUser}
-                onUpdate={(patch) => onUpdate(selectedUser, patch)}
+                user={presence.visible}
+                open={presence.open}
+                onUpdate={(patch) => onUpdate(presence.visible!, patch)}
                 onClose={() => setSelected(null)}
                 emailInUse={(email) =>
                   users.some(
                     (u) =>
-                      u.id !== selectedUser.id &&
+                      u.id !== presence.visible!.id &&
                       u.email.toLowerCase() === email,
                   )
                 }
-                onDelete={() => onDelete(selectedUser)}
+                onDelete={() => onDelete(presence.visible!)}
               />
             )}
           </>

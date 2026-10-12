@@ -430,17 +430,6 @@
 .permission-state-icon.denied { background: #b20009; }
 .permission-category-icon { background: var(--subdued); }
 .permission-item.with-limit { grid-template-columns: 20px minmax(0, 1fr) auto auto; }
-.permission-item.with-limit > .permission-checkbox,
-.permission-item.with-limit > .permission-state-icon,
-.permission-item.with-limit > span:nth-child(2) { align-self: center; }
-.permission-item.with-limit .permission-approval {
-  grid-column: 2 / -1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.permission-approval .permission-option { font-size: inherit; }
 .permission-item .limit-value { border: 0; padding: 0; background: transparent; }
 .permission-checkbox {
   appearance: none; display: inline-block; width: 20px; height: 20px; flex: 0 0 20px;
@@ -1074,7 +1063,7 @@
   }
 }
 
-/* Side panel starts level with "Manage your", beside the list, and scrolls internally. */
+/* Side panel starts level with the Name / Role list, beside that list, and scrolls internally. */
 header {
   position: relative;
   z-index: 50;
@@ -1082,6 +1071,20 @@ header {
 .has-permissions .permissions-panel {
   top: var(--permissions-top, 196px);
   overflow: hidden;
+  opacity: 0;
+  translate: 24px 0;
+  pointer-events: none;
+  transition: opacity 240ms ease, translate 240ms ease;
+}
+.has-permissions .permissions-panel.permissions-panel-open {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .has-permissions .permissions-panel {
+    transition: none;
+  }
 }
 .has-permissions .permissions-scroll {
   flex: 1 1 auto;
@@ -1090,19 +1093,6 @@ header {
   overflow-x: hidden;
   overflow-y: auto;
 }
-@media (min-width: 701px) {
-  main:has(.permissions-panel) .management-heading,
-  main:has(.permissions-panel) .toolbar {
-    width: calc(50% - 9px);
-  }
-  main:has(.permissions-panel) .toolbar {
-    flex-wrap: wrap;
-  }
-  main:has(.permissions-panel) .toolbar .search {
-    flex: 1 0 100%;
-  }
-}
-
 /* Name and email sit next to the avatar; the avatar lines up with Edit. */
 .has-permissions .permissions-panel .permission-profile {
   display: grid;
@@ -1141,13 +1131,22 @@ header {
   grid-column: 1 / -1;
 }
 
-/* Header Back matches the Access & Security Manager title. */
+/* Back stays 12px regular. The 16px chevron matches that label. */
 .back-bar > button {
-  font-size: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.back-bar > button img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
 }
 @media (max-width: 700px) {
   .back-bar > button {
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: 400;
   }
   .back-bar {
     position: sticky;

@@ -14,7 +14,7 @@ try {
     await expect(popup.getByRole('button',{name:'Clear filters',exact:true})).toHaveCount(1);
     await popup.getByRole('checkbox',{name:'Accountant',exact:true}).check();
     await expect(page.locator('.list-body .user-name')).toHaveCount(13);
-    await popup.getByRole('checkbox',{name:'CFO',exact:true}).check();
+    await popup.getByRole('checkbox',{name:'Finance Lead',exact:true}).check();
     await popup.getByRole('tab',{name:'Status',exact:true}).click();
     await popup.getByRole('checkbox',{name:'Removed',exact:true}).check();
     await popup.getByRole('button',{name:'Apply',exact:true}).click();

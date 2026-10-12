@@ -1,4 +1,5 @@
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
+import { useReducedMotion } from "motion/react";
 import assets from "./permission-assets.json";
 import RoleSelect from "./RoleSelect";
 import { companyIndex, statusClass } from "./business";
@@ -18,12 +19,55 @@ import {
 } from "./permissionUi";
 type PanelUser = User;
 export type UserChanges = Pick<User, "name" | "email" | "role" | "job" | "status">;
+export const permissionsMotionMs = 240;
+
+export function usePermissionsPresence<T extends { id: string }>(user: T | null | undefined) {
+  const reduce = useReducedMotion();
+  const [visible, setVisible] = useState<T | null>(user ?? null);
+  const [open, setOpen] = useState(false);
+  const shown = useRef(false);
+
+  useLayoutEffect(() => {
+    if (user) {
+      setVisible(user);
+      if (shown.current) {
+        setOpen(true);
+        return;
+      }
+      shown.current = true;
+      if (reduce) {
+        setOpen(true);
+        return;
+      }
+      setOpen(false);
+      let inner = 0;
+      const outer = requestAnimationFrame(() => {
+        inner = requestAnimationFrame(() => setOpen(true));
+      });
+      return () => {
+        cancelAnimationFrame(outer);
+        cancelAnimationFrame(inner);
+      };
+    }
+    shown.current = false;
+    setOpen(false);
+    if (reduce) {
+      setVisible(null);
+      return;
+    }
+    const timer = window.setTimeout(() => setVisible(null), permissionsMotionMs + 40);
+    return () => window.clearTimeout(timer);
+  }, [user, reduce]);
+
+  return { visible, open };
+}
 function readPermissions(panelUser: PanelUser): Permissions {
   return readStoredPermissions({ id: panelUser.id, role: panelUser.role });
 }
-export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, onUpdate }: {
+export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, onUpdate, open = true }: {
   user: PanelUser; onClose: () => void; emailInUse: (email: string) => boolean; onDelete: () => void;
   onUpdate: (patch: UserChanges) => void;
+  open?: boolean;
 }) {
   const panel = useRef<HTMLElement>(null);
   const scroll = useRef<HTMLDivElement>(null);
@@ -43,25 +87,18 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
       if (bounds) {
         const columnHeader = element.parentElement?.querySelector<HTMLElement>(".list-header, .company-list-header");
         const anchor = columnHeader?.getBoundingClientRect() ?? bounds;
-        const main = element.closest("main");
-        const heading = main?.querySelector<HTMLElement>(".management-heading");
-        const headingBox = heading?.getBoundingClientRect();
         const headerBottom = document.querySelector("header")?.getBoundingClientRect().bottom ?? 0;
         const narrow = window.innerWidth <= 700;
         if (narrow) {
-          const toolbar = element.closest("section")?.querySelector<HTMLElement>(".toolbar");
           element.style.marginTop = "0px";
-          if (toolbar) {
-            const shift = toolbar.getBoundingClientRect().top - element.getBoundingClientRect().top;
-            element.style.setProperty("--permissions-mobile-shift", `${Math.round(shift)}px`);
-          }
+          const shift = anchor.top - element.getBoundingClientRect().top;
+          element.style.setProperty("--permissions-mobile-shift", `${Math.round(shift)}px`);
           element.style.marginTop = "";
           element.style.removeProperty("--permissions-mobile-pad");
         } else {
           element.style.removeProperty("--permissions-mobile-shift");
-          // Desktop: top edge lines up with "Manage your" and never climbs into the Chase header.
-          const besideTitle = headingBox?.top ?? anchor.top;
-          element.style.setProperty("--permissions-top", `${Math.max(16, headerBottom, besideTitle)}px`);
+          // Top edge lines up with the Name / Role list header, never the Chase header.
+          element.style.setProperty("--permissions-top", `${Math.max(16, headerBottom, anchor.top)}px`);
         }
         element.style.setProperty("--permissions-left", `${anchor.left + anchor.width / 2 + 2}px`);
         element.style.setProperty("--permissions-width", `${anchor.width / 2 - 2}px`);
@@ -76,10 +113,8 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     if (element.parentElement) observer.observe(element.parentElement);
     const main = element.closest("main");
     if (main) observer.observe(main);
-    const heading = main?.querySelector<HTMLElement>(".management-heading");
-    if (heading) observer.observe(heading);
-    const toolbar = element.closest("section")?.querySelector<HTMLElement>(".toolbar");
-    if (toolbar) observer.observe(toolbar);
+    const columnHeader = element.parentElement?.querySelector<HTMLElement>(".list-header, .company-list-header");
+    if (columnHeader) observer.observe(columnHeader);
     window.addEventListener("resize", schedule);
     window.addEventListener("scroll", schedule, { passive: true });
 
@@ -145,7 +180,7 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     });
   }
   return <EditorContext.Provider value={{ editing, value, setValue, userId: user.id, role: effectiveRole, companyIndex: companyIndex(user.id) }}>
-    <aside ref={panel} className={`permissions-panel ${editing ? "editing-permissions" : ""}`} id="permissions-title" aria-label="Permissions">
+    <aside ref={panel} className={`permissions-panel ${open ? "permissions-panel-open" : ""} ${editing ? "editing-permissions" : ""}`} id="permissions-title" aria-label="Permissions">
       <div className="permissions-scroll" ref={scroll} tabIndex={0} aria-label={`Permissions for ${user.name}`}>
         <div className="permission-profile">
           <Avatar user={user} />

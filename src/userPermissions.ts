@@ -39,7 +39,6 @@ export const defaultDailyLimit = "50000.00";
 export type Permissions = {
   allowed: Record<string, boolean>;
   limits: Record<string, string>;
-  approvals: Record<string, boolean>;
   mfa: boolean;
   token: "Soft token" | "Hard token" | "No token";
   accounts: Record<string, boolean>;
@@ -47,36 +46,36 @@ export type Permissions = {
 
 export type PermissionUser = { id: string; role: string };
 
-const cardAccessRoles = new Set(["Admin", "CFO", "Business Partner", "Read Only"]);
+const cardAccessRoles = new Set(["Admin", "Business Partner", "Read Only"]);
 
 export function permissionsForRole(role: string): Omit<Permissions, "accounts"> {
+  const resolved = role === "CFO" ? "Admin" : role;
   const enabled = new Set<string>();
   const allow = (...names: string[]) => names.forEach((name) => enabled.add(name));
-  const adminLike = role === "Admin" || role === "CFO";
-  const finance = role === "Finance Lead";
-  const mover = role === "Money Mover";
-  const accountant = role === "Accountant";
-  const partner = role === "Business Partner";
-  const readOnly = role === "Read Only" || role === "" || ![
+  const adminLike = resolved === "Admin";
+  const finance = resolved === "Finance Lead";
+  const mover = resolved === "Money Mover";
+  const accountant = resolved === "Accountant";
+  const partner = resolved === "Business Partner";
+  const readOnly = resolved === "Read Only" || resolved === "" || ![
     "Admin",
-    "CFO",
     "Business Partner",
     "Finance Lead",
     "Money Mover",
     "Accountant",
     "Read Only",
     "Custom",
-  ].includes(role);
+  ].includes(resolved);
 
-  if (role !== "Custom") {
+  if (resolved !== "Custom") {
     allow(...accountInformationTypes);
-    if (adminLike || finance || mover || accountant) allow("Chase QuickDeposit");
-    if (adminLike || finance || mover) {
+    if (adminLike || partner || finance || mover || accountant) allow("Chase QuickDeposit");
+    if (adminLike || partner || finance || mover) {
       allow("ACH payments", "ACH vendor payments", "Bill pay", "Payroll");
     }
-    if (adminLike || finance || mover || accountant) allow("CashFlow 360");
-    if (adminLike || mover) allow("Transfers and payments", "Wires", "Zelle");
-    if (cardAccessRoles.has(role) || readOnly) allow("Card access");
+    if (adminLike || partner || finance || mover || accountant) allow("CashFlow 360");
+    if (adminLike || partner || mover) allow("Transfers and payments", "Wires", "Zelle");
+    if (cardAccessRoles.has(resolved) || readOnly) allow("Card access");
     if (adminLike || partner) {
       allow("Business credit access", ...merchantServiceTypes);
     }
@@ -88,9 +87,6 @@ export function permissionsForRole(role: string): Omit<Permissions, "accounts"> 
     ),
     limits: Object.fromEntries(
       moneyMovementTypes.map((name) => [name, defaultDailyLimit]),
-    ),
-    approvals: Object.fromEntries(
-      moneyMovementTypes.map((name) => [name, false]),
     ),
     mfa: true,
     token: "Soft token",
@@ -160,12 +156,6 @@ export function readStoredPermissions(user: PermissionUser): Permissions {
       if (isUsableLimit(savedLimits[name])) limits[name] = savedLimits[name];
     }
 
-    const approvals = { ...fallback.approvals };
-    const savedApprovals = blob.approvals ?? {};
-    for (const name of moneyMovementTypes) {
-      if (typeof savedApprovals[name] === "boolean") approvals[name] = savedApprovals[name];
-    }
-
     let accounts = { ...fallback.accounts };
     if (Array.isArray(blob.accounts) && blob.accounts.every((value) => typeof value === "boolean") && blob.accounts.length === 4) {
       accounts = migrateLegacyAccountBooleans(blob.accounts, user.id, user.role, { allowed });
@@ -178,7 +168,6 @@ export function readStoredPermissions(user: PermissionUser): Permissions {
     return {
       allowed,
       limits,
-      approvals,
       mfa: blob.mfa,
       token: blob.token === "Hard token" ? "Hard token" : blob.token === "No token" ? "No token" : "Soft token",
       accounts,

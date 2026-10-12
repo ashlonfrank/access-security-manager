@@ -36,7 +36,6 @@ export function PermissionItem({
   const { editing, value, setValue } = ctx;
   const allowed = value.allowed[text];
   const showMoneyDetails = limit && allowed;
-  const requiresApproval = value.approvals?.[text] ?? false;
   return (
     <li className={`permission-item ${showMoneyDetails ? "with-limit" : ""}`}>
       {editing ? (
@@ -54,10 +53,6 @@ export function PermissionItem({
                 limit && checked
                   ? { ...previous.limits, [text]: defaultDailyLimit }
                   : previous.limits,
-              approvals:
-                limit && checked
-                  ? { ...previous.approvals, [text]: false }
-                  : previous.approvals,
             }));
           }}
         />
@@ -101,33 +96,6 @@ export function PermissionItem({
               }).format(Number(value.limits[text]))}
             </span>
           )}
-          <span className="permission-approval">
-            {editing ? (
-              <label className="permission-option">
-                <input
-                  type="checkbox"
-                  className="permission-checkbox"
-                  aria-label={`${text} requires approval`}
-                  checked={requiresApproval}
-                  onChange={(event) =>
-                    setValue((previous) => ({
-                      ...previous,
-                      approvals: {
-                        ...previous.approvals,
-                        [text]: event.target.checked,
-                      },
-                    }))
-                  }
-                />
-                Requires approval
-              </label>
-            ) : (
-              <>
-                <span className="permission-approval-label">Requires approval</span>
-                <span className="limit-value">{requiresApproval ? "On" : "Off"}</span>
-              </>
-            )}
-          </span>
         </>
       )}
     </li>
