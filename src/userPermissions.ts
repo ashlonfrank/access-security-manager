@@ -3,31 +3,43 @@ import {
   seedAccountAccess,
 } from "./demoAccounts";
 
-export const paymentTypes = [
+export const accountInformationTypes = [
+  "See activity and balances",
+  "See check images",
+  "See statements and documents",
+  "Download statements and documents",
+];
+export const statementTypes = accountInformationTypes;
+export const moneyMovementTypes = [
+  "Chase QuickDeposit",
   "ACH payments",
   "ACH vendor payments",
   "Bill pay",
   "CashFlow 360",
   "Transfers and payments",
   "Wires",
+  "Zelle",
+  "Payroll",
 ];
-export const statementTypes = [
-  "See activity and balances",
-  "See check images",
-  "See statements and documents",
+export const paymentTypes = moneyMovementTypes;
+export const creditCardTypes = ["Card access", "Business credit access"];
+export const merchantServiceTypes = [
+  "Chase QuickAccept",
+  "Mobile Checkout",
+  "Payment Solutions",
 ];
 export const permissionNames = [
-  ...statementTypes,
-  "Chase QuickDeposit",
-  ...paymentTypes,
-  "Requires approval",
-  "Card access",
-  "Merchant services",
+  ...accountInformationTypes,
+  ...moneyMovementTypes,
+  ...creditCardTypes,
+  ...merchantServiceTypes,
 ];
+export const defaultDailyLimit = "50000.00";
 
 export type Permissions = {
   allowed: Record<string, boolean>;
   limits: Record<string, string>;
+  approvals: Record<string, boolean>;
   mfa: boolean;
   token: "Soft token" | "Hard token" | "No token";
   accounts: Record<string, boolean>;
@@ -35,46 +47,51 @@ export type Permissions = {
 
 export type PermissionUser = { id: string; role: string };
 
+const cardAccessRoles = new Set(["Admin", "CFO", "Business Partner", "Read Only"]);
+
 export function permissionsForRole(role: string): Omit<Permissions, "accounts"> {
   const enabled = new Set<string>();
   const allow = (...names: string[]) => names.forEach((name) => enabled.add(name));
-  const allMoney = ["Chase QuickDeposit", ...paymentTypes];
+  const adminLike = role === "Admin" || role === "CFO";
+  const finance = role === "Finance Lead";
+  const mover = role === "Money Mover";
+  const accountant = role === "Accountant";
+  const partner = role === "Business Partner";
+  const readOnly = role === "Read Only" || role === "" || ![
+    "Admin",
+    "CFO",
+    "Business Partner",
+    "Finance Lead",
+    "Money Mover",
+    "Accountant",
+    "Read Only",
+    "Custom",
+  ].includes(role);
 
-  switch (role) {
-    case "Admin":
-    case "CFO":
-      allow(...statementTypes, ...allMoney, "Card access", "Merchant services");
-      break;
-    case "Business Partner":
-      allow(...statementTypes, "Card access", "Merchant services");
-      break;
-    case "Finance Lead":
-      allow(
-        ...statementTypes,
-        "Chase QuickDeposit",
-        "ACH payments",
-        "ACH vendor payments",
-        "Bill pay",
-        "CashFlow 360",
-      );
-      break;
-    case "Money Mover":
-      allow(...statementTypes, ...allMoney);
-      break;
-    case "Accountant":
-      allow(...statementTypes, "Chase QuickDeposit", "CashFlow 360");
-      break;
-    case "Read Only":
-    default:
-      allow(...statementTypes, "Card access");
-      break;
+  if (role !== "Custom") {
+    allow(...accountInformationTypes);
+    if (adminLike || finance || mover || accountant) allow("Chase QuickDeposit");
+    if (adminLike || finance || mover) {
+      allow("ACH payments", "ACH vendor payments", "Bill pay", "Payroll");
+    }
+    if (adminLike || finance || mover || accountant) allow("CashFlow 360");
+    if (adminLike || mover) allow("Transfers and payments", "Wires", "Zelle");
+    if (cardAccessRoles.has(role) || readOnly) allow("Card access");
+    if (adminLike || partner) {
+      allow("Business credit access", ...merchantServiceTypes);
+    }
   }
 
   return {
     allowed: Object.fromEntries(
       permissionNames.map((name) => [name, enabled.has(name)]),
     ),
-    limits: Object.fromEntries(paymentTypes.map((name) => [name, "50000.00"])),
+    limits: Object.fromEntries(
+      moneyMovementTypes.map((name) => [name, defaultDailyLimit]),
+    ),
+    approvals: Object.fromEntries(
+      moneyMovementTypes.map((name) => [name, false]),
+    ),
     mfa: true,
     token: "Soft token",
   };
@@ -101,29 +118,12 @@ function isValidAccountMap(
   );
 }
 
-type StoredPermissionsBlob = Omit<Permissions, "accounts"> & {
-  accounts: Permissions["accounts"] | boolean[];
-};
-
-function isValidSavedPermissions(saved: unknown): saved is StoredPermissionsBlob {
-  if (!saved || typeof saved !== "object") return false;
-  const blob = saved as StoredPermissionsBlob;
+function isUsableLimit(value: unknown): value is string {
   return (
-    typeof blob.mfa === "boolean" &&
-    ["Soft token", "Hard token", "No token"].includes(blob.token) &&
-    permissionNames.every(
-      (name) => typeof blob.allowed?.[name] === "boolean",
-    ) &&
-    paymentTypes.every(
-      (name) =>
-        typeof blob.limits?.[name] === "string" &&
-        Number.isFinite(Number(blob.limits[name])) &&
-        Number(blob.limits[name]) >= 0,
-    ) &&
-    (isValidAccountMap(blob.accounts) ||
-      (Array.isArray(blob.accounts) &&
-        blob.accounts.length === 4 &&
-        blob.accounts.every((value: unknown) => typeof value === "boolean")))
+    typeof value === "string" &&
+    Number.isFinite(Number(value)) &&
+    Number(value) >= 0 &&
+    Number(value) <= 999999999
   );
 }
 
@@ -133,18 +133,56 @@ export function readStoredPermissions(user: PermissionUser): Permissions {
     const saved = JSON.parse(
       localStorage.getItem(permissionsStorageKey(user.id)) || "null",
     );
-    if (!isValidSavedPermissions(saved)) return fallback;
+    if (!saved || typeof saved !== "object") return fallback;
+    const blob = saved as Partial<Permissions> & { accounts?: unknown };
+    if (typeof blob.mfa !== "boolean") return fallback;
+    if (!["Soft token", "Hard token", "No token"].includes(String(blob.token))) {
+      return fallback;
+    }
+    if (!blob.allowed || typeof blob.allowed !== "object" || Array.isArray(blob.allowed)) {
+      return fallback;
+    }
 
-    const accounts = Array.isArray(saved.accounts)
-      ? migrateLegacyAccountBooleans(
-          saved.accounts,
-          user.id,
-          user.role,
-          saved,
-        )
-      : saved.accounts;
+    const allowed = { ...fallback.allowed };
+    for (const name of permissionNames) {
+      if (typeof blob.allowed[name] === "boolean") allowed[name] = blob.allowed[name];
+    }
+    const legacyMerchant = (blob.allowed as Record<string, unknown>)["Merchant services"];
+    if (typeof legacyMerchant === "boolean") {
+      for (const name of merchantServiceTypes) {
+        if (typeof blob.allowed[name] !== "boolean") allowed[name] = legacyMerchant;
+      }
+    }
 
-    return { ...saved, accounts };
+    const limits = { ...fallback.limits };
+    const savedLimits = blob.limits ?? {};
+    for (const name of moneyMovementTypes) {
+      if (isUsableLimit(savedLimits[name])) limits[name] = savedLimits[name];
+    }
+
+    const approvals = { ...fallback.approvals };
+    const savedApprovals = blob.approvals ?? {};
+    for (const name of moneyMovementTypes) {
+      if (typeof savedApprovals[name] === "boolean") approvals[name] = savedApprovals[name];
+    }
+
+    let accounts = { ...fallback.accounts };
+    if (Array.isArray(blob.accounts) && blob.accounts.every((value) => typeof value === "boolean") && blob.accounts.length === 4) {
+      accounts = migrateLegacyAccountBooleans(blob.accounts, user.id, user.role, { allowed });
+    } else if (isValidAccountMap(blob.accounts)) {
+      for (const [id, selected] of Object.entries(blob.accounts)) {
+        if (id in accounts) accounts[id] = selected;
+      }
+    }
+
+    return {
+      allowed,
+      limits,
+      approvals,
+      mfa: blob.mfa,
+      token: blob.token === "Hard token" ? "Hard token" : blob.token === "No token" ? "No token" : "Soft token",
+      accounts,
+    };
   } catch {
     return fallback;
   }

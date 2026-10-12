@@ -5,7 +5,14 @@ import {
   visibleAccountsForUser,
   type DemoCompanyAccount,
 } from "./demoAccounts";
-import { paymentTypes, statementTypes, type Permissions } from "./userPermissions";
+import {
+  accountInformationTypes,
+  creditCardTypes,
+  defaultDailyLimit,
+  merchantServiceTypes,
+  moneyMovementTypes,
+  type Permissions,
+} from "./userPermissions";
 
 export const EditorContext = createContext<{
   editing: boolean;
@@ -28,20 +35,31 @@ export function PermissionItem({
   if (!ctx) return null;
   const { editing, value, setValue } = ctx;
   const allowed = value.allowed[text];
+  const showMoneyDetails = limit && allowed;
+  const requiresApproval = value.approvals?.[text] ?? false;
   return (
-    <li className={`permission-item ${limit ? "with-limit" : ""}`}>
+    <li className={`permission-item ${showMoneyDetails ? "with-limit" : ""}`}>
       {editing ? (
         <input
           type="checkbox"
           className="permission-checkbox"
           aria-label={text}
           checked={allowed}
-          onChange={(event) =>
+          onChange={(event) => {
+            const checked = event.target.checked;
             setValue((previous) => ({
               ...previous,
-              allowed: { ...previous.allowed, [text]: event.target.checked },
-            }))
-          }
+              allowed: { ...previous.allowed, [text]: checked },
+              limits:
+                limit && checked
+                  ? { ...previous.limits, [text]: defaultDailyLimit }
+                  : previous.limits,
+              approvals:
+                limit && checked
+                  ? { ...previous.approvals, [text]: false }
+                  : previous.approvals,
+            }));
+          }}
         />
       ) : (
         <span
@@ -54,7 +72,7 @@ export function PermissionItem({
         />
       )}
       <span>{text}</span>
-      {limit && (
+      {showMoneyDetails && (
         <>
           <span className="daily-limit">Daily limit</span>
           {editing ? (
@@ -67,8 +85,7 @@ export function PermissionItem({
               inputMode="decimal"
               required
               aria-label={`${text} daily limit`}
-              disabled={!allowed}
-              value={value.limits[text]}
+              value={value.limits[text] ?? defaultDailyLimit}
               onChange={(event) =>
                 setValue((previous) => ({
                   ...previous,
@@ -84,6 +101,33 @@ export function PermissionItem({
               }).format(Number(value.limits[text]))}
             </span>
           )}
+          <span className="permission-approval">
+            {editing ? (
+              <label className="permission-option">
+                <input
+                  type="checkbox"
+                  className="permission-checkbox"
+                  aria-label={`${text} requires approval`}
+                  checked={requiresApproval}
+                  onChange={(event) =>
+                    setValue((previous) => ({
+                      ...previous,
+                      approvals: {
+                        ...previous.approvals,
+                        [text]: event.target.checked,
+                      },
+                    }))
+                  }
+                />
+                Requires approval
+              </label>
+            ) : (
+              <>
+                <span className="permission-approval-label">Requires approval</span>
+                <span className="limit-value">{requiresApproval ? "On" : "Off"}</span>
+              </>
+            )}
+          </span>
         </>
       )}
     </li>
@@ -91,7 +135,7 @@ export function PermissionItem({
 }
 
 const categoryDescriptions: Record<string, string> = {
-  "Statements and documents": "Balances, statements, and account records",
+  "Account Information": "Balances, statements, and account records",
   "Money movement": "Payments, transfers, and daily limits",
   "Credit cards": "Business card access",
   "Merchant services": "Coffee shop payment processing",
@@ -129,23 +173,25 @@ export function PermissionCategoriesEditor() {
     <section className="permission-details">
       <h3>User permissions</h3>
       <div className="permission-categories">
-        <PermissionCategory title="Statements and documents" icon={assets.imgIcon1}>
-          {statementTypes.map((text) => (
+        <PermissionCategory title="Account Information" icon={assets.imgIcon1}>
+          {accountInformationTypes.map((text) => (
             <PermissionItem key={text} text={text} />
           ))}
         </PermissionCategory>
         <PermissionCategory title="Money movement" icon={assets.imgIcon2}>
-          <PermissionItem text="Chase QuickDeposit" />
-          {paymentTypes.map((text) => (
+          {moneyMovementTypes.map((text) => (
             <PermissionItem key={text} text={text} limit />
           ))}
-          <PermissionItem text="Requires approval" />
         </PermissionCategory>
         <PermissionCategory title="Credit cards" icon={assets.imgIcon4}>
-          <PermissionItem text="Card access" />
+          {creditCardTypes.map((text) => (
+            <PermissionItem key={text} text={text} />
+          ))}
         </PermissionCategory>
         <PermissionCategory title="Merchant services" icon={assets.imgIcon4}>
-          <PermissionItem text="Merchant services" />
+          {merchantServiceTypes.map((text) => (
+            <PermissionItem key={text} text={text} />
+          ))}
         </PermissionCategory>
       </div>
     </section>

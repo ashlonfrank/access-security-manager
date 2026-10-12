@@ -25,6 +25,7 @@ export default function CompaniesView({
   onReview,
   onDecline,
   onApprovalModeChange,
+  permissionsDismiss = 0,
 }: {
   users: User[];
   onDelete: (user: User) => void;
@@ -33,6 +34,7 @@ export default function CompaniesView({
   onReview: (user: User) => void;
   onDecline: (user: User) => void;
   onApprovalModeChange?: (active: boolean) => void;
+  permissionsDismiss?: number;
 }) {
   const listRef = useStickyRows();
   const [deletedCompanies, setDeletedCompanies] = useState<number[]>(() => {
@@ -70,6 +72,10 @@ export default function CompaniesView({
   useEffect(() => {
     if (approval) setSelected(null);
   }, [approval]);
+
+  useEffect(() => {
+    if (permissionsDismiss) setSelected(null);
+  }, [permissionsDismiss]);
 
   const matchesSearch = (user: User) =>
     `${companyLabel(user.id)} ${user.name} ${user.email} ${user.role} ${user.job}`

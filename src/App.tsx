@@ -112,6 +112,7 @@ export default function App() {
   const [companiesApprovalMode, setCompaniesApprovalMode] = useState(false);
   const [notice, setNotice] = useState("");
   const [formError, setFormError] = useState("");
+  const [permissionsDismiss, setPermissionsDismiss] = useState(0);
   const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (tab !== "companies") setCompaniesApprovalMode(false);
@@ -374,6 +375,8 @@ export default function App() {
             className="primary-button"
             onClick={() => {
               setFormError("");
+              setSelectedId(null);
+              setPermissionsDismiss((count) => count + 1);
               setDialog({ kind: "add" });
             }}
           >
@@ -511,6 +514,7 @@ export default function App() {
         ) : (
           <CompaniesView
             users={users}
+            permissionsDismiss={permissionsDismiss}
             reviewId={reviewId}
             onReview={(user) => setReviewId(user.id)}
             onDecline={(user) => setDialog({ kind: "decline", user })}

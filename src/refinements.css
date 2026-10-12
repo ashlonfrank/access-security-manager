@@ -430,6 +430,17 @@
 .permission-state-icon.denied { background: #b20009; }
 .permission-category-icon { background: var(--subdued); }
 .permission-item.with-limit { grid-template-columns: 20px minmax(0, 1fr) auto auto; }
+.permission-item.with-limit > .permission-checkbox,
+.permission-item.with-limit > .permission-state-icon,
+.permission-item.with-limit > span:nth-child(2) { align-self: center; }
+.permission-item.with-limit .permission-approval {
+  grid-column: 2 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.permission-approval .permission-option { font-size: inherit; }
 .permission-item .limit-value { border: 0; padding: 0; background: transparent; }
 .permission-checkbox {
   appearance: none; display: inline-block; width: 20px; height: 20px; flex: 0 0 20px;
@@ -1060,5 +1071,247 @@
   }
   .pending-approval-actions {
     justify-content: flex-start;
+  }
+}
+
+/* Side panel starts level with "Manage your", beside the list, and scrolls internally. */
+header {
+  position: relative;
+  z-index: 50;
+}
+.has-permissions .permissions-panel {
+  top: var(--permissions-top, 196px);
+  overflow: hidden;
+}
+.has-permissions .permissions-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media (min-width: 701px) {
+  main:has(.permissions-panel) .management-heading,
+  main:has(.permissions-panel) .toolbar {
+    width: calc(50% - 9px);
+  }
+  main:has(.permissions-panel) .toolbar {
+    flex-wrap: wrap;
+  }
+  main:has(.permissions-panel) .toolbar .search {
+    flex: 1 0 100%;
+  }
+}
+
+/* Name and email sit next to the avatar; the avatar lines up with Edit. */
+.has-permissions .permissions-panel .permission-profile {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  column-gap: 8px;
+  align-items: center;
+}
+.has-permissions .permissions-panel .permission-profile > .avatar {
+  position: relative;
+  top: auto;
+  left: auto;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+.has-permissions .permissions-panel .permission-name,
+.has-permissions .permissions-panel .permission-close {
+  align-self: center;
+}
+.has-permissions .permissions-panel .permission-name {
+  margin-left: 0;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  padding-right: 8px;
+}
+.has-permissions .permissions-panel .permission-close {
+  position: static;
+  top: auto;
+  right: auto;
+  grid-column: 3;
+  grid-row: 1;
+}
+.has-permissions .permissions-panel .permission-actions,
+.has-permissions .permissions-panel .permission-feedback {
+  grid-column: 1 / -1;
+}
+
+/* Header Back matches the Access & Security Manager title. */
+.back-bar > button {
+  font-size: 18px;
+}
+@media (max-width: 700px) {
+  .back-bar > button {
+    font-size: 15px;
+  }
+  .back-bar {
+    position: sticky;
+    top: 0;
+    z-index: 70;
+    background: #f5f7fa;
+  }
+  .list-header,
+  .company-list-header {
+    position: static;
+    top: auto;
+  }
+  .has-permissions .permissions-panel {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+    max-height: none;
+    margin-top: var(--permissions-mobile-shift, 0px);
+    overflow: visible;
+    z-index: 40;
+  }
+  .has-permissions .permissions-scroll {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    flex: none;
+  }
+  .has-permissions .permissions-panel .permission-profile {
+    position: static;
+    top: auto;
+    row-gap: 16px;
+  }
+  .has-permissions .permissions-panel .permission-actions {
+    margin-top: 0;
+  }
+  .has-permissions .permissions-panel .permission-profile > .avatar {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 50%;
+    mask-image: url("/assets/imgJp.svg");
+    -webkit-mask-image: url("/assets/imgJp.svg");
+    mask-size: 36px 36px;
+    -webkit-mask-size: 36px 36px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  }
+  .has-permissions .permissions-panel .permission-profile > .avatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .brand-actions .sign-out,
+  .sign-out,
+  .primary-nav button,
+  .user-name,
+  .user-email,
+  .list-header,
+  .column-sort,
+  .company-list-header,
+  .company-identity,
+  .company-identity small,
+  .company-user .user-name,
+  .company-user .user-email,
+  .permission-name h3,
+  .permission-name p,
+  .permission-info h3,
+  .permission-details > h3,
+  .permission-accounts > h3,
+  .permission-info dt,
+  .permission-info dd,
+  .category-heading h4,
+  .category-heading p,
+  .permissions-panel .permission-item,
+  .permissions-panel:not(.editing-permissions) .permission-item,
+  .permission-item .daily-limit,
+  .permission-item .limit-value,
+  .permission-option,
+  .permission-fields label,
+  .permission-status-readonly,
+  .permission-company,
+  .authentication-editor legend,
+  .permission-auth-implied,
+  .role-picker,
+  .role-picker-option > span,
+  .role-picker-option small,
+  .filter-dropdown,
+  .filter-options-heading h3,
+  .filter-dropdown .text-button,
+  .company-delete-notice,
+  .permission-feedback,
+  .avatar-initials,
+  .pending-approvals-heading,
+  .approval-permissions-intro,
+  .approval-info-banner {
+    font-size: 14px;
+  }
+  .tag,
+  .status-tag,
+  .role-tag,
+  .permission-small-tag,
+  .filter-count,
+  .approval-info-icon,
+  .approval-info-dot {
+    font-size: 12px;
+  }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #d3d9de transparent;
+  }
+  html::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+  html::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  html::-webkit-scrollbar-track,
+  html::-webkit-scrollbar-track-piece,
+  html::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  html::-webkit-scrollbar-thumb {
+    background: #d3d9de;
+    border-radius: 999px;
+  }
+}
+
+/* Desktop permissions list keeps a thumb-only bar, about half a standard scrollbar. */
+@media (min-width: 701px) {
+  .permissions-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #d3d9de transparent;
+  }
+  .permissions-scroll::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+  .permissions-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .permissions-scroll::-webkit-scrollbar-track,
+  .permissions-scroll::-webkit-scrollbar-track-piece,
+  .permissions-scroll::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  .permissions-scroll::-webkit-scrollbar-thumb {
+    background: #d3d9de;
+    border-radius: 999px;
   }
 }

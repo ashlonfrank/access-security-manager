@@ -5,7 +5,7 @@ import { companyIndex, statusClass } from "./business";
 import Avatar from "./Avatar";
 import type { User } from "./App";
 import {
-  paymentTypes,
+  moneyMovementTypes,
   permissionsStorageKey,
   readStoredPermissions,
   seedPermissionsForUser,
@@ -43,7 +43,26 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
       if (bounds) {
         const columnHeader = element.parentElement?.querySelector<HTMLElement>(".list-header, .company-list-header");
         const anchor = columnHeader?.getBoundingClientRect() ?? bounds;
-        element.style.setProperty("--permissions-top", `${Math.max(32, anchor.top)}px`);
+        const main = element.closest("main");
+        const heading = main?.querySelector<HTMLElement>(".management-heading");
+        const headingBox = heading?.getBoundingClientRect();
+        const headerBottom = document.querySelector("header")?.getBoundingClientRect().bottom ?? 0;
+        const narrow = window.innerWidth <= 700;
+        if (narrow) {
+          const toolbar = element.closest("section")?.querySelector<HTMLElement>(".toolbar");
+          element.style.marginTop = "0px";
+          if (toolbar) {
+            const shift = toolbar.getBoundingClientRect().top - element.getBoundingClientRect().top;
+            element.style.setProperty("--permissions-mobile-shift", `${Math.round(shift)}px`);
+          }
+          element.style.marginTop = "";
+          element.style.removeProperty("--permissions-mobile-pad");
+        } else {
+          element.style.removeProperty("--permissions-mobile-shift");
+          // Desktop: top edge lines up with "Manage your" and never climbs into the Chase header.
+          const besideTitle = headingBox?.top ?? anchor.top;
+          element.style.setProperty("--permissions-top", `${Math.max(16, headerBottom, besideTitle)}px`);
+        }
         element.style.setProperty("--permissions-left", `${anchor.left + anchor.width / 2 + 2}px`);
         element.style.setProperty("--permissions-width", `${anchor.width / 2 - 2}px`);
       }
@@ -57,6 +76,10 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
     if (element.parentElement) observer.observe(element.parentElement);
     const main = element.closest("main");
     if (main) observer.observe(main);
+    const heading = main?.querySelector<HTMLElement>(".management-heading");
+    if (heading) observer.observe(heading);
+    const toolbar = element.closest("section")?.querySelector<HTMLElement>(".toolbar");
+    if (toolbar) observer.observe(toolbar);
     window.addEventListener("resize", schedule);
     window.addEventListener("scroll", schedule, { passive: true });
 
@@ -88,7 +111,7 @@ export default function PermissionsPanel({ user, onClose, emailInUse, onDelete, 
       setError("Enter a full name and a valid email address."); return;
     }
     if (emailInUse(savedEmail)) { setError("This email address is already assigned to another user."); return; }
-    if (!job.trim() || paymentTypes.some((name) => value.limits[name].trim() === "" || !Number.isFinite(Number(value.limits[name])) || Number(value.limits[name]) < 0 || Number(value.limits[name]) > 999999999 || !/^\d+(\.\d{1,2})?$/.test(value.limits[name]))) {
+    if (!job.trim() || moneyMovementTypes.some((name) => value.allowed[name] && (value.limits[name].trim() === "" || !Number.isFinite(Number(value.limits[name])) || Number(value.limits[name]) < 0 || Number(value.limits[name]) > 999999999 || !/^\d+(\.\d{1,2})?$/.test(value.limits[name])))) {
       setError("Enter a job title and non-negative daily limits with up to two decimal places."); return;
     }
     const savedPermissions: Permissions = value.mfa
