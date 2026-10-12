@@ -1141,11 +1141,11 @@ header {
   grid-column: 1 / -1;
 }
 
-/* Back stays 12px regular. The 16px chevron matches that label. */
+/* Back is 14px regular. The 16px chevron stays in proportion with that label. */
 .back-bar > button {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 20px;
 }
 .back-bar > button img {
   width: 16px;
@@ -1155,7 +1155,7 @@ header {
 }
 @media (max-width: 700px) {
   .back-bar > button {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
   }
   .back-bar {
